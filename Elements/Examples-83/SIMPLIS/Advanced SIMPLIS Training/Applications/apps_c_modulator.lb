@@ -1,0 +1,164 @@
+********************************************************************************
+***                                                                          ***
+***            Auto-generated ASCII Library file for component :             ***
+***                      Modulator_29_January_2015.sxcmp                     ***
+***                          Created on : 1/29/2015                          ***
+***                           At Time : 1:45:02 PM                           ***
+***                           Using version : 7.20j                          ***
+***                                                                          ***
+********************************************************************************
+
+*** POP Trigger Gate information:
+*** This model has no embedded POP trigger gate.
+
+.SUBCKT Modulator_29_January_2015  30 33 34 31
+
+.NODE_MAP ICMD_P 30
+.NODE_MAP SW 33
+.NODE_MAP VDDH 34
+.NODE_MAP ICMD_N 31
+
+*
+?@@--START ENCRYPTION: "SMX_AES Modulator 29 January 2015"
+?@@K8jITA8Kfz/SMri484CmY4uQrlv7w+1oLuQZ0MARKjYHRYs7SgYQTdt5kaLnvGDF?##
+?@@WBexnj2pRSiPEl4cfpF2+g2dtKttFff5DxmEiquznbEDi87Dgiq2yXJZ2q7gU15j?##
+?@@A/jEqnvMUO1hJS+LUTrhaNP22ybdkZeG5y5u6L410fGLFlAdHY/DUPYErhPcyZ78?##
+?@@J57SuMuY7PRmKvo0vXaDRu0FsurKUqcaOGRRci2JDlVGOGs3ipEhHj3Jxk0IJy4Y?##
+?@@Ri+sO7qs/bckD08QuEJ23abZDkqxls4pqO0sAen7WZH82XfH7j7tCZCVaSv7B1N7?##
+?@@4hrsf6vfpoVg9bPaw9XKqaVPE+QKa0aGoqJ7fDq+zVFgoGjF55/T0r4+qg5MnxpN?##
+?@@MhCoTSDwiExnyLfgZoHnAg1143vHiaTAHRvd42O1MKwD2Ff+opwQNi9M7UBbAnxj?##
+?@@iP3RikDq0CYtWkDx28tt69AetWvhUAZhODOXhZEIntG6SrmKYpfip1Cwg66DbyH3?##
+?@@7fnEXJGF2Rx1lqlPc8o3tp/mZDWOr86Rso5NNnjNbiB85pqstkmAYvNaNfPgM5/x?##
+?@@v/NGdft+vHt70j5suAiUHNK8+wUaWNFPLIybzngb/CDSc0G7BnRDJzDtDZbaQ/4w?##
+?@@mzs7/DdSidoBHJiq9qvsLe2h4O+sf0pJk6SFw2ALllNy6jWkDqpfkIUdZNGJGqkT?##
+?@@n8z79Jeh+3Chw3XPx/gI5Nm9zYpELi86ARpmOzpsNJFW5mENLt2niTkbz5dgJKIR?##
+?@@l6GIaIJFkEI6B9E/R42WfFo2S1sWuLO0LbMa0SDkBoITnw8qkk0GZ73LnxjPmt2g?##
+?@@xvJmr8Wug2rphH7wXrLa9xgcswl2ei4ln9b+UWI/J0J6oAoLRZC7WhZBTsyKocnw?##
+?@@FdYEVCRxkHMOnTDy7JhXnbHPquxUd92IpIe8zQJrhuH6JHpY3XWlkTTq1v95QIn8?##
+?@@14ulxPa0XZp+ggduZ2BONmZKa7Znw5EnuiWj1eLQDjVvdDgnBZqLDa8ovH+hgddy?##
+?@@1eXaw5wTunGwyLkjABWqy+uRbOpP/G8nPK55OvxBYciqJv2krJPJF3voWiE/W1OP?##
+?@@/MbScSV1gqeVsjf/5ZV0FLzWIMBGTzb/lT/9wQfUi4SwwWAS0OV9xu95utvWW4pJ?##
+?@@o6RgCCzNC9bX9CALuzILdNCBSGdH2llA2fexW/o5dSkmi4ZVWsdWP5YLlvZmApMf?##
+?@@SymsjF+pUZPrZ9Qtapv2KLB30rs7z+Nk3cWH5Wn3/mMhT0qNOeNR7FctYaKLmOtB?##
+?@@DWOVvMYMnwD035T55jKZRrNV6MLesf9NWUcCAw1N+kJYA/3Qq1R4WnJBdA4UgxwH?##
+?@@YjkeR1GsGUMvFGmXYHDsUn+PA/xHdxxVr+y5U0h8DRRiEo6itvFjftnRCQ5up8zN?##
+?@@b/109NqsUkHwxCw09c8C8yVzxLroagP7FBEK4WDAGhKNFA8jTB4BxQTS9HsWmcRc?##
+?@@ORf2LObMUnhhj0C+mfJ9Tv3smADSQ3qjQ+D3H8dS7N+PeQ4EA1t/bR0JlQn7phFC?##
+?@@a9O9qQnkuXSMPGLIqdUcgOKMO+g5EK8/tBye4A9jxjWFZMp8bncvS2Il3W78mMLz?##
+?@@aPDjnhCaPMu3zYpx4iSL2fEj1qaUJDfY7XlX0tkJPdhrIwpG+HKWmOk16Pyl45e8?##
+?@@G+RmUNlqf+GAHfOkOk7RNJsDcekaFePEl6ugQLn8f7IzyAD4S3SPS0vUrNLYWQAk?##
+?@@CVDAHIDjkhSJlk9RBn0OnmmZ+kn3Chy4zvIMWCjf5kPOIWBK0t8711cN6bLbBF8s?##
+?@@mWmyszvQYuPHlabxcwnO/1a0Ne2/718TAsQqu3N19MADeG7597JhKotI0XIaOh/N?##
+?@@6q9qseXqbUUuXEuqQCHZ94g5Wbc2tEMw+5tGOPfOAf9avCgGjMy8AQ02WBIW3CDT?##
+?@@gwdghBzHu6NVgxj8gPrr7nGTi80HjlaPfIr9Gfb5rCjF96yJ7d0lYFXeKVegfpLJ?##
+?@@LwxOzDGHXHL/+k0ABWR8y2zJX2JPZvaIuaTVN0LpJHZGFq8ymSbR9jRY58OJCOBh?##
+?@@t6XHd+Sb+3BTVadEaeFl7fNOH03JBZs+wwYHjXGVEKSUYHKLZLdNmsTDhXbVEr+Q?##
+?@@fd5P5f8TRg2y+bCLuAJ7odOgqJkDw48p2v3gOy9Z1DsJBtFkWZ/ESxW5JsKC3Iu/?##
+?@@uNvLePK60U9yP9udeF4rKhVp89tMj0w6qA9RNgVBGvWlrzfkFsp7rjQNApbGFJax?##
+?@@Rplu331epZIjLhguecCJATv/tW1Vj92ScZqcyDecO42WWSdRar3TA4mXXc6PVbqA?##
+?@@B2Vqqesj9NKzSQF4WSB7RSbI9G8E5eyVPHD0U7joHRITJNmCyGhgvqzscaxTwdUU?##
+?@@2E6ze2+Hcmw2TTfO+WAMI5YEZrSiqUoG2hcu97owkP4L/uUq7DM3uhQZ9iUM9Bg0?##
+?@@tPrU1lffpVEneIrtXJN8OxabxkyWMWBHtCkaAtNvivutRPZn1He+FP0lskJ8Greb?##
+?@@32VIk4XEo2YqJAfaxPaFJTaJNgiUWEhtQ2/MeEdqplT6Ty+ktdO2166a2pFFHHmt?##
+?@@rEyYUKuisHjEtM2jmk5ekaim2zsz+kf1dp7nSNtC/XCsYnYFqg1DmlB86gaoIv00?##
+?@@R3iMNIEf0ETR6l/+q3sIiyus3wPEAChy33qcVn1d9xsDHE0U7D/pylgF1N3AMTWp?##
+?@@+BOKBbb2p8jcUBHRepny0PBKqai1/0Q8AujzE59zgClH8IW4PcUzwh0v3eewl8a4?##
+?@@YWfmOGawwhTEv76hnWfNxN4mNaUVgeadXxRecHdcgEmamOLTR8X4AsqBXcKcYsP3?##
+?@@DHyt7evAQ8oOk59dlIhh6h0MCgOO2P30BDIBky2Shkb9uNnah0b31CIJQTqLKJNh?##
+?@@6r+eY2MVwQSsjF207GADu3YWMuDkjzRyJLbe4cj9Mp8vMTb8RvseNydCyLCwu+oe?##
+?@@+zc5hNlEybmD0mxg0eG8/TLY6aDUFm6eBInXaApyynVpAPKcSkTntMgWlgaicjUP?##
+?@@5n5B9+/W25iEKxD34/odxeulAKWH6Jq49DNO9IJHuuHzdjKsMBfX7SfRw7SY4fa3?##
+?@@ABhL9MNwOrHXYSvkCLm2+SBKWSV85CYgz+l6yrCtiOZgEwgUiBMHXVdFHWBNMXSx?##
+?@@DZxPZaMXu36dA3SIpKgZvi8/PFLHk2HiAR04RCIRz6/pWtP/bh8qNo5AlDKFFJGd?##
+?@@Han9L2N4Rzc/7W7aS9cKRRdCFPh/2CgrJhbMpBV0PONx11H0SwITncRBbpG4GWlz?##
+?@@ZQIx+/AI1D2mHxaHf44VxJjr2tliv5JM3o3UiMzI3msFDKLd9e3i7QFJ4UoZLZbQ?##
+?@@MrffSzC24MrSaZOqkLf2NYpJG4nJN9l2XVEPvBMUJS/sTzllRW+9TrcOKP6lZX+n?##
+?@@ISU/ssdbWrEGmOfcChAKYNTRhlafiootgeMSyiSw7DfQQmHmREOTpXd5CYHdC1Fd?##
+?@@bFZSQnY1CSRBls0lIrqwHL5kb+xUt4w+yP9xRCSoKIIWour1FMbKZ/awx2gg5Let?##
+?@@6jwFm39EA9GFgBIyRdAhP1O1/qO/lnJUthKxHDij2O8Au9cJ82oiXtGCXQfuNlXA?##
+?@@aVu5TCUMtayXPdBZBgUtRazV33Zg8imluUvBHHJ3EinUSGr+PbZmfxzPXKdqNODN?##
+?@@WPdsuamJmqOwWKEJvn9uYjnd+7WO7Fu/e9wnBQ8lHfOnXxriMG99EwOkZZ8dPkxr?##
+?@@8857CgHxbKzb3d8XzUL9EtAAujsnzgOMcxOJ8zHGVwz6PioA8ij6+HmrqMRJGu5F?##
+?@@F1gK5MFX+DlUi4izcvWrVmBrA8u3fF9x7ohseFSz2i5Y9wBpwi90NDEFyjuEPNGi?##
+?@@x5ldVIzqrBDlU/1LdK4b/NULwRjKfwMdEy8ZzjOdKdKGyOZkBq6nZL3kE8k7aUvr?##
+?@@GIjnN1Qs/J36xEcakwvxsa/FvWoUOARvkuj8/8PXCFpckOzCi0osSN7JX54KqqZu?##
+?@@BMhVRjGQx3qKyNamFlZRLjl+2AT18Hjb9G9XFvUdYDMUfbUaIVm1u2hgV3RKJsGR?##
+?@@1yyQQ8Am2zScFSNQ/ph43c4tavOjrF3Odur7x8wk6vyTOP7sst7ZzuGiiqEi88r5?##
+?@@ipNDd9t/NE3oYrCSKa1jjR+x5Bz0Qp9J6YRAYByu2/UFRjz7nfvy9MwW2EBfrWbv?##
+?@@bZwIXsaOI35GaNnw1vObQ2WiO5+0/1fpI61aWH2p5GAHuaOqf+Y0YuoxI5fw8GGg?##
+?@@tWBvU6Aoe3shd1n+WRF8ZKFTAtpiWzgh6djyk2YSGl733scogVdBkbH3JNVxz33u?##
+?@@oGXD2vRn6zYzpVjtJnDTtDBHdYzSq1iTaYtLxFL8IasMdMcwrer/N/5FpmeouBUY?##
+?@@6nveYVH9AGDskp9nsuhoqHcNdCdaMr4LnAhF7efvv1Wakgx6225ma2HJY6lfAH9b?##
+?@@Bcy8z5yP0uMG83669VRzvYx7DYzc1ask0tYmYOKRljkx6A7ey/U6N/d10/9U77fY?##
+?@@uKoHUqSHuhdFT86XQJib2pkozkQVlhPWiHGGl4NOaNLSp5O0MlkSfoR6rPvA54Aa?##
+?@@GTKQZJir5dIi7b0MqBrqZ6hLRPu7ffSUyi02sVOblOSX8HYkGmDqGAJfhSqdE3jP?##
+?@@2Rz+Se2atbXwvHn9OZef8pVTNqhqZEGi8aRXwlrI6FsiM434z3wn2Ga2nrGIOxZC?##
+?@@/aUHzo6zJTr/kKSrHmUPBftc9L5NgM368K/qiOwhmec7JawYkGRPMpNY3yh8d4+v?##
+?@@rLC4JMM4KTHzFolvFRCtHJGEl748HbLkKoyMovRXXqGA7T1ujCNAJXzvi6nwee3P?##
+?@@QCdWTuXN6aGB/RKdE6J+hZBIXaZvdIGBGZA+qgbo025Fe1BwCIG59X9kAmNU0L+Q?##
+?@@HC54VxkBhreZFKxhdsTte5EH0YNI28gmaNbD5oNHfeJ9blXiD7tWRa43cn/KDFvP?##
+?@@/AswccD9AFzS9IzAMYzYqzXrXZMl1LOmjMJRmD0G42r5o0RG8WzcPYoWspz6tCD2?##
+?@@MqAExNyYdqC99DjlNz2fu1hEy5qG9xugaYHdxYi0C9e60cbd1FolCeAYIK+UugZx?##
+?@@NZL01BmgeSpX7cHCT2+kRKLvhEhLJI0bQ2VsPjtIqknGpeerbyWSDlW5lU0WWKww?##
+?@@Yf6c0Wf1We/9i2zpDsVZq6Fj1Ak7BXdkFIB5g3gYt81p6REy2MPHK2eOcbeoPS+b?##
+?@@1Vk5kRoyiuinuMjyUdLIuj3e+ZODtM6XDWexIvIjWL5MBbnsFf/QJmBJy6ykvdXw?##
+?@@iDf7TVf6bu6exlntMXvjg9zDYQGu1XJnVX+cPfLj+nHBdmwG3CgxDZp46kc2trO9?##
+?@@fMYgW6ltUYYk4HpYy+iw34ryUJlZmDf4277PyYC9yozaVvoftgAzIzKv89RW6NxE?##
+?@@v+PYfzxnkAbi8NtkgjdDgBAnhZImW4/KKxH5CuV5OkGDqJioF0JmutcbLoKQfoUt?##
+?@@zXQGXbwSYUSkqggpwGtxDhy2EQbAVOTXSITAzInTZICKp9GuGhwiq6nKdIZTiGZN?##
+?@@DRCVR3AOKvTlymrhOCBGUhXoww8NoRFV9KPNLPEBO9dqfy0zB8pjlwPGchfqQI/m?##
+?@@JTFXrRCJlzeeN1j9ZOvAe9aQPo2cn89jmmq7C3Eq0uwCAqbMseKTFFBDQLip3JTw?##
+?@@KsqXknE6X7q3jMtF3FkDylpW8ahA6M26DO3+0Nysk9nfeEnTT9NBTx3o4ubrjhLL?##
+?@@gAsbxbXuWV62LF6j6gAFScU0sc3szv85V8I/2wWlXMvvQsbOZrJBxnVeuHzZimed?##
+?@@Puzm1ce+jSA9ylpouDhBP4dwxLVyrw2J5dLmkWJB9lPm+dzqYcD1PTpth8P/lrXq?##
+?@@tQNR7OKOIO61/oTNtyv9SFSrnWsrczAS0qsVHuKn3cU04RDzWM4usudQ4CC0FV5K?##
+?@@fPH9S4yQTSUWYcwrOfXb2+7ztcMrcMjXc1A/1TsDx1dU7FbT6UIZELK+Wdn/Uh5p?##
+?@@BuZETFKM8bKeuzcYPTlYk7fMb+ahevS7/HPGLvXI2aIupL1lh5yd9U3xCGLSaMGn?##
+?@@NMWwDH3UCQAdJlBbrjcavoyW1YOcw8W4UetbVph9H2kHbVlFstIZTPjlZSrhajV6?##
+?@@uodUI4t+f3Ge16Fu10PY9wCN1fhMRD/uIK8PufjQSKHZw+IgpwhMBA+g9Yre/Ftm?##
+?@@BL8rLsoGOmA3IVycmKLZfLiD3jYJ7a3/MlfRko52T/BUVmPSsqkPBsh0qt11Eqdk?##
+?@@stZQbusAxuZiVb3ohVs2uBQUwdI3zA9o5xSKntb4UUt41HI/eMkZntpA1KT1t301?##
+?@@xvcl6i1TJ6No/wRZgnh3+6seMKlv2kbl/aSbHoGvIZXNhZGctzwzdi87Z1X4yWmy?##
+?@@Wzm9pLDecw18jHlz4lHuXNgNNTvDjM5YcNfkbVln1arA0+3EddD9ZzWlhvELrVIJ?##
+?@@gyNu9JyccfByOE47VnQi8+dW31yXaoiCNC47bZNa2EXwc1WupkqPeS6XfDDu7ul8?##
+?@@RnCLEM/sKvhnNSiOP9NpvxSxM/kf8x2eE4GyLTL8Q/VOtaeq65xP1aGAu9oajqIT?##
+?@@OhPscAT9PfLkEbbKCkqohHUkBn/iCPieIJs6i1kS8rTtIcmtZXF+CKedP3+Tb0Z+?##
+?@@Qg3ruKbjsA8eHaoNNhdHi6d4pbAA+NYllPscF+m9TLhZo+/nn7UewgIPNRgIGLWN?##
+?@@j2E9jSS004k94EP9jNLHwLWdK9uSJKT6beiSjD27viHsiNegENyb3ZK4Wz5G+gXb?##
+?@@CuKfXQb2X2GqcZZqAym/x0gtN3fS5TrPQ2kMn4Ng72WwSf6BqsV2KNuRrKQaza+A?##
+?@@lN2WUF6GkTtMpPho9G98ELikwEAaVqvbjS/kwIMxSXVB7uZoVSs/SGHN4G0soo1P?##
+?@@NXlMVmm0Z0J7Gm5+iYiDdNv8qUvyCSuVeYisHzhfhHVquRB18tvn1V/VtEM2fPLI?##
+?@@yvUWeqqJ8tg9NbDAfmir2H+Vm90NJlaPiTdDR8p0F95TaS4ED/PizwGZYm4UyC9e?##
+?@@PthOfmT9FZ42gMeRPMYUVgSUyxowm4Hih4LRH6hN6w7aTQPc3XoKj5p9OuhQigcS?##
+?@@7JEGEgHhTcs3qQCLijddQAkyRbUueGH+/NHGhhgWvzeZ3qnPkU66pmq1RoCyvCb+?##
+?@@CiYDLkxV76SnP+MI3vhIM8CJv3h4fKfD+aBZDvTjy9xrP4LiO7qTKXya+sXhOAMI?##
+?@@8XtfWVibiJhIvPLrmAO9ALfcq8dIjLn6FlUThlBqZvKTOomlH8zfnPTNYn0vovSA?##
+?@@MKYamhMpbYViIgdYAS/ofMkKLqMhFlBMuOQXRev+iY4SXnieRZcRr6rRYvKbzsLV?##
+?@@VIkesieM3LxUxKcUod9VLMkqw96KMJNsrXv0Jdvf42HTPxAEp5MUtnG3rN/9sOAr?##
+?@@PG77bcalTeVxAGX+1cndLbrY/ssbZgbL6PedOlzIKK+q6J3MNrNxFeYlj039Rrbg?##
+?@@cr8EGrNzA/dFXVyZ7398gakPkDprCSAtuL7CF5z1BGQgG3aGk+gIqR/PnD54IePx?##
+?@@ywafXX4fQ41Fz/ET7PY5S9QT5TAbrDiRM3f8NFAJiCtvXm/gkWv/KSU4RQsqltJG?##
+?@@sxASG4bW6FfvkdFSnKZcfIRa6aXCSpghIJPkn/G1Shq7tgtvTkfKFJXP/j9xibkV?##
+?@@IcdzdoRseJHJpxO2CPSzal02058H39C0sCAQOQACWz9UikUbbmJPgHtYyGuWU7QA?##
+?@@P/dE6BST2SAWp9/QqjNk5u/zmlFTUbESbUsGPaiqYm18ouvLlSPD0rJYkolBWCKC?##
+?@@brAwUVfqB7zR17Rk1IdDNqTxTWchlPdB+OUV4zFr8Z+RCNhphEVUSBvdBGOIfgsx?##
+?@@keB6q+i2TmSHJYpt5oKbODrQVwdatCZzdvAtwGebajMeX9wPIMpaMzqF+/JNr9QA?##
+?@@hyO0aM4F2Xic02NzyJlpRbFjjOAogOgeENGuPI+UJbZX9PmpfoHjQCyBmOxdsE48?##
+?@@9yYaQhZ87j3V5G8IB2scZXW41G3h+dtv7IS2nv12SZJ9MWEt0LDktCTty9G1bkhE?##
+?@@g43UFdYnM2DFsQcpolafoCRcPAZ7PqXOFPllVP5KN55q4X9zUNfJjI1v1ZejVaAN?##
+?@@aMys0bvLDW6P2kZ/7H7bphqeS011nolCe5emzLaWR8mWr/jv7QlUFhthn2DZGY8m?##
+?@@FDpdpJDEww13HZt2i8JpvlJFOY9+JPGZP7BLeff3Y5YRxAAnAoahCdSqb4KAJPIk?##
+?@@1nC1LepU9mX+JSCGRGpWsX3ac0pxjmcWDeDM0YGWV6GacJDZdyyKHGR/jPmvQyWO?##
+?@@cdOIilxWqYJ//b3PuMEe9Soz7N3Lnxnw8jRpN8lTcTo5TA2kWEtowoufMGfJUAwA?##
+?@@zNuLfBIUp9SxLzUXRRcAhkzhwwtZFcKpqneMBsvWDrapXz9kr9kXdcXKDPAF07G9?##
+?@@eczLjfTpluKIfbIxqm3OZYQ2H59kjJXgBJZn+7XSeWFnWtfF+ullwFcadeh/1zEv?##
+?@@zLNUYdM6lgu0CwwK9UAjIM9gs1O6IAfyFu+cSCwRcNiSpc3fZ8rWKGNjb+lEOKl3?##
+?@@HT0GV7ffkDPOFRcos3i3zxdTq5EefvwlvAQf6ff5YB8anfFL7dV1nEGKlRQMaetK?##
+?@@ezPcaELSfvVAjSU4nM4n+MCjU9QViYds2RnzQwACG0JarmHCMeN7ODI4E0snb0qt?##
+?@@BSeLKEDEpmPJVgOQN9S8Gg5xOARzlxJu7AoDupojZGJzn4rRo1P5JQ3D1ub+Gr06?##
+?@@udlQ3Kxt1mJGGxWBCU53cEHG0NKdonMNZS6rQr44fdmgk7ocgypvIqydspgzuI6X?##
+?@@orFNlcfiGFkqJk90ekOTeVNZTvwv7K6iBE/AJAu0pENygm0KP02y8bKnHATafJzR?##
+?@@--END ENCRYPTION: "SMX_AES Modulator 29 January 2015", 140 lines, chksum 21746600
+*
+
+.ENDS Modulator_29_January_2015

@@ -1,0 +1,9 @@
+***
+*** sensitivity_base.testplan
+***
+*?@ analysis	objective	source	load	label
+***
+Ac	BodePlot(OUTPUT:1)	"SOURCE(INPUT:1, Nominal)"	"LOAD(OUTPUT:1, 50%)"	Ac Analysis|Bode Plot
+Transient	"StepLoad(OUTPUT:1, 50%, 100%)"	"SOURCE(INPUT:1, Nominal)"		Transient|Step Load|50% Load to 100% Load
+Transient	"StepLoad(OUTPUT:1, 100%, 50%)"	"SOURCE(INPUT:1, Nominal)"		Transient|Step Load|100% Load to 50% Load
+Steady-State	Steady-State	"SOURCE(INPUT:1, Nominal)"	"LOAD(OUTPUT:1, 50%)"	Steady-State|Steady-State

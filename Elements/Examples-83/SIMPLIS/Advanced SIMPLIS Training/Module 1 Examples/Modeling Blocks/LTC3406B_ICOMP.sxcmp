@@ -1,0 +1,405 @@
+SIMetrixFile type=schematic format=1.0 revision=7
+.Component
+.Symbol
+Attributes name="component" description="component" track=1
+Segment x1=1080 y1=240 x2=1200 y2=240
+Segment x1=600 y1=960 x2=600 y2=840
+Segment x1=1200 y1=480 x2=1080 y2=480
+Segment x1=1200 y1=0 x2=1080 y2=0
+Segment x1=0 y1=600 x2=120 y2=600
+Segment x1=120 y1=-120 x2=120 y2=840
+Segment x1=120 y1=840 x2=1080 y2=840
+Segment x1=1080 y1=-120 x2=1080 y2=840
+Segment x1=120 y1=-120 x2=1080 y2=-120
+Segment x1=0 y1=120 x2=120 y2=120
+Segment x1=0 y1=360 x2=120 y2=360
+Pin name="SLOPE" order=7 x=0 y=360 visible=1 xlabel=192 ylabel=0 align=LeftBase rotated=0
+Pin name="GND" order=1 x=600 y=960 visible=1 xlabel=-2 ylabel=-242 align=CentreTop rotated=0
+Pin name="ICOMP" order=2 x=1200 y=480 visible=1 xlabel=-182 ylabel=-2 align=RightBase rotated=0
+Pin name="VIN" order=4 x=1200 y=0 visible=1 xlabel=-182 ylabel=-1 align=RightBase rotated=0
+Pin name="CLK" order=5 x=0 y=120 visible=1 xlabel=216 ylabel=0 align=LeftBase rotated=0
+Pin name="EA_OUT" order=3 x=0 y=600 visible=1 xlabel=178 ylabel=-2 align=LeftBase rotated=0
+Pin name="S_PFET" order=6 x=1200 y=240 visible=1 xlabel=-168 ylabel=0 align=RightBase rotated=0
+Property name="TEXT" value="ICOMP" autopos=0 x=600 y=-192 align=CentreBase font=Default
+Property name="Ref" value="U?" autopos=1 normal=Right rotated=Right font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="SIMULATOR" value="Simplis" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes name="ccvs" description="Current Controlled Voltage Source" catalog="Sources" track=1
+Segment x1=60 y1=240 x2=84 y2=204
+Segment x1=60 y1=240 x2=36 y2=204
+Segment x1=60 y1=120 x2=60 y2=360
+Segment x1=180 y1=360 x2=360 y2=360
+Segment x1=180 y1=120 x2=360 y2=120
+Segment x1=0 y1=480 x2=360 y2=240
+Segment x1=0 y1=0 x2=360 y2=240
+Segment x1=0 y1=0 x2=0 y2=480
+Segment x1=-120 y1=360 x2=60 y2=360
+Segment x1=-120 y1=120 x2=60 y2=120
+Pin name="P" order=1 x=360 y=120 visible=0
+Pin name="N" order=2 x=360 y=360 visible=0
+Pin name="CP" order=3 x=-120 y=120 visible=0
+Pin name="CN" order=4 x=-120 y=360 visible=0
+Property name="REF" value="H?" autopos=1 normal=Bottom rotated=Right font=Default
+Property name="VALUE" value="1000" autopos=1 normal=Top rotated=Right font=Default
+Property name="MODEL" value="H" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="SIMULATOR" value="DUAL" autopos=0 x=-120 y=900 align=LeftBase protected=1 visible=0 font=Default
+Property name="TEMPLATE" value="<ref> <node[1]> <node[2]> %REF%$TP_CCVS <value> <paramsValue> ;V<sep>%REF%$TP_CCVS <node[3]> <node[4]> 0" autopos=0 x=-120 y=720 align=LeftBase protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <node[1]> <node[2]> V%REF%$TP_CCVS %VALUE% ;V%REF%$TP_CCVS <node[3]> <node[4]> 0" autopos=0 x=-120 y=960 align=LeftBase protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="SIMPLIS_LOGIC_BB_AND_2I0" description="SIMPLIS Logic BB 2-input 0-inverted input AND-Gate" catalog="Digital"
+Segment x1=144 y1=60 x2=144 y2=420
+Segment x1=0 y1=360 x2=144 y2=360
+Segment x1=0 y1=120 x2=144 y2=120
+Segment x1=240 y1=420 x2=240 y2=600
+Segment x1=144 y1=420 x2=270 y2=420
+Segment x1=144 y1=60 x2=270 y2=60
+Segment x1=499 y1=360 x2=600 y2=360
+Segment x1=404 y1=120 x2=600 y2=120
+Arc l=415 t=318 r=499 b=402 x1=240 y1=360 x2=600 y2=360
+Arc l=415 t=318 r=499 b=402 x1=600 y1=360 x2=240 y2=360
+Arc l=90 t=60 r=450 b=420 x1=270 y1=420 x2=270 y2=60
+Pin name="IN2" order=5 x=0 y=360 visible=0
+Pin name="IN1" order=4 x=0 y=120 visible=0
+Pin name="RTN" order=3 x=240 y=600 visible=0
+Pin name="OUT_BAR" order=2 x=600 y=360 visible=0
+Pin name="OUT" order=1 x=600 y=120 visible=0
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="edit_parameterised_multi_prop_subckt" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_LOGIC_BB_AND2" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="TH" value="2.5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: NumInv=0 IC=%IC% RIN=%RIN% ROUT=%ROUT% HYSTWD=%HYSTWD% VOL=%VOL% VOH=%VOH% DELAY=%DELAY% TH=%TH%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+Property name="VALUE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="vcvs" description="Voltage Controlled Voltage Source" catalog="Sources" track=1
+Segment x1=60 y1=96 x2=60 y2=144
+Segment x1=36 y1=120 x2=84 y2=120
+Segment x1=180 y1=360 x2=360 y2=360
+Segment x1=180 y1=120 x2=360 y2=120
+Segment x1=0 y1=480 x2=360 y2=240
+Segment x1=0 y1=0 x2=360 y2=240
+Segment x1=0 y1=0 x2=0 y2=480
+Segment x1=-120 y1=360 x2=0 y2=360
+Segment x1=-120 y1=120 x2=0 y2=120
+Pin name="P" order=1 x=360 y=120 visible=0
+Pin name="N" order=2 x=360 y=360 visible=0
+Pin name="CP" order=3 x=-120 y=120 visible=0
+Pin name="CN" order=4 x=-120 y=360 visible=0
+Property name="REF" value="E?" autopos=1 normal=Bottom rotated=Right font=Default
+Property name="VALUE" value="1" autopos=1 normal=Top rotated=Right font=Default
+Property name="MODEL" value="E" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="SIMULATOR" value="DUAL" autopos=0 x=0 y=780 align=LeftBase protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="SIMPLIS_LOGIC_BB_SRFF" description="SIMPLIS Logic BB SR Flip-Flop" catalog="Digital"
+Segment x1=0 y1=480 x2=120 y2=480
+Segment x1=600 y1=480 x2=720 y2=480
+Segment x1=360 y1=600 x2=360 y2=720
+Segment x1=600 y1=240 x2=720 y2=240
+Segment x1=0 y1=240 x2=120 y2=240
+Segment x1=120 y1=600 x2=120 y2=120
+Segment x1=600 y1=600 x2=120 y2=600
+Segment x1=600 y1=120 x2=600 y2=600
+Segment x1=120 y1=120 x2=600 y2=120
+Pin name="R" order=5 x=0 y=480 visible=1 xlabel=156 ylabel=30 align=LeftBase rotated=0
+Pin name="S" order=4 x=0 y=240 visible=1 xlabel=156 ylabel=30 align=LeftBase rotated=0
+Pin name="RTN" order=3 x=360 y=720 visible=0
+Pin name="QN" order=2 x=720 y=480 visible=1 xlabel=-144 ylabel=30 align=RightBase rotated=0
+Pin name="Q" order=1 x=720 y=240 visible=1 xlabel=-144 ylabel=30 align=RightBase rotated=0
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="edit_parameterised_multi_prop_subckt" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_LOGIC_BB_SRFF" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="TH" value="2.5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DOM_TYPE" value="None" autopos=0 x=360 y=144 align=CentreTop protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: DomType='None' IC=%IC% RIN=%RIN% ROUT=%ROUT% HYSTWD=%HYSTWD% VOL=%VOL% VOH=%VOH% DELAY=%DELAY% TH=%TH%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+Property name="VALUE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="SIMPLIS_LOGIC_BB_BUF" description="SIMPLIS Logic BB Buffer" catalog="Digital"
+Segment x1=420 y1=480 x2=600 y2=480
+Segment x1=300 y1=240 x2=600 y2=240
+Segment x1=240 y1=519 x2=240 y2=720
+Segment x1=0 y1=360 x2=120 y2=360
+Segment x1=120 y1=120 x2=120 y2=600
+Segment x1=120 y1=600 x2=480 y2=360
+Segment x1=120 y1=120 x2=480 y2=360
+Arc l=334 t=438 r=418 b=522 x1=162 y1=480 x2=522 y2=480
+Arc l=334 t=438 r=418 b=522 x1=522 y1=480 x2=162 y2=480
+Pin name="IN1" order=4 x=0 y=360 visible=0
+Pin name="RTN" order=3 x=240 y=720 visible=0
+Pin name="OUT_BAR" order=2 x=600 y=480 visible=0
+Pin name="OUT" order=1 x=600 y=240 visible=0
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="edit_parameterised_multi_prop_subckt" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_LOGIC_BB_BUF" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="TH" value="2.5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: IC=%IC% RIN=%RIN% ROUT=%ROUT% HYSTWD=%HYSTWD% VOL=%VOL% VOH=%VOH% DELAY=%DELAY% TH=%TH%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+Property name="VALUE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="SIMPLIS_LOGIC_BB_COMP" description="SIMPLIS Logic BB Comparator" catalog="Digital"
+Segment x1=150 y1=480 x2=210 y2=480
+Segment x1=180 y1=210 x2=180 y2=276
+Segment x1=150 y1=240 x2=210 y2=240
+Segment x1=420 y1=480 x2=600 y2=480
+Segment x1=300 y1=240 x2=600 y2=240
+Segment x1=240 y1=519 x2=240 y2=720
+Segment x1=0 y1=480 x2=120 y2=480
+Segment x1=0 y1=240 x2=120 y2=240
+Segment x1=120 y1=120 x2=120 y2=600
+Segment x1=120 y1=600 x2=480 y2=360
+Segment x1=120 y1=120 x2=480 y2=360
+Arc l=334 t=438 r=418 b=522 x1=162 y1=480 x2=522 y2=480
+Arc l=334 t=438 r=418 b=522 x1=522 y1=480 x2=162 y2=480
+Pin name="INN" order=5 x=0 y=480 visible=0
+Pin name="INP" order=4 x=0 y=240 visible=0
+Pin name="RTN" order=3 x=240 y=720 visible=0
+Pin name="OUT_BAR" order=2 x=600 y=480 visible=0
+Pin name="OUT" order=1 x=600 y=240 visible=0
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="edit_parameterised_multi_prop_subckt" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_LOGIC_BB_COMP" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="2M" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: IC=%IC% RIN=%RIN% ROUT=%ROUT% HYSTWD=%HYSTWD% VOL=%VOL% VOH=%VOH% DELAY=%DELAY%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+Property name="VALUE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="modport" description="Module Port" catalog="Connections;Terminals" track=1
+Segment x1=0 y1=0 x2=300 y2=0
+Segment x1=120 y1=-18 x2=300 y2=-18
+Segment x1=120 y1=-24 x2=300 y2=-24
+Segment x1=120 y1=-30 x2=300 y2=-30
+Segment x1=120 y1=-36 x2=120 y2=36
+Segment x1=120 y1=-36 x2=300 y2=-36
+Segment x1=120 y1=24 x2=300 y2=24
+Segment x1=120 y1=30 x2=300 y2=30
+Segment x1=120 y1=36 x2=300 y2=36
+Segment x1=120 y1=6 x2=300 y2=6
+Segment x1=300 y1=-12 x2=120 y2=-12
+Segment x1=300 y1=-36 x2=300 y2=36
+Segment x1=300 y1=-6 x2=120 y2=-6
+Segment x1=300 y1=12 x2=120 y2=12
+Segment x1=300 y1=18 x2=120 y2=18
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="netname" value="" autopos=1 normal=Left rotated=Left protected=1 font=Default
+Property name="VALUE" value="VOUT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="Free_text" description="Free text" catalog="Sheet/Text" track=1
+Property name="VALUE" value="Text" autopos=0 x=0 y=156 align=LeftBase linear=1 selectable=1 font=FreeText
+Property name="VALUESCRIPT" value="edit_schem_text" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.EndSymbolLibrary
+View x=2280 y=1440 zoom=9 snapgrid=120
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=3240 y=1920 orient=M0
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="SLOPE" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="vcvs" selected=0 protected=0 x=4200 y=1800 orient=N0
+Property name="MODEL" value="E" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="1" autopos=1 normal=Top rotated=Right font=Default
+Property name="REF" value="E1" autopos=1 normal=Bottom rotated=Right font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_LOGIC_BB_AND_2I0" selected=0 protected=0 x=6480 y=3720 orient=N0
+Property name="VALUE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="REF" value="U1" autopos=1 normal=Top rotated=Top font=Default
+Property name="TH" value="2.5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_LOGIC_BB_SRFF" selected=0 protected=0 x=4440 y=4200 orient=N0
+Property name="VALUE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="REF" value="U_LEB_SRFF" autopos=1 normal=Top rotated=Top font=Default
+Property name="TH" value="2.5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_LOGIC_BB_BUF" selected=0 protected=0 x=3720 y=4680 orient=N0
+Property name="VALUE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="REF" value="U_LEB_BUF" autopos=1 normal=Top rotated=Top font=Default
+Property name="TH" value="2.5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="75n" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=7200 y=1800 orient=N0
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="VIN" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="ccvs" selected=0 protected=0 x=6600 y=2160 orient=M0
+Property name="MODEL" value="H" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="2.5 " autopos=1 normal=Top rotated=Right font=Default
+Property name="REF" value="H_ICOMP" autopos=1 normal=Bottom rotated=Right font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=7320 y=3000 orient=N0
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="S_PFET" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=3240 y=4440 orient=M0
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="CLK" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=3480 y=5760 orient=N90
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="GND" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=3120 y=6360 orient=N0
+Property name="VALUE" value="CREATE AN LEB OF 75ns.\nTHE CLK PULSE MUST BE\nLESS75 ns IN DURATION." autopos=0 x=0 y=156 align=LeftBase linear=1 selectable=1 font=FreeText
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_LOGIC_BB_COMP" selected=0 protected=0 x=5160 y=2640 orient=N0
+Property name="VALUE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="REF" value="U_ICOMP" autopos=1 normal=Top rotated=Top font=Default
+Property name="DELAY" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="2M" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=3240 y=3120 orient=M0
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="EA_OUT" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=7560 y=3840 orient=N0
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="ICOMP" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=3240 y=2160 orient=M0
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="GND" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames
+.EndInstance
+Wire x1=5040 y1=1920 x2=5040 y2=2880 net="1" branch="+:U_ICOMP#INP"
+Wire x1=5880 y1=2280 x2=6240 y2=2280 net="2" branch="+:H_ICOMP#P"
+Wire x1=4560 y1=2160 x2=5880 y2=2160 net="2" branch="-:E1#N"
+Wire x1=4080 y1=2160 x2=3240 y2=2160 net="#GND" branch="+:E1#CN"
+Wire x1=6000 y1=4680 x2=5160 y2=4680 net="5" branch="-:U_LEB_SRFF#QN"
+Wire x1=6480 y1=4080 x2=6000 y2=4080 net="5" branch="+:U1#IN2"
+Wire x1=6720 y1=5640 x2=6240 y2=5640 net="#GND" branch="+:U1#RTN"
+Wire x1=4800 y1=5640 x2=5400 y2=5640 net="#GND" branch="+:U1#RTN+:H_ICOMP#N+:U_ICOMP#RTN"
+Wire x1=5400 y1=3360 x2=5400 y2=5640 net="#GND" branch="-:U_ICOMP#RTN"
+Wire x1=6000 y1=2880 x2=6000 y2=3840 net="3" branch="+:U1#IN1"
+Wire x1=5160 y1=3120 x2=3240 y2=3120 net="#EA_OUT" branch="+:U_ICOMP#INN"
+Wire x1=3480 y1=5760 x2=3480 y2=5640 net="#GND" branch="-:U1#RTN-:H_ICOMP#N-:U_ICOMP#RTN-:U_LEB_SRFF#RTN-:U_LEB_BUF#RTN"
+Wire x1=4320 y1=4680 x2=4440 y2=4680 net="8" branch="+:U_LEB_SRFF#R"
+Wire x1=3960 y1=5640 x2=4800 y2=5640 net="#GND" branch="+:U1#RTN+:H_ICOMP#N+:U_ICOMP#RTN+:U_LEB_SRFF#RTN"
+Wire x1=4800 y1=4920 x2=4800 y2=5640 net="#GND" branch="-:U_LEB_SRFF#RTN"
+Wire x1=3240 y1=4440 x2=3480 y2=4440 net="#CLK" branch="+:U_LEB_SRFF#S+:U_LEB_BUF#IN1"
+Wire x1=3480 y1=5040 x2=3720 y2=5040 net="#CLK" branch="+:U_LEB_BUF#IN1"
+Wire x1=4440 y1=4440 x2=3480 y2=4440 net="#CLK" branch="+:U_LEB_SRFF#S"
+Wire x1=6240 y1=2520 x2=6240 y2=5640 net="#GND" branch="-:H_ICOMP#N"
+Wire x1=6960 y1=3000 x2=7320 y2=3000 net="#S_PFET" branch="-:H_ICOMP#CN"
+Wire x1=6720 y1=2520 x2=6960 y2=2520 net="#S_PFET" branch="-:H_ICOMP#CN"
+Wire x1=6960 y1=2280 x2=6960 y2=1800 net="#VIN" branch="+:H_ICOMP#CP"
+Wire x1=6720 y1=2280 x2=6960 y2=2280 net="#VIN" branch="-:H_ICOMP#CP"
+Wire x1=6960 y1=1800 x2=7200 y2=1800 net="#VIN" branch="-:H_ICOMP#CP"
+Wire x1=6960 y1=2520 x2=6960 y2=3000 net="#S_PFET" branch="-:H_ICOMP#CN"
+Wire x1=5400 y1=5640 x2=6240 y2=5640 net="#GND" branch="+:U1#RTN+:H_ICOMP#N"
+Wire x1=3960 y1=5400 x2=3960 y2=5640 net="#GND" branch="-:U_LEB_BUF#RTN"
+Wire x1=3480 y1=5640 x2=3960 y2=5640 net="#GND" branch="+:U1#RTN+:H_ICOMP#N+:U_ICOMP#RTN+:U_LEB_SRFF#RTN+:U_LEB_BUF#RTN"
+Wire x1=3480 y1=4440 x2=3480 y2=5040 net="#CLK" branch="+:U_LEB_BUF#IN1"
+Wire x1=4320 y1=4920 x2=4320 y2=4680 net="8" branch="+:U_LEB_BUF#OUT"
+Wire x1=5040 y1=2880 x2=5160 y2=2880 net="1" branch="+:U_ICOMP#INP"
+Wire x1=5760 y1=2880 x2=6000 y2=2880 net="3" branch="-:U_ICOMP#OUT"
+Wire x1=6000 y1=3840 x2=6480 y2=3840 net="3" branch="+:U1#IN1"
+Wire x1=6720 y1=4320 x2=6720 y2=5640 net="#GND" branch="-:U1#RTN"
+Wire x1=7080 y1=3840 x2=7560 y2=3840 net="#ICOMP" branch="-:U1#OUT"
+Wire x1=6000 y1=4080 x2=6000 y2=4680 net="5" branch="+:U_LEB_SRFF#QN"
+Wire x1=4080 y1=1920 x2=3240 y2=1920 net="#SLOPE" branch="+:E1#CP"
+Wire x1=5880 y1=2160 x2=5880 y2=2280 net="2" branch="+:H_ICOMP#P"
+Wire x1=4560 y1=1920 x2=5040 y2=1920 net="1" branch="-:E1#P"
+Text value=""
+SimulatorMode value="Simplis"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+Property name="UserVersion" value="1" type=value
+.EndSchematic
+.EndComponent

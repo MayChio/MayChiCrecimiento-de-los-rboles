@@ -1,0 +1,6 @@
+***					
+*** apps_d_5_sensitivity_efficiency.testplan					
+***					
+*?@ Objective	Source	"Change( I1.LOAD_RESISTANCE , 5 )"	"Change( U2.DEADTIME_HSON , 2n )"	FinalProcess	Label
+***					
+Steady-State	"SOURCE( INPUT:1 , Nominal )"	{RLOAD}	2n	./scripts/alias_efficiency.sxscr	Efficiency with td=2ns nominal

@@ -1,0 +1,4 @@
+*** sensitivity_parameter.def
+***
+*** FUNC DISPLAY NAME	PARAM1	[PARAM2..PARAMn]
+Converter Efficiency	U2.DEADTIME_HSON

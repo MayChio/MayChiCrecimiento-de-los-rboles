@@ -1,0 +1,12 @@
+***												
+*** apps_c_8_load_line.testplan												
+***												
+*?@ analysis	Objective	load	label	Include	Include	finalprocess	"Var( Vi , 12 )"	"Var( FREQ , 730k )"	"Var( NPH , 4 )"	"Var( VREF , 1 )"	"Var( ICMD_offset , 0.34 )"	"Var( QTY , 32 )"
+***												
+Steady-State	Steady-State	"Dc(OUTPUT:1, 0)"	Load Line|0A load	apps_c_compensator.lb	apps_c_modulator.lb							
+Steady-State	Steady-State	"Dc(OUTPUT:1, 20)"	Load Line|20A load	apps_c_compensator.lb	apps_c_modulator.lb							
+Steady-State	Steady-State	"Dc(OUTPUT:1, 40)"	Load Line|40A load	apps_c_compensator.lb	apps_c_modulator.lb							
+Steady-State	Steady-State	"Dc(OUTPUT:1, 60)"	Load Line|60A load	apps_c_compensator.lb	apps_c_modulator.lb							
+Steady-State	Steady-State	"Dc(OUTPUT:1, 80)"	Load Line|80A load	apps_c_compensator.lb	apps_c_modulator.lb							
+Steady-State	Steady-State	"Dc(OUTPUT:1, 100)"	Load Line|100A load	apps_c_compensator.lb	apps_c_modulator.lb							
+NoSimulation			Load Line|summary			scripts/apps_c_8_postprocess.sxscr						

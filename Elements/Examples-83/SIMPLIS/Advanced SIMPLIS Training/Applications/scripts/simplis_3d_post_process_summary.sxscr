@@ -1,0 +1,463 @@
+***
+*** simplis_3d_post_process_summary_version_5.sxscr
+***
+
+*** Author: Chris Bridge, SIMPLIS Technologies
+*** Customer: Intel
+***
+*** Unsupported user post-process script which collects data from all Multi-Step runs and generates plots.
+***
+
+*** standard DVM script interface:
+Arguments @retval label report_dir log_file controlhandle 
+
+********************************************************************************
+***                                                                          ***
+***                     START User Defined Constant Names                    ***
+***                                                                          ***
+********************************************************************************
+
+*** these are the scalar names on the overview report.
+Let overview_scalar_names = [ 'Minimum Output' , 'Maximum Output' , 'Peak-to-Peak' ]
+
+*** the overview scalar names are appended with these strings
+Let min_annotations = [ 'Min Value' , '(Frequency @ Min Value)' , '(Duty Cycle @ Min Value)' ]
+Let max_annotations = [ 'Max Value' , '(Frequency @ Max Value)' , '(Duty Cycle @ Max Value)' ]
+
+*** These are the graph names on the reports
+Let graph_names = [ 'DVM ' & overview_scalar_names[0] , 'DVM ' & overview_scalar_names[1] , 'DVM ' & overview_scalar_names[2] ]
+
+*** the pretty names for the measurements
+Let pretty_labels = [ 'Frequency' , 'Duty' , 'Minimum' , 'Maximum' , 'Peak-to-Peak' ]
+
+*** the data files to dump data tables to, these are saved in report directory and have .txt extension.
+Let data_file_names = [ 'data_min' , 'data_max' , 'data_pk2pk' ]
+
+*** the .extension to use for the data files
+Let data_file_extension = '.txt'
+
+********************************************************************************
+***                                                                          ***
+***                      END User Defined Constant Names                     ***
+***                                                                          ***
+********************************************************************************
+
+*** special characters
+Let tab = Chr(9)
+Let dq = Chr(34)
+
+*** debug
+*** Let controlhandles = MakeString( 0 )
+*** Let controlsymbols = MakeString( 0 )
+*** simplis_dvm_advanced_util_find_control_handle @controlhandles @controlsymbols
+
+*** let controlhandle = controlhandles[Length(controlhandles)-1]
+*** Let label = '3D Plot Generation|Summarize' 
+*** Let report_dir = '\'
+*** Let log_file = report_dir & 'dvm_advanced.log'
+
+*** get load refs...
+Let load_refs = PropValues2( 'DVM_LOADS' , -1 , 'handle' , controlhandle )
+
+if StringLength( load_refs ) then
+	Let load_ref = load_refs[0]
+	Let load_name = PropValues2( 'LOAD_NAME' , -1 , 'ref' , load_ref )
+else
+	*** handle error
+	Echo
+	Echo { 'Error: Couldn''t find load reference designator from control symbol.' }
+	Echo { 'Exiting script' }
+	Exit Script
+endif
+
+*** initialize scalar returns
+Let user_scalars = ''
+
+*** the columns we seek in the log file - fixed.
+Let targets = [ 'Freq' , 'Duty' , 'Min(V' & load_name & ')' , 'Max(V' & load_name & ')' , 'Pk2Pk(V' & load_name & ')' ]
+
+*** first we get all dirs, reports, labels from logs for this DVM execution:
+let dirs    = ''
+Let reports = ''
+Let labels  = ''
+simplis_dvm_advanced_util_get_test_dirs_reports_labels_from_log log_file @dirs @reports @labels
+
+
+********************************************************************************
+***                                                                          ***
+***                   Collect Data from dvm_mslog.log files                  ***
+***                                                                          ***
+********************************************************************************
+
+*** string arrays for the vector data
+Let freq_str = MakeString(0)
+Let duty_str = MakeString(0)
+Let min_str = MakeString(0)
+Let max_str = MakeString(0)
+Let pk2pk_str = MakeString(0)
+
+
+*** loop through directories
+for dir = 0 to length( dirs ) - 1
+
+	*** file name
+	let file = dirs[dir] & '\dvm_mslog.log'
+	
+	*** does it exist?
+	if CanOpenFile( file ) then
+	
+		*** hoover it up into an array
+		Let file_lines = ReadFile( file )
+		
+		*** keys are in the first column
+		Let first_idx = -1
+		Let second_idx = -1
+		
+		*** CDB - 12-1-2015 bug reported where the row between data and the Statistical data is '***' instead of ''
+		*** put in a two level, prioritized search, first for '***' , then ''. Quadzilla has '', customer has '***'?
+		*** see simplis_dvm_advanced_util_log_multi_step_data.sxscr, line 45 tag 8.0d. Fixed for 'e'
+		Let col = SelectColumns( file_lines , 0 , tab )
+		Let first_idx = Search( col , 'Run #' )
+		if first_idx > -1 then
+			Let second_idx = Search( Range( col , first_idx ) , '***' )
+			if second_idx <= first_idx then
+				*** try harder
+				Let second_idx = Search( Range( col , first_idx ) , '' )
+			endif
+		endif
+		
+		*** slice it...
+		if first_idx > -1 && second_idx > -1 then
+			
+			Let second_idx = second_idx + first_idx
+			
+			Let lines = Range( file_lines , first_idx , second_idx - 1 )
+			
+			*** search out our target data in header rows
+			Let idxs = search( Parse( lines[0] , tab ) , targets )
+
+			*** Must have all indexes, otherwise data will not line up with the freq , duty parameters.
+			*** data can be in random column order, and the script finds it. But all 5 data must be present in the file.
+			*** the script echos an error if all 5 are not found, but proceeds to the next file.
+			if Minimum( idxs > -1 ) then
+				Let freq_str  = JoinStringArray( freq_str , Range( SelectColumns( lines , idxs[0] , tab ) , 1 ) )
+				Let duty_str  = JoinStringArray( duty_str , Range( SelectColumns( lines , idxs[1] , tab ) , 1 ) )
+				Let min_str   = JoinStringArray( min_str , Range( SelectColumns( lines , idxs[2] , tab ) , 1 ) )
+				Let max_str   = JoinStringArray( max_str , Range( SelectColumns( lines , idxs[3] , tab ) , 1 ) )
+				Let pk2pk_str = JoinStringArray( pk2pk_str , Range( SelectColumns( lines , idxs[4] , tab ), 1 ) )
+			else
+				*** handle error
+				Echo
+				Echo { 'Error: Couldn''t find all parameters and scalars in file.' }
+				Echo { 'In particular, Report with label : ' & labels[dir] }
+				Echo { 'Has the following missing:' }
+				
+				for i= 0 to 4
+					If idxs[i] < 0 then
+						Echo { pretty_labels[i] }
+					endif
+				next i
+			endif
+		else
+			Echo
+			Echo { 'Error: Couldn''t find start and end tags in dvm_mslog.log file.' }
+			Echo { 'Opening tag is "Run #" and closing tag is an empty string.' }
+			Echo { file }
+		endif
+	elseif StrStr( label , 'POP' ) < -1 || StrStr( label , 'Summarize' ) < -1 then
+		*** warn for any run which is not a POP or Summary directory.
+		Echo
+		Echo { 'Error: Couldn''t open dvm_mslog.log file.' }
+		Echo { file }
+	endif
+next i
+
+if !Length( freq_str ) then
+	Echo
+	Echo { 'No Scalars found.' }
+	Echo { 'Exiting Script' }
+	Exit Script
+endif
+
+********************************************************************************
+***                                                                          ***
+***                                Graph Data                                ***
+***                                                                          ***
+********************************************************************************
+Let unique_duties = Sort( duty_str , 'unique' )
+Let num_duty = Length( unique_duties )
+
+Let unique_freqs = Sort( freq_str , 'unique' )
+Let num_unique_freq = Length( unique_freqs )
+
+Let scalar_names = Range( targets, 2 )
+
+*** these are the names of the scalar string arrays:
+Let scalar_array_names = [ 'min_str' , 'max_str' , 'pk2pk_str' ]
+for scalar = 0 to Length( scalar_names ) - 1
+
+	for duty = 0 to Length( unique_duties ) - 1
+	
+		*** find all indexes into our arrays where the duty cycle exists.
+		Let d_idxs = SIMPLISSearchIdx( duty_str , unique_duties[duty] )
+		
+		if d_idxs > -1 then
+		
+			*** make up some temporary string arrays
+			Let freq_temp_str = MakeString( Length( d_idxs ) )
+			Let scalar_temp_str = MakeString( Length( d_idxs ) )
+			
+			for i = 0 to Length( d_idxs ) - 1
+				Let freq_temp_str[i] = freq_str[d_idxs[i]]
+				Let scalar_temp_str[i] = {scalar_array_names[scalar]}[d_idxs[i]]
+			next i
+
+			*** xy the data
+			Let npts = Length( freq_temp_str )
+			
+			Let x = Vector( npts )
+			Let y = Vector( npts )
+			
+			Let count = -1
+			for i = 0 to npts - 1
+				
+				Let /quiet /noerr f_val = Val( freq_temp_str[i] )
+				Let err_f = GetLastError()
+				
+				Let /quiet /noerr y_val = Val( scalar_temp_str[i] )
+				Let err_y = GetLastError()
+				
+				if err_f == 'Ok' && err_y == 'Ok' then
+					
+					*** strip possible duplicates?
+					if Search( x , f_val ) < 0 then
+						Let count = count + 1
+						Let x[count] = f_val
+						Let y[count] = y_val
+					else
+						Echo
+						Echo { 'Info: skipping a scalar value because the value already exists:' }
+						Echo { 'Frequency : ' & freq_temp_str[i] & ' Scalarname : ' & scalar_names[scalar] & ' : ' & scalar_temp_str[i] }
+					endif
+					
+				else
+					Echo
+					Echo { 'Info: Error converting scalar values to numeric values.' }
+					Echo { 'Frequency : ' & freq_temp_str[i] & ' Scalarname : ' & scalar_names[scalar] & ' : ' & scalar_temp_str[i] }
+				endif
+				
+			next i
+				
+			Let xy = SimplisDVMSyncBuckUtilSortRealXYVectorByRef(XY( Range( y , 0 , count ) , Range( x , 0 , count ) ) )
+			
+			if Length( xy ) then
+			
+				*** first time through create a graph.
+				if !duty then
+					Plot /newsheet
+					Let gid = GetCurrentGraph()
+					SetGraphAnnoProperty { gid } { 'ProbeId' } { graph_names[scalar] }
+					Let SimplisDVMAdvancedUtilMeasurementPromoteGraph( [ graph_names[scalar] , str( scalar ) ] , log_file ) 
+				endif
+				
+				Curve /xlog /name { 'DVM Duty=' & unique_duties[duty] } /yLabel { graph_names[scalar] } /yUnit { 'V' } /xLabel { 'Frequency' } /xUnit { 'Hz' } xy
+			
+			else
+				*** handle errors
+				Echo
+				Echo { 'Couldn''t convert values to an XY vector.' }
+				Echo { 'Duty Cycle  : ' & unique_duties[duty] }
+				Echo { 'Scalar Name : ' & scalar_names[scalar] }
+				
+			endif
+		endif
+	next duty
+	SizeGraph /xfull /yfull 0 0 1 1
+	
+	********************************************************************************
+	***                                                                          ***
+	***                               Curve markers                              ***
+	***                                                                          ***
+	********************************************************************************
+	*** find min, max, frequency, duty cycle at min and max, add curve markers
+	Let min = 0
+	Let max = 0
+	Let first = 1
+
+	Let cids = GetAllCurves()
+	Let cid_map = Vector( Length( unique_duties ) )
+
+	for j = 0 to length( cids ) - 1
+
+		Let vec = cv( cids[j] )
+		Let reference_vec = Ref( vec )
+		Let this_max = Maximum( vec )
+		Let this_min = Minimum( vec )
+		Let c_name = GetCurvename( cids[j] )
+		let this_duty = ParseParameterString( c_name , 'Duty' , 'read' )
+
+		Let cid_map[j] = Search( unique_duties , this_duty )
+
+		if this_max > max || first then
+
+			Let max = this_max
+			Let d_at_max = this_duty
+			Let f_at_max = Str( (Ref( vec ) )[ MaxIdx( vec ) ] )
+			Let cid_at_max = cids[j]
+
+		endif
+
+		if this_min < min || first then
+			
+			Let first = 0
+			Let min = this_min
+			Let d_at_min = this_duty
+			Let f_at_min = Str( (Ref( vec ) )[ MinIdx( vec ) ] )
+			Let cid_at_min = cids[j]
+
+		endif
+		
+	next j
+	
+	*** error check that we have our 6 variables.
+	if ExistVec( 'd_at_min' ) && ExistVec( 'd_at_max' ) && ExistVec( 'f_at_min' ) && ExistVec( 'f_at_max' ) && ExistVec( 'cid_at_min' ) && ExistVec( 'cid_at_max' ) then
+		
+		*** where does our data lie on the x-axis?
+		Let min_x_axis = GetGraphObjPropValue( GetXAxis() , 'min' )
+		Let max_x_axis = GetGraphObjPropValue( GetXAxis() , 'max' )
+		Let n_dec = Log10( max_x_axis / min_x_axis )
+		
+		*** 0 degrees is east, 90 degrees is north, etc.
+		if Log10( f_at_min / min_x_axis ) / n_dec >= 0.5 then
+			Let min_angle = 225
+		else
+			Let min_angle = 315
+		endif
+		
+		if Log10( f_at_max / min_x_axis ) / n_dec >= 0.5 then
+			Let max_angle = 135
+		else
+		
+			Let max_angle = 45
+		endif
+		
+		*** number of sigfig for curvemarkers
+		Let n = 4
+		
+		*** add curve markers
+		AddCurveMarker { cid_at_min } 0 { f_at_min } { min } { 'Min='& FormatNumber( min , n ) & 'V F=' & FormatNumber( f_at_min , n ) & 'Hz D=' & FormatNumber( d_at_min , n ) & '%%%' } { 0.06 } { min_angle }
+		AddCurveMarker { cid_at_max } 0 { f_at_max } { max } { 'Max='& FormatNumber( max , n ) & 'V F=' & FormatNumber( f_at_max , n ) & 'Hz D=' & FormatNumber( d_at_max , n ) & '%%%' } { 0.07 } { max_angle }
+		
+		********************************************************************************
+		***                                                                          ***
+		***                                 Scalars                                  ***
+		***                                                                          ***
+		********************************************************************************
+		*** return scalars
+		Let user_scalars = SimplisDVMAdvancedUtilCreateScalar( overview_scalar_names[scalar] & ' ' & min_annotations[0] , min     , user_scalars )
+		Let user_scalars = SimplisDVMAdvancedUtilCreateScalar( overview_scalar_names[scalar] & ' ' & min_annotations[1] , f_at_min , user_scalars )
+		Let user_scalars = SimplisDVMAdvancedUtilCreateScalar( overview_scalar_names[scalar] & ' ' & min_annotations[2] , d_at_min , user_scalars )
+		
+		Let user_scalars = SimplisDVMAdvancedUtilCreateScalar( overview_scalar_names[scalar] & ' ' & max_annotations[0] , max     , user_scalars )
+		Let user_scalars = SimplisDVMAdvancedUtilCreateScalar( overview_scalar_names[scalar] & ' ' & max_annotations[1] , f_at_max , user_scalars )
+		Let user_scalars = SimplisDVMAdvancedUtilCreateScalar( overview_scalar_names[scalar] & ' ' & max_annotations[2] , d_at_max , user_scalars )
+
+		Let array = [ overview_scalar_names[scalar] & ' ' & min_annotations[0] , FormatNumber( min , n ) & 'V' ]
+		Let ignoreme = SimplisDVMAdvancedUtilMeasurementPromoteScalar( array  , log_file )
+		
+		Let array = [ overview_scalar_names[scalar] & ' ' & min_annotations[1] , FormatNumber( f_at_min , n ) & 'Hz' ]
+		Let ignoreme = SimplisDVMAdvancedUtilMeasurementPromoteScalar( array  , log_file )
+		
+		Let array = [ overview_scalar_names[scalar] & ' ' & min_annotations[2] , FormatNumber( d_at_min , n ) & '%' ]
+		Let ignoreme = SimplisDVMAdvancedUtilMeasurementPromoteScalar( array  , log_file )
+		
+		Let array = [ overview_scalar_names[scalar] & ' ' & max_annotations[0] , FormatNumber( max , n ) & 'V' ]
+		Let ignoreme = SimplisDVMAdvancedUtilMeasurementPromoteScalar( array  , log_file )
+		
+		Let array = [ overview_scalar_names[scalar] & ' ' & max_annotations[1] , FormatNumber( f_at_max , n ) & 'Hz' ]
+		Let ignoreme = SimplisDVMAdvancedUtilMeasurementPromoteScalar( array  , log_file )
+		
+		Let array = [ overview_scalar_names[scalar] & ' ' & max_annotations[2] , FormatNumber( d_at_max , n ) & '%' ]
+		Let ignoreme = SimplisDVMAdvancedUtilMeasurementPromoteScalar( array  , log_file )
+
+
+		********************************************************************************
+		***                                                                          ***
+		***                                Dump Data                                 ***
+		***                                                                          ***
+		********************************************************************************
+		
+		*** first table entry is 'Frequency'
+		Let table = MakeString( 1 , pretty_labels[0] )
+
+		*** add duty cycles to header
+		for duty_idx = 0 to num_duty - 1
+			Let table[0] = table[0] & tab & '' & unique_duties[duty_idx] & ''
+		next duty_idx
+		
+		*** sort it out, numerically. Alpha sorting strings using Sort( x , 'unique' ) simply doesn't work.
+		Let freq_vec = Vector( num_unique_freq )
+
+		*** turn strings into numbers
+		for freq_idx = 0 to num_unique_freq - 1
+			Let freq_vec[freq_idx] = Val( unique_freqs[freq_idx] )
+		next freq_idx
+
+		Let indexes = sortidx(freq_vec, 'reverse')
+		Let sorted_freq_str = makeString( num_unique_freq )
+
+		for idx=0 to num_unique_freq-1
+			Let sorted_freq_str[idx] = Str( unique_freqs[indexes[idx]] )
+		next idx
+		
+		*** test that all sorted frequencies are in the output string vector
+		if Minimum( Search( sorted_freq_str , unique_freqs ) ) > -1 then
+			
+			for freq_idx = 0 to num_unique_freq - 1
+			
+				Let row = FormatNumber( sorted_freq_str[freq_idx] , 6 , 'noeng' )
+				
+				for duty_idx = 0 to num_duty - 1
+			
+					Let data = ''
+					Let freq_idxs = SIMPLISSearchIdx( freq_str , sorted_freq_str[freq_idx] )
+					
+					if freq_idxs[0] !=-1 then
+						for i = 0 to Length( freq_idxs ) - 1
+							if duty_str[freq_idxs[i]] == unique_duties[duty_idx] then
+							
+								*** scoop data.
+								Let data = {scalar_array_names[scalar]}[freq_idxs[i]]
+								
+								*** convert to number
+								Let data = FormatNumber( data , 6 , 'noeng' )
+								
+								exit for
+							endif
+						next i
+					endif
+					
+					Let row = JoinStringArray( row , data ) 
+					
+				next duty_idx
+				
+				Let table = JoinStringArray( table , SimplisDVMSyncBuckUtilJoin( row , tab ) )
+			
+			next freq_idx
+			
+			show /plain /file { report_dir & '/' & data_file_names[scalar] & data_file_extension } table
+		
+		else
+		
+			Echo { 'Error: couldn''t convert all strings to numbers for sorting and return to strings.' }
+			Echo { 'No output data file for scalar : ' & pretty_labels[scalar] }
+		
+		endif
+	endif
+next scalar
+
+*** if we get here, return a passing status
+Let user_specs = SimplisDVMAdvancedUtilCreateSpec( 'script_execution' , 'PASS',  'Post-Process script ran to completion.' )
+
+*** finally, return the scalars to DVM via the script interface.
+Let retval = [ '' , user_specs , user_scalars ]

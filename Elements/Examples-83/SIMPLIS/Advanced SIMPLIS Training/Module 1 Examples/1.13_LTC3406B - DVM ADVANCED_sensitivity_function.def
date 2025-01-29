@@ -1,0 +1,8 @@
+*** sensitivity_function.def
+***
+*** FUNC	FUNC DISPLAY NAME	LABEL
+gain_margin	Gain Margin	Ac Analysis|Bode Plot
+phase_margin	Phase Margin	Ac Analysis|Bode Plot
+MAX(VLOAD)	VLOAD Max	Transient|Step Load|50% Load to 100% Load
+MIN(VLOAD)	VLOAD Min	Transient|Step Load|100% Load to 50% Load
+AVG(VLOAD)	VLOAD Avg	Steady-State|Steady-State

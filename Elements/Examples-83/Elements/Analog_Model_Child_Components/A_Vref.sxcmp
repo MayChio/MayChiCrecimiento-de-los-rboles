@@ -1,0 +1,96 @@
+SIMetrixFile type=schematic format=1.0 revision=5
+.Component
+.Symbol
+Attributes name="component" description="" track=1
+Segment x1=0 y1=240 x2=0 y2=360
+Segment x1=-360 y1=-360 x2=360 y2=-360
+Segment x1=360 y1=-360 x2=360 y2=240
+Segment x1=-360 y1=240 x2=360 y2=240
+Segment x1=-360 y1=-360 x2=-360 y2=240
+Segment x1=480 y1=0 x2=360 y2=0
+Pin name="REF" order=1 x=480 y=0 visible=1 xlabel=-182 ylabel=0 align=RightBase rotated=0
+Pin name="RTN" order=2 x=0 y=360 visible=1 xlabel=-1 ylabel=-180 align=CentreBase rotated=0
+Property name="NAME" value="A_VREF" autopos=0 x=-1 y=-240 align=CentreBase protected=1 font=Default
+Property name="Ref" value="U?" autopos=1 normal=Top rotated=Right font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="SIMULATOR" value="Simplis" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes name="dc_source" description="DC Voltage Source" catalog="Sources" track=1
+Segment x1=0 y1=312 x2=0 y2=480
+Segment x1=0 y1=0 x2=0 y2=168
+Segment x1=-48 y1=312 x2=48 y2=312
+Segment x1=-48 y1=216 x2=48 y2=216
+Segment x1=-120 y1=264 x2=120 y2=264
+Segment x1=-120 y1=168 x2=120 y2=168
+Pin name="P" order=1 x=0 y=0 visible=0
+Pin name="N" order=2 x=0 y=480 visible=0
+Property name="VALUESCRIPT" value="edit_dcsource" autopos=0 x=-240 y=660 align=LeftBase protected=1 visible=0 font=Default
+Property name="SIMULATOR" value="DUAL" autopos=0 x=-240 y=780 align=LeftBase protected=1 visible=0 font=Default
+Property name="MODEL" value="V" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="5" autopos=1 normal=Right rotated=Top font=Default
+Property name="REF" value="V?" autopos=1 normal=Right rotated=Bottom font=Default
+.EndSymbol
+.Symbol
+Attributes name="modport" description="Module Port" catalog="Connections;Terminals" track=1
+Segment x1=300 y1=18 x2=120 y2=18
+Segment x1=300 y1=12 x2=120 y2=12
+Segment x1=300 y1=-6 x2=120 y2=-6
+Segment x1=300 y1=-36 x2=300 y2=36
+Segment x1=300 y1=-12 x2=120 y2=-12
+Segment x1=120 y1=6 x2=300 y2=6
+Segment x1=120 y1=36 x2=300 y2=36
+Segment x1=120 y1=30 x2=300 y2=30
+Segment x1=120 y1=24 x2=300 y2=24
+Segment x1=120 y1=-36 x2=300 y2=-36
+Segment x1=120 y1=-36 x2=120 y2=36
+Segment x1=120 y1=-30 x2=300 y2=-30
+Segment x1=120 y1=-24 x2=300 y2=-24
+Segment x1=120 y1=-18 x2=300 y2=-18
+Segment x1=0 y1=0 x2=300 y2=0
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="netname" value="" autopos=1 normal=Left rotated=Left protected=1 font=Default
+Property name="VALUE" value="VOUT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="Free_text" description="Free text" catalog="Sheet/Text" track=1
+Property name="VALUE" value="Text" autopos=0 x=0 y=156 align=LeftBase linear=1 selectable=1 font=FreeText
+Property name="VALUESCRIPT" value="edit_schem_text" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.EndSymbolLibrary
+View x=-720 y=-2280 zoom=9 snapgrid=120
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=4800 y=720 orient=N0
+Property name="VALUE" value="REF" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#REF"
+.EndInstance
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=2640 y=-1560 orient=N0
+Property name="VALUE" value="For 1.2V out of 2.5V into 9 bits unsigned,\nthe reference is 246, decimal.\n\nFor 0.6V out of 2.5V into 9 bits unsigned,\nthe reference is 123 decimal." autopos=0 x=0 y=156 align=LeftBase selectable=1 font=Caption
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="dc_source" selected=0 protected=0 x=4320 y=960 orient=N0
+Property name="MODEL" value="V" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="123" autopos=1 normal=Right rotated=Top font=Default
+Property name="REF" value="V1" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames pin1="#REF" pin2="#RTN"
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=4320 y=1680 orient=N90
+Property name="VALUE" value="RTN" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#RTN"
+.EndInstance
+Wire x1=4320 y1=1440 x2=4320 y2=1680 net="#RTN" branch="-:V1#N"
+Wire x1=4320 y1=960 x2=4320 y2=720 net="#REF" branch="+:V1#P"
+Wire x1=4800 y1=720 x2=4320 y2=720 net="#REF" branch="-:V1#P"
+Text value=""
+SimulatorMode value="Simplis"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+.EndSchematic
+.EndComponent

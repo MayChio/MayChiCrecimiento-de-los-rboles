@@ -1,0 +1,459 @@
+SIMetrixFile type=schematic format=1.0 revision=7
+.Component
+.Symbol
+Attributes name="component" description="" track=1
+Segment x1=0 y1=1200 x2=-120 y2=1200
+Segment x1=0 y1=600 x2=-120 y2=600
+Segment x1=0 y1=0 x2=-120 y2=0
+Segment x1=-840 y1=-360 x2=-840 y2=1440
+Segment x1=-840 y1=1440 x2=-120 y2=1440
+Segment x1=-120 y1=-360 x2=-120 y2=1440
+Segment x1=-840 y1=-360 x2=-120 y2=-360
+Pin name="KD" order=3 x=0 y=1200 visible=1 xlabel=-180 ylabel=-2 align=RightBase rotated=0
+Pin name="KI" order=1 x=0 y=600 visible=1 xlabel=-180 ylabel=-2 align=RightBase rotated=0
+Pin name="KP" order=2 x=0 y=0 visible=1 xlabel=-180 ylabel=-1 align=RightBase rotated=0
+Property name="LABEL1" value="PID coefficients" autopos=0 x=-480 y=480 align=CentreBase protected=1 font=Caption rotated=1
+Property name="SIMULATOR" value="Simplis" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Ref" value="U?" autopos=1 normal=Top rotated=Right font=Default
+.EndSymbol
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes name="SIMPLIS_DIGI1_D_CONSTANT_14BIT" description="SIMPLIS Logic BB Digital Comparator" catalog="Digital"
+Segment x1=120 y1=120 x2=360 y2=120
+Segment x1=360 y1=120 x2=360 y2=1920
+Segment x1=120 y1=1920 x2=360 y2=1920
+Segment x1=120 y1=1920 x2=120 y2=120
+Segment x1=120 y1=1884 x2=156 y2=1920
+Segment x1=120 y1=1872 x2=168 y2=1920
+Segment x1=120 y1=1860 x2=180 y2=1920
+Segment x1=120 y1=1848 x2=192 y2=1920
+Segment x1=360 y1=240 x2=480 y2=240
+Segment x1=360 y1=360 x2=480 y2=360
+Segment x1=360 y1=480 x2=480 y2=480
+Segment x1=360 y1=600 x2=480 y2=600
+Segment x1=360 y1=720 x2=480 y2=720
+Segment x1=360 y1=840 x2=480 y2=840
+Segment x1=360 y1=960 x2=480 y2=960
+Segment x1=360 y1=1080 x2=480 y2=1080
+Segment x1=360 y1=1200 x2=480 y2=1200
+Segment x1=360 y1=1320 x2=480 y2=1320
+Segment x1=360 y1=1440 x2=480 y2=1440
+Segment x1=360 y1=1560 x2=480 y2=1560
+Segment x1=360 y1=1680 x2=480 y2=1680
+Segment x1=360 y1=1800 x2=480 y2=1800
+Pin name="B0" order=1 x=480 y=240 visible=0
+Pin name="B1" order=2 x=480 y=360 visible=0
+Pin name="B2" order=3 x=480 y=480 visible=0
+Pin name="B3" order=4 x=480 y=600 visible=0
+Pin name="B4" order=5 x=480 y=720 visible=0
+Pin name="B5" order=6 x=480 y=840 visible=0
+Pin name="B6" order=7 x=480 y=960 visible=0
+Pin name="B7" order=8 x=480 y=1080 visible=0
+Pin name="B8" order=9 x=480 y=1200 visible=0
+Pin name="B9" order=10 x=480 y=1320 visible=0
+Pin name="B10" order=11 x=480 y=1440 visible=0
+Pin name="B11" order=12 x=480 y=1560 visible=0
+Pin name="B12" order=13 x=480 y=1680 visible=0
+Pin name="B13" order=14 x=480 y=1800 visible=0
+Property name="BIT0" value="0" autopos=0 x=240 y=240 align=CentreBase font=Default
+Property name="BIT1" value="0" autopos=0 x=240 y=360 align=CentreBase font=Default
+Property name="BIT2" value="0" autopos=0 x=240 y=480 align=CentreBase font=Default
+Property name="BIT3" value="0" autopos=0 x=240 y=600 align=CentreBase font=Default
+Property name="BIT4" value="0" autopos=0 x=240 y=720 align=CentreBase font=Default
+Property name="BIT5" value="0" autopos=0 x=240 y=840 align=CentreBase font=Default
+Property name="BIT6" value="0" autopos=0 x=240 y=960 align=CentreBase font=Default
+Property name="BIT7" value="0" autopos=0 x=240 y=1080 align=CentreBase font=Default
+Property name="BIT8" value="0" autopos=0 x=240 y=1200 align=CentreBase font=Default
+Property name="BIT9" value="0" autopos=0 x=240 y=1320 align=CentreBase font=Default
+Property name="BIT10" value="0" autopos=0 x=240 y=1440 align=CentreBase font=Default
+Property name="BIT11" value="0" autopos=0 x=240 y=1560 align=CentreBase font=Default
+Property name="BIT12" value="0" autopos=0 x=240 y=1680 align=CentreBase font=Default
+Property name="BIT13" value="0" autopos=0 x=240 y=1800 align=CentreBase font=Default
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="simplis_edit_constant" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_DIGI1_D_CONSTANT" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: VALUE=%VALUE%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="TEMPLATESCRIPT" value="simplis_make_constant_model" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="NUMBITS" value="14" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VALUE" value="0" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="FORMAT" value="'DECIMAL'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+.EndSymbol
+.Symbol
+Attributes name="SIMPLIS_DIGI1_D_CONSTANT_10BIT" description="SIMPLIS Logic BB Digital Comparator(2)" catalog="Digital"
+Segment x1=120 y1=120 x2=360 y2=120
+Segment x1=360 y1=120 x2=360 y2=1440
+Segment x1=120 y1=1440 x2=360 y2=1440
+Segment x1=120 y1=1440 x2=120 y2=120
+Segment x1=120 y1=1404 x2=156 y2=1440
+Segment x1=120 y1=1392 x2=168 y2=1440
+Segment x1=120 y1=1380 x2=180 y2=1440
+Segment x1=120 y1=1368 x2=192 y2=1440
+Segment x1=360 y1=240 x2=480 y2=240
+Segment x1=360 y1=360 x2=480 y2=360
+Segment x1=360 y1=480 x2=480 y2=480
+Segment x1=360 y1=600 x2=480 y2=600
+Segment x1=360 y1=720 x2=480 y2=720
+Segment x1=360 y1=840 x2=480 y2=840
+Segment x1=360 y1=960 x2=480 y2=960
+Segment x1=360 y1=1080 x2=480 y2=1080
+Segment x1=360 y1=1200 x2=480 y2=1200
+Segment x1=360 y1=1320 x2=480 y2=1320
+Pin name="B0" order=1 x=480 y=240 visible=0
+Pin name="B1" order=2 x=480 y=360 visible=0
+Pin name="B2" order=3 x=480 y=480 visible=0
+Pin name="B3" order=4 x=480 y=600 visible=0
+Pin name="B4" order=5 x=480 y=720 visible=0
+Pin name="B5" order=6 x=480 y=840 visible=0
+Pin name="B6" order=7 x=480 y=960 visible=0
+Pin name="B7" order=8 x=480 y=1080 visible=0
+Pin name="B8" order=9 x=480 y=1200 visible=0
+Pin name="B9" order=10 x=480 y=1320 visible=0
+Property name="BIT0" value="0" autopos=0 x=240 y=240 align=CentreBase font=Default
+Property name="BIT1" value="0" autopos=0 x=240 y=360 align=CentreBase font=Default
+Property name="BIT2" value="0" autopos=0 x=240 y=480 align=CentreBase font=Default
+Property name="BIT3" value="0" autopos=0 x=240 y=600 align=CentreBase font=Default
+Property name="BIT4" value="0" autopos=0 x=240 y=720 align=CentreBase font=Default
+Property name="BIT5" value="0" autopos=0 x=240 y=840 align=CentreBase font=Default
+Property name="BIT6" value="0" autopos=0 x=240 y=960 align=CentreBase font=Default
+Property name="BIT7" value="0" autopos=0 x=240 y=1080 align=CentreBase font=Default
+Property name="BIT8" value="0" autopos=0 x=240 y=1200 align=CentreBase font=Default
+Property name="BIT9" value="0" autopos=0 x=240 y=1320 align=CentreBase font=Default
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="simplis_edit_constant" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_DIGI1_D_CONSTANT" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: VALUE=%VALUE%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="TEMPLATESCRIPT" value="simplis_make_constant_model" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="NUMBITS" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VALUE" value="0" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="FORMAT" value="'DECIMAL'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+.EndSymbol
+.Symbol
+Attributes name="Ripper_0_9_3" description=""
+Segment x1=120 y1=120 x2=120 y2=1200
+Segment x1=132 y1=120 x2=132 y2=1200
+Segment x1=144 y1=120 x2=144 y2=1200
+Segment x1=0 y1=120 x2=120 y2=120
+Segment x1=0 y1=240 x2=120 y2=240
+Segment x1=0 y1=360 x2=120 y2=360
+Segment x1=0 y1=480 x2=120 y2=480
+Segment x1=0 y1=600 x2=120 y2=600
+Segment x1=0 y1=720 x2=120 y2=720
+Segment x1=0 y1=840 x2=120 y2=840
+Segment x1=0 y1=960 x2=120 y2=960
+Segment x1=0 y1=1080 x2=120 y2=1080
+Segment x1=0 y1=1200 x2=120 y2=1200
+Segment x1=120 y1=120 x2=240 y2=120
+Pin name="1" order=1 x=0 y=120 visible=0
+Pin name="2" order=2 x=0 y=240 visible=0
+Pin name="3" order=3 x=0 y=360 visible=0
+Pin name="4" order=4 x=0 y=480 visible=0
+Pin name="5" order=5 x=0 y=600 visible=0
+Pin name="6" order=6 x=0 y=720 visible=0
+Pin name="7" order=7 x=0 y=840 visible=0
+Pin name="8" order=8 x=0 y=960 visible=0
+Pin name="9" order=9 x=0 y=1080 visible=0
+Pin name="10" order=10 x=0 y=1200 visible=0
+Pin name="11" order=11 x=240 y=120 visible=0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$busripper" value="3" autopos=0 x=-49 y=480 align=RightBase font=Default
+Property name="pinprop$5$busripper" value="4" autopos=0 x=-49 y=600 align=RightBase font=Default
+Property name="pinprop$6$busripper" value="5" autopos=0 x=-49 y=720 align=RightBase font=Default
+Property name="pinprop$7$busripper" value="6" autopos=0 x=-49 y=840 align=RightBase font=Default
+Property name="pinprop$8$busripper" value="7" autopos=0 x=-49 y=960 align=RightBase font=Default
+Property name="pinprop$9$busripper" value="8" autopos=0 x=-49 y=1080 align=RightBase font=Default
+Property name="pinprop$10$busripper" value="9" autopos=0 x=-49 y=1200 align=RightBase font=Default
+Property name="pinprop$11$bus" value="" autopos=0 x=262 y=120 align=LeftBase font=Default
+Property name="Style" value="3" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="valuescript" value="edit_ripper" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="Ripper_0_13_3" description=""
+Segment x1=120 y1=120 x2=120 y2=1680
+Segment x1=132 y1=120 x2=132 y2=1680
+Segment x1=144 y1=120 x2=144 y2=1680
+Segment x1=0 y1=120 x2=120 y2=120
+Segment x1=0 y1=240 x2=120 y2=240
+Segment x1=0 y1=360 x2=120 y2=360
+Segment x1=0 y1=480 x2=120 y2=480
+Segment x1=0 y1=600 x2=120 y2=600
+Segment x1=0 y1=720 x2=120 y2=720
+Segment x1=0 y1=840 x2=120 y2=840
+Segment x1=0 y1=960 x2=120 y2=960
+Segment x1=0 y1=1080 x2=120 y2=1080
+Segment x1=0 y1=1200 x2=120 y2=1200
+Segment x1=0 y1=1320 x2=120 y2=1320
+Segment x1=0 y1=1440 x2=120 y2=1440
+Segment x1=0 y1=1560 x2=120 y2=1560
+Segment x1=0 y1=1680 x2=120 y2=1680
+Segment x1=120 y1=120 x2=240 y2=120
+Pin name="1" order=1 x=0 y=120 visible=0
+Pin name="2" order=2 x=0 y=240 visible=0
+Pin name="3" order=3 x=0 y=360 visible=0
+Pin name="4" order=4 x=0 y=480 visible=0
+Pin name="5" order=5 x=0 y=600 visible=0
+Pin name="6" order=6 x=0 y=720 visible=0
+Pin name="7" order=7 x=0 y=840 visible=0
+Pin name="8" order=8 x=0 y=960 visible=0
+Pin name="9" order=9 x=0 y=1080 visible=0
+Pin name="10" order=10 x=0 y=1200 visible=0
+Pin name="11" order=11 x=0 y=1320 visible=0
+Pin name="12" order=12 x=0 y=1440 visible=0
+Pin name="13" order=13 x=0 y=1560 visible=0
+Pin name="14" order=14 x=0 y=1680 visible=0
+Pin name="15" order=15 x=240 y=120 visible=0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$busripper" value="3" autopos=0 x=-49 y=480 align=RightBase font=Default
+Property name="pinprop$5$busripper" value="4" autopos=0 x=-49 y=600 align=RightBase font=Default
+Property name="pinprop$6$busripper" value="5" autopos=0 x=-49 y=720 align=RightBase font=Default
+Property name="pinprop$7$busripper" value="6" autopos=0 x=-49 y=840 align=RightBase font=Default
+Property name="pinprop$8$busripper" value="7" autopos=0 x=-49 y=960 align=RightBase font=Default
+Property name="pinprop$9$busripper" value="8" autopos=0 x=-49 y=1080 align=RightBase font=Default
+Property name="pinprop$10$busripper" value="9" autopos=0 x=-49 y=1200 align=RightBase font=Default
+Property name="pinprop$11$busripper" value="10" autopos=0 x=-49 y=1320 align=RightBase font=Default
+Property name="pinprop$12$busripper" value="11" autopos=0 x=-49 y=1440 align=RightBase font=Default
+Property name="pinprop$13$busripper" value="12" autopos=0 x=-49 y=1560 align=RightBase font=Default
+Property name="pinprop$14$busripper" value="13" autopos=0 x=-49 y=1680 align=RightBase font=Default
+Property name="pinprop$15$bus" value="" autopos=0 x=262 y=120 align=LeftBase font=Default
+Property name="Style" value="3" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="valuescript" value="edit_ripper" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="bus_port" description="Module Bus Port" catalog="Connections;Terminals" track=1
+Segment x1=6 y1=-6 x2=0 y2=0
+Segment x1=300 y1=18 x2=120 y2=18
+Segment x1=300 y1=12 x2=120 y2=12
+Segment x1=300 y1=-6 x2=6 y2=-6
+Segment x1=300 y1=-36 x2=300 y2=36
+Segment x1=300 y1=-12 x2=120 y2=-12
+Segment x1=6 y1=6 x2=300 y2=6
+Segment x1=120 y1=36 x2=300 y2=36
+Segment x1=120 y1=30 x2=300 y2=30
+Segment x1=120 y1=24 x2=300 y2=24
+Segment x1=120 y1=-36 x2=300 y2=-36
+Segment x1=120 y1=-36 x2=120 y2=36
+Segment x1=120 y1=-30 x2=300 y2=-30
+Segment x1=120 y1=-24 x2=300 y2=-24
+Segment x1=120 y1=-18 x2=300 y2=-18
+Segment x1=0 y1=0 x2=300 y2=0
+Segment x1=0 y1=0 x2=6 y2=6
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="VALUE" value="BUS" autopos=0 x=0 y=360 align=LeftBase visible=0 font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="LABEL" value="BUS[0..3]" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="valuescript" value="edit_bus_port" autopos=0 x=0 y=120 align=LeftBase protected=1 visible=0 font=Default
+Property name="BUSSIZE" value="4" autopos=0 x=0 y=240 align=LeftBase visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="Free_text" description="Free text" catalog="Sheet/Text" track=1
+Property name="VALUE" value="Text" autopos=0 x=0 y=156 align=LeftBase linear=1 selectable=1 font=FreeText
+Property name="VALUESCRIPT" value="edit_schem_text" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.EndSymbolLibrary
+View x=-5040 y=-2400 zoom=11 snapgrid=120
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=-4560 y=-480 orient=N0
+Property name="VALUE" value="SINCE INTEGER ARITHMETIC INSTEAD\nOF FIXED-POINT ARITHMETIC IS USED\nIN THIS EXAMPLE, THE COEFFICIENTS\nARE SCALED SO AS TO STORE MORE\nSIGNIFICANT BITS.\n\nHENCE, 16 * KP IS STORED INSTEAD\nOF KP.\n\nSIMILARLY, 2048 * KI AND 16 * KD\nINSTEAD OF KI AND KD ARE STORED." autopos=0 x=0 y=156 align=LeftBase selectable=1 font=Caption
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_CONSTANT_14BIT" selected=0 protected=0 x=1440 y=2640 orient=N0
+Property name="BIT0" value="0" autopos=0 x=240 y=240 align=CentreBase font=Default
+Property name="BIT1" value="1" autopos=0 x=240 y=360 align=CentreBase font=Default
+Property name="BIT2" value="0" autopos=0 x=240 y=480 align=CentreBase font=Default
+Property name="BIT3" value="1" autopos=0 x=240 y=600 align=CentreBase font=Default
+Property name="BIT4" value="1" autopos=0 x=240 y=720 align=CentreBase font=Default
+Property name="BIT5" value="0" autopos=0 x=240 y=840 align=CentreBase font=Default
+Property name="BIT6" value="1" autopos=0 x=240 y=960 align=CentreBase font=Default
+Property name="BIT7" value="0" autopos=0 x=240 y=1080 align=CentreBase font=Default
+Property name="BIT8" value="0" autopos=0 x=240 y=1200 align=CentreBase font=Default
+Property name="BIT9" value="0" autopos=0 x=240 y=1320 align=CentreBase font=Default
+Property name="BIT10" value="0" autopos=0 x=240 y=1440 align=CentreBase font=Default
+Property name="BIT11" value="0" autopos=0 x=240 y=1560 align=CentreBase font=Default
+Property name="BIT12" value="1" autopos=0 x=240 y=1680 align=CentreBase font=Default
+Property name="BIT13" value="0" autopos=0 x=240 y=1800 align=CentreBase font=Default
+Property name="NUMBITS" value="14" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VALUE" value="0x105a" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="FORMAT" value="'HEX'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U2" autopos=1 normal=Top rotated=Top font=Default
+Netnames pin1="#KD$0" pin2="#KD$1" pin3="#KD$2" pin4="#KD$3" pin5="#KD$4" pin6="#KD$5" pin7="#KD$6" pin8="#KD$7" pin9="#KD$8" pin10="#KD$9" pin11="#KD$10" pin12="#KD$11" pin13="#KD$12" pin14="#KD$13"
+.EndInstance
+.Instance
+Attributes type=symbol name="Ripper_0_9_3" selected=0 protected=0 x=2640 y=480 orient=N0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$busripper" value="3" autopos=0 x=-49 y=480 align=RightBase font=Default
+Property name="pinprop$5$busripper" value="4" autopos=0 x=-49 y=600 align=RightBase font=Default
+Property name="pinprop$6$busripper" value="5" autopos=0 x=-49 y=720 align=RightBase font=Default
+Property name="pinprop$7$busripper" value="6" autopos=0 x=-49 y=840 align=RightBase font=Default
+Property name="pinprop$8$busripper" value="7" autopos=0 x=-49 y=960 align=RightBase font=Default
+Property name="pinprop$9$busripper" value="8" autopos=0 x=-49 y=1080 align=RightBase font=Default
+Property name="pinprop$10$busripper" value="9" autopos=0 x=-49 y=1200 align=RightBase font=Default
+Property name="pinprop$11$bus" value="" autopos=0 x=262 y=120 align=LeftBase font=Default
+Netnames pin1="#KI$0" pin2="#KI$1" pin3="#KI$2" pin4="#KI$3" pin5="#KI$4" pin6="#KI$5" pin7="#KI$6" pin8="#KI$7" pin9="#KI$8" pin10="#KI$9"
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_CONSTANT_10BIT" selected=0 protected=0 x=1440 y=360 orient=N0
+Property name="BIT0" value="0" autopos=0 x=240 y=240 align=CentreBase font=Default
+Property name="BIT1" value="0" autopos=0 x=240 y=360 align=CentreBase font=Default
+Property name="BIT2" value="0" autopos=0 x=240 y=480 align=CentreBase font=Default
+Property name="BIT3" value="0" autopos=0 x=240 y=600 align=CentreBase font=Default
+Property name="BIT4" value="1" autopos=0 x=240 y=720 align=CentreBase font=Default
+Property name="BIT5" value="0" autopos=0 x=240 y=840 align=CentreBase font=Default
+Property name="BIT6" value="0" autopos=0 x=240 y=960 align=CentreBase font=Default
+Property name="BIT7" value="0" autopos=0 x=240 y=1080 align=CentreBase font=Default
+Property name="BIT8" value="1" autopos=0 x=240 y=1200 align=CentreBase font=Default
+Property name="BIT9" value="0" autopos=0 x=240 y=1320 align=CentreBase font=Default
+Property name="NUMBITS" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VALUE" value="0x110" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="FORMAT" value="'HEX'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U1" autopos=1 normal=Top rotated=Top font=Default
+Netnames pin1="#KI$0" pin2="#KI$1" pin3="#KI$2" pin4="#KI$3" pin5="#KI$4" pin6="#KI$5" pin7="#KI$6" pin8="#KI$7" pin9="#KI$8" pin10="#KI$9"
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_CONSTANT_10BIT" selected=0 protected=0 x=1440 y=-1800 orient=N0
+Property name="BIT0" value="0" autopos=0 x=240 y=240 align=CentreBase font=Default
+Property name="BIT1" value="0" autopos=0 x=240 y=360 align=CentreBase font=Default
+Property name="BIT2" value="0" autopos=0 x=240 y=480 align=CentreBase font=Default
+Property name="BIT3" value="0" autopos=0 x=240 y=600 align=CentreBase font=Default
+Property name="BIT4" value="0" autopos=0 x=240 y=720 align=CentreBase font=Default
+Property name="BIT5" value="1" autopos=0 x=240 y=840 align=CentreBase font=Default
+Property name="BIT6" value="0" autopos=0 x=240 y=960 align=CentreBase font=Default
+Property name="BIT7" value="1" autopos=0 x=240 y=1080 align=CentreBase font=Default
+Property name="BIT8" value="0" autopos=0 x=240 y=1200 align=CentreBase font=Default
+Property name="BIT9" value="0" autopos=0 x=240 y=1320 align=CentreBase font=Default
+Property name="NUMBITS" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VALUE" value="0xa0" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="FORMAT" value="'HEX'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U10" autopos=1 normal=Top rotated=Top font=Default
+Netnames pin1="#KP$0" pin2="#KP$1" pin3="#KP$2" pin4="#KP$3" pin5="#KP$4" pin6="#KP$5" pin7="#KP$6" pin8="#KP$7" pin9="#KP$8" pin10="#KP$9"
+.EndInstance
+.Instance
+Attributes type=symbol name="bus_port" selected=0 protected=0 x=3240 y=600 orient=N0
+Property name="VALUE" value="KI" autopos=0 x=0 y=360 align=LeftBase visible=0 font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="LABEL" value="KI[0..9]" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="BUSSIZE" value="10" autopos=0 x=0 y=240 align=LeftBase visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="bus_port" selected=0 protected=0 x=3240 y=-1560 orient=N0
+Property name="VALUE" value="KP" autopos=0 x=0 y=360 align=LeftBase visible=0 font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="LABEL" value="KP[0..9]" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="BUSSIZE" value="10" autopos=0 x=0 y=240 align=LeftBase visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=4320 y=-1440 orient=N0
+Property name="VALUE" value="KP: 10 BITS\nKP = 10.02\nBUT STORE 16 * KP.\n16 * KP = 160.3 = 160 = 0xa0" autopos=0 x=0 y=156 align=LeftBase selectable=1 font=Caption
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="Ripper_0_9_3" selected=0 protected=0 x=2640 y=-1680 orient=N0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$busripper" value="3" autopos=0 x=-49 y=480 align=RightBase font=Default
+Property name="pinprop$5$busripper" value="4" autopos=0 x=-49 y=600 align=RightBase font=Default
+Property name="pinprop$6$busripper" value="5" autopos=0 x=-49 y=720 align=RightBase font=Default
+Property name="pinprop$7$busripper" value="6" autopos=0 x=-49 y=840 align=RightBase font=Default
+Property name="pinprop$8$busripper" value="7" autopos=0 x=-49 y=960 align=RightBase font=Default
+Property name="pinprop$9$busripper" value="8" autopos=0 x=-49 y=1080 align=RightBase font=Default
+Property name="pinprop$10$busripper" value="9" autopos=0 x=-49 y=1200 align=RightBase font=Default
+Property name="pinprop$11$bus" value="" autopos=0 x=262 y=120 align=LeftBase font=Default
+Netnames pin1="#KP$0" pin2="#KP$1" pin3="#KP$2" pin4="#KP$3" pin5="#KP$4" pin6="#KP$5" pin7="#KP$6" pin8="#KP$7" pin9="#KP$8" pin10="#KP$9"
+.EndInstance
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=4200 y=600 orient=N0
+Property name="VALUE" value="KI: 10 BITS\nKI = 0.1329\nBUT STORE 2048 * KI\n2048 * KI = 272.18 = 272 = 0x110" autopos=0 x=0 y=156 align=LeftBase selectable=1 font=Caption
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=4200 y=2880 orient=N0
+Property name="VALUE" value="KD: 14 BITS\nKD =261.6\nBUT STORE 16 * KD\n16 * KD = 4185.6 = 4186 = 0x105a" autopos=0 x=0 y=156 align=LeftBase selectable=1 font=Caption
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="bus_port" selected=0 protected=0 x=3240 y=2880 orient=N0
+Property name="VALUE" value="KD" autopos=0 x=0 y=360 align=LeftBase visible=0 font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="LABEL" value="KD[0..13]" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="BUSSIZE" value="14" autopos=0 x=0 y=240 align=LeftBase visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="Ripper_0_13_3" selected=0 protected=0 x=2640 y=2760 orient=N0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$busripper" value="3" autopos=0 x=-49 y=480 align=RightBase font=Default
+Property name="pinprop$5$busripper" value="4" autopos=0 x=-49 y=600 align=RightBase font=Default
+Property name="pinprop$6$busripper" value="5" autopos=0 x=-49 y=720 align=RightBase font=Default
+Property name="pinprop$7$busripper" value="6" autopos=0 x=-49 y=840 align=RightBase font=Default
+Property name="pinprop$8$busripper" value="7" autopos=0 x=-49 y=960 align=RightBase font=Default
+Property name="pinprop$9$busripper" value="8" autopos=0 x=-49 y=1080 align=RightBase font=Default
+Property name="pinprop$10$busripper" value="9" autopos=0 x=-49 y=1200 align=RightBase font=Default
+Property name="pinprop$11$busripper" value="10" autopos=0 x=-49 y=1320 align=RightBase font=Default
+Property name="pinprop$12$busripper" value="11" autopos=0 x=-49 y=1440 align=RightBase font=Default
+Property name="pinprop$13$busripper" value="12" autopos=0 x=-49 y=1560 align=RightBase font=Default
+Property name="pinprop$14$busripper" value="13" autopos=0 x=-49 y=1680 align=RightBase font=Default
+Property name="pinprop$15$bus" value="" autopos=0 x=262 y=120 align=LeftBase font=Default
+Netnames pin1="#KD$0" pin2="#KD$1" pin3="#KD$2" pin4="#KD$3" pin5="#KD$4" pin6="#KD$5" pin7="#KD$6" pin8="#KD$7" pin9="#KD$8" pin10="#KD$9" pin11="#KD$10" pin12="#KD$11" pin13="#KD$12" pin14="#KD$13"
+.EndInstance
+Wire x1=2640 y1=4320 x2=1920 y2=4320 net="#KD$12" branch="-:U2#B12"
+Wire x1=2640 y1=4080 x2=1920 y2=4080 net="#KD$10" branch="-:U2#B10"
+Wire x1=2640 y1=2880 x2=1920 y2=2880 net="#KD$0" branch="-:U2#B0"
+Wire x1=2640 y1=3000 x2=1920 y2=3000 net="#KD$1" branch="-:U2#B1"
+Wire x1=2640 y1=3120 x2=1920 y2=3120 net="#KD$2" branch="-:U2#B2"
+Wire x1=2640 y1=3840 x2=1920 y2=3840 net="#KD$8" branch="-:U2#B8"
+Wire x1=1920 y1=3360 x2=2640 y2=3360 net="#KD$4" branch="-:U2#B4"
+Wire x1=2640 y1=3480 x2=1920 y2=3480 net="#KD$5" branch="-:U2#B5"
+Wire x1=1920 y1=3600 x2=2640 y2=3600 net="#KD$6" branch="-:U2#B6"
+Wire x1=1920 y1=3720 x2=2640 y2=3720 net="#KD$7" branch="-:U2#B7"
+Wire x1=2640 y1=3960 x2=1920 y2=3960 net="#KD$9" branch="-:U2#B9"
+Wire x1=2640 y1=3240 x2=1920 y2=3240 net="#KD$3" branch="-:U2#B3"
+Wire x1=2640 y1=960 x2=1920 y2=960 net="#KI$3" branch="-:U1#B3"
+Wire x1=2640 y1=1680 x2=1920 y2=1680 net="#KI$9" branch="-:U1#B9"
+Wire x1=1920 y1=1440 x2=2640 y2=1440 net="#KI$7" branch="-:U1#B7"
+Wire x1=1920 y1=1320 x2=2640 y2=1320 net="#KI$6" branch="-:U1#B6"
+Wire x1=2640 y1=1200 x2=1920 y2=1200 net="#KI$5" branch="-:U1#B5"
+Wire x1=1920 y1=1080 x2=2640 y2=1080 net="#KI$4" branch="-:U1#B4"
+Wire x1=2640 y1=1560 x2=1920 y2=1560 net="#KI$8" branch="-:U1#B8"
+Wire x1=2640 y1=840 x2=1920 y2=840 net="#KI$2" branch="-:U1#B2"
+Wire x1=2640 y1=720 x2=1920 y2=720 net="#KI$1" branch="-:U1#B1"
+Wire x1=2640 y1=600 x2=1920 y2=600 net="#KI$0" branch="-:U1#B0"
+Wire x1=3240 y1=600 x2=2880 y2=600 net="KI" branch=""
+Wire x1=2640 y1=-1560 x2=1920 y2=-1560 net="#KP$0" branch="-:U10#B0"
+Wire x1=2640 y1=-1440 x2=1920 y2=-1440 net="#KP$1" branch="-:U10#B1"
+Wire x1=2640 y1=-1320 x2=1920 y2=-1320 net="#KP$2" branch="-:U10#B2"
+Wire x1=2640 y1=-600 x2=1920 y2=-600 net="#KP$8" branch="-:U10#B8"
+Wire x1=3240 y1=-1560 x2=2880 y2=-1560 net="KP" branch=""
+Wire x1=1920 y1=-1080 x2=2640 y2=-1080 net="#KP$4" branch="-:U10#B4"
+Wire x1=2640 y1=-960 x2=1920 y2=-960 net="#KP$5" branch="-:U10#B5"
+Wire x1=1920 y1=-840 x2=2640 y2=-840 net="#KP$6" branch="-:U10#B6"
+Wire x1=1920 y1=-720 x2=2640 y2=-720 net="#KP$7" branch="-:U10#B7"
+Wire x1=2640 y1=-480 x2=1920 y2=-480 net="#KP$9" branch="-:U10#B9"
+Wire x1=2640 y1=-1200 x2=1920 y2=-1200 net="#KP$3" branch="-:U10#B3"
+Wire x1=3240 y1=2880 x2=2880 y2=2880 net="KD" branch=""
+Wire x1=2640 y1=4200 x2=1920 y2=4200 net="#KD$11" branch="-:U2#B11"
+Wire x1=2640 y1=4440 x2=1920 y2=4440 net="#KD$13" branch="-:U2#B13"
+Text value=""
+SimulatorMode value="Simplis"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+Property name="NetName" value="" type=value
+Property name="UserVersion" value="49" type=value
+.EndSchematic
+.EndComponent

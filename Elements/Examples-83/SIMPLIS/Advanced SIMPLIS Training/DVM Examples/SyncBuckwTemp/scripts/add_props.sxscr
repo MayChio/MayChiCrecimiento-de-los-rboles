@@ -1,0 +1,41 @@
+***
+*** add_props.sxscr
+***
+
+Arguments @retval label report_dir log_file controlhandle
+
+*** semicolon
+Let sc = Chr(59)
+
+*** RDSHS_25 : the high side rdson at 25 degrees C
+*** RDSLS_25 : the low side rdson at 25 degrees C
+prop /showname /handle { controlhandle } { 'RDSHS_25' } { '18m' }
+prop /showname /handle { controlhandle } { 'RDSLS_25' } { '18m' }
+
+
+*** RDSON_HS : the high side rdson after any simulation
+*** RDSON_LS : the low side rdson after any simulation
+prop /showname /handle { controlhandle } { 'RDSON_HS' } { '18m' }
+prop /showname /handle { controlhandle } { 'RDSON_LS' } { '18m' }
+
+
+*** TJ_HS     : The high side junction temperature after any simulation
+*** TJ_LS     : The low side junction temperature after any simulation
+prop /showname /handle { controlhandle } { 'TJ_HS' }  { '25' }
+prop /showname /handle { controlhandle } { 'TJ_LS' }  { '25' }
+
+
+*** THETA_JC_HS : The high side juction to case thermal conductivity
+*** THETA_JC_LS : The low side juction to case thermal conductivity
+prop /showname /handle { controlhandle } { 'THETA_JC_HS' }  { '50' }
+prop /showname /handle { controlhandle } { 'THETA_JC_LS' }  { '30' }
+
+
+*** TEMPCO_RDS_HS : The high side tempco in normalized change per degree C. 0.008 is approx 2x change in 125 degrees C. i.e. at 150 C, the RDS(ON) is 2x the 25 degree C number
+*** TEMPCO_RDS_LS : The low side juction to case thermal conductivity. Same comments as above.
+prop /showname /handle { controlhandle } { 'TEMPCO_RDS_HS' }  { '0.008' }
+prop /showname /handle { controlhandle } { 'TEMPCO_RDS_LS' }  { '0.008' }
+
+
+*** The SIMPLIS_TEMPLATE will make global variables for the current RDSON available in the deck.
+prop /handle { controlhandle } { 'SIMPLIS_TEMPLATE' } { '.GLOBALVAR RDSON_HS=%RDSON_HS%' & sc & '.GLOBALVAR RDSON_LS=%RDSON_LS%' }

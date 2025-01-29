@@ -1,0 +1,8 @@
+********************************************************************************
+***                                                                          ***
+***                             SIMetrix/SIMPLIS                             ***
+***                 Load Component Values configuration file                 ***
+***                                                                          ***
+********************************************************************************
+
+QDUT.PARAM_VALUES	"CDS_NSEG=4 IBD0=-1 LIMIT_MAX_ROFF=1 IBD1=0 IBD2=0 KP1=333.333m IBD3=2.35313 KP2=1 IBD4=10 ROFF=100Meg USER_VT0=2.65613 USER_HYSTWD=2u TEMP=25 VCGS0=0 VCGS1=1 USER_DIODE_FWD_RES=10.5015m LEVEL=2 QCDS0=0 QCDS1={K_CDS*284.05p} QCDS2={K_CDS*1.02527n} QCDS3={K_CDS*1.66169n} QCDS4={K_CDS*2.8405n} RDSon=9.35225m QCDG0={QCDG0} QCDG1={QCDG1} QCDG2=0 QCDG3={K_CDG*394.374p} QCDG4={K_CDG*1.34177n} QCDG5={K_CDG*2.1349n} QCDG6={K_CDG*3.94374n} USER_COSS=339.212p DEVICE='FDD8882_NO_INDUCTANCE_NO_ESG' RG=3.0305m BD_NSEG=4 VD_PEAK=20 LABEL='USER_LABEL' QCGS0=0 QCGS1=1.10013n CGS_NSEG=1 HYSTWD=2u USER_CGS=1.10013n USER_DIODE_FWD_VOLTAGE=730.994m ID_PEAK=10 VGSON=12 USER_ROFF=100Meg USER_RG=3.0305m CDG_NSEG=6 MAX_ROFF=100Meg USER_RDSON=9.35225m VGS2=3.65613 VCDS0=0 VT0=2.65613 VCDS1=731.514m VCDS2=3.78046 VCDS3=8 VCDS4=20 VCDG0={VCDG0} VCDG1={VCDG1} VCDG2=0 VCDG3=926.86m ID2=35.1034 VCDG4=4.22925 VD0=-10.001k VCDG5=8 VD1=-10k VCDG6=20 VD2=674.954m VD3=755.706m USE_EXTRACTED=1 VD4=836.01m protected=1"

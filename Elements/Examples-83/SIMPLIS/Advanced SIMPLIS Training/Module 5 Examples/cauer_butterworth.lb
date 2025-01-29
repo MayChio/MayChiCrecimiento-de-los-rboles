@@ -1,0 +1,64 @@
+* cauer topology butterworth filter
+.SIMULATOR SIMPLIS
+
+.SUBCKT BUTTERWORTH_CAUER_FILTER 100 200 300 vars: FC=10k ORDER=1 GAIN=1.0 IC=0.0
+.NODE_MAP IN 100
+.NODE_MAP GND 200
+.NODE_MAP OUT 300
+
+
+.IF { Search( Vector(6)+1 , ORDER ) == -1 }
+	.ERROR "Butterworth filter ORDER parameter muse be between 1 and 6."
+.ENDIF
+.IF { FC < 1p }
+	.ERROR "Butterworth filter pole frequency must be greater than or equal to 1pHz."
+.ENDIF
+
+*** input buffer
+E_IN 1 200 100 200 1.0
+
+*** input resistance must be unity
+R1 1 2 1.0
+
+*** order index count variable
+.VAR K = 1
+
+*** last node in the ladder counter
+.VAR LAST_NODE = 2
+
+.WHILE { K <= ORDER }
+	
+	.VAR GK = { 1/(2*pi*FC)*2*SIN((2*K-1)*pi/(2*ORDER)) }
+	
+	{ '*** K : ' & K & ' GK : ' & GK }
+	
+	*** what to do?
+	.IF { K%2 == 1 }
+	
+		{ '*** K is ODD' }
+		*** K is odd - instantiate a capacitor
+		
+		{ 'C_' & K } {LAST_NODE} 200 { GK } IC={IC}
+	.ELSE
+		{ '*** K is EVEN' }
+		*** K is even - instantiate an inductor
+
+		{ 'L_' & K } {LAST_NODE} { LAST_NODE + 1 } { GK } IC=0.0
+		
+		*** increment LAST_NODE
+		.VAR LAST_NODE = { LAST_NODE + 1 }
+		
+	.ENDIF
+	
+	*** increment K
+	.VAR K = { K + 1 }
+
+.ENDWHILE
+
+*** terminate the filter into unity resistance 
+R_TERM { LAST_NODE } 200 1.0
+
+*** gain and buffer the output
+EOUT 300 200 { LAST_NODE } 200 {GAIN+1.0}
+
+.ENDS BUTTERWORTH_CAUER_FILTER

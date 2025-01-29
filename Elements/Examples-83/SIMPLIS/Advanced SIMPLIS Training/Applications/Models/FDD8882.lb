@@ -1,0 +1,317 @@
+
+*$
+.SUBCKT FDD8882  2 1 3      
+*#ASSOC Category=NMOS Symbol=nmos_sub
+*Nom Temp=25 deg C 
+*30 July 04
+
+Ca 12 8 0.9e-9
+Cb 15 14 0.9e-9
+Cin 6 8 1.1e-9
+
+Dbody 7 5 DbodyMOD
+Dbreak 5 11 DbreakMOD
+Dplcap 10 5 DplcapMOD
+
+Ebreak 11 7 17 18 34.1
+Eds 14 8 5 8 1
+Egs 13 8 6 8 1
+Esg 6 10 6 8 1
+Evthres 6 21 19 8 1
+Evtemp 20 6 18 22 1
+
+It 8 17 1
+
+Lgate 1 9 8.6e-9
+Ldrain 2 5 1.0e-9
+Lsource 3 7 2.67e-9
+
+RLgate 1 9 86
+RLdrain 2 5 10
+RLsource 3 7 26.7
+
+Mmed 16 6 8 8 MmedMOD
+Mstro 16 6 8 8 MstroMOD 
+Mweak 16 21 8 8 MweakMOD    
+
+Rbreak 17 18 RbreakMOD 1
+Rdrain 50 16 RdrainMOD 2.5e-3
+Rgate 9 20 2.43
+RSLC1 5 51 RSLCMOD 1e-6
+RSLC2 5 50 1e3
+Rsource 8 7 RsourceMOD 6.5e-3
+Rvthres 22 8 RvthresMOD 1
+Rvtemp 18 19 RvtempMOD 1
+S1a 6 12 13 8 S1AMOD
+S1b 13 12 13 8 S1BMOD
+S2a 6 15 14 13 S2AMOD
+S2b 13 15 14 13 S2BMOD
+
+Vbat 22 19 DC 1
+
+ESLC 51 50  VALUE={(V(5,51)/ABS(V(5,51)))*(PWR(V(5,51)/(1e-6*600),10))}
+
+.MODEL DbodyMOD D (IS=2E-12 IKF=10 N=1.01 RS=5.7e-3 TRS1=8e-4 TRS2=2e-7
++ CJO=4.6e-10 M=0.58 TT=1e-11 XTI=2.7)
+.MODEL DbreakMOD D (RS=1 TRS1=1e-3 TRS2=-8.9e-6)
+.MODEL DplcapMOD D (CJO=5.0e-10 IS=1e-30 N=10 M=0.45)
+
+.MODEL MmedMOD NMOS (VTO=2.11 KP=14 IS=1e-30 N=10 TOX=1 L=1u W=1u RG=2.43)
+.MODEL MstroMOD NMOS (VTO=2.65 KP=240 IS=1e-30 N=10 TOX=1 L=1u W=1u)
+.MODEL MweakMOD NMOS (VTO=1.82 KP=0.09 IS=1e-30 N=10 TOX=1 L=1u W=1u RG=24.3 RS=0.1) 
+
+.MODEL RbreakMOD RES (TC1=8.0e-4 TC2=-8e-7)
+.MODEL RdrainMOD RES (TC1=-0.6e-2 TC2=6e-6)
+.MODEL RSLCMOD RES (TC1=8e-5 TC2=2e-6)
+.MODEL RsourceMOD RES (TC1=7.5e-3 TC2=1e-6)
+.MODEL RvthresMOD RES (TC1=-12e-4 TC2=-8.3e-6)
+.MODEL RvtempMOD RES (TC1=-2.5e-3 TC2=3.3e-7)
+
+.MODEL S1AMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-4 VOFF=-3.5)
+.MODEL S1BMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-3.5 VOFF=-4)
+.MODEL S2AMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-2 VOFF=-1.5)
+.MODEL S2BMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-1.5 VOFF=-2)
+
+.ENDS
+*$
+*Thermal Model Subcircuit
+.SUBCKT FDD8882_JC TH TL
+*Thermal Model Subcircuit
+*30 July 04
+
+CTHERM1 TH 6 5.6e-4
+CTHERM2 6 5 6.8e-4
+CTHERM3 5 4 2e-3
+CTHERM4 4 3 2.8e-3
+CTHERM5 3 2 5.7e-3
+CTHERM6 2 TL 5.8e-3
+
+RTHERM1 TH 6 5.3e-2
+RTHERM2 6 5 2.2e-1
+RTHERM3 5 4 2.9e-1
+RTHERM4 4 3 3.9e-1
+RTHERM5 3 2 6e-1
+RTHERM6 2 TL 6.6e-1
+
+
+
+.ends
+
+********************************************************************************
+***                                                                          ***
+***                       Model With No Inductance, RG                       ***
+***                                                                          ***
+********************************************************************************
+
+*$
+.SUBCKT FDD8882_NO_INDUCTANCE 2 1 3      
+*#ASSOC Category=NMOS Symbol=nmos_sub
+*Nom Temp=25 deg C 
+*30 July 04
+
+Ca 12 8 0.9e-9
+Cb 15 14 0.9e-9
+Cin 6 8 1.1e-9
+
+Dbody 7 5 DbodyMOD
+Dbreak 5 11 DbreakMOD
+Dplcap 10 5 DplcapMOD
+
+Ebreak 11 7 17 18 34.1
+Eds 14 8 5 8 1
+Egs 13 8 6 8 1
+Esg 6 10 6 8 1
+Evthres 6 21 19 8 1
+Evtemp 20 6 18 22 1
+
+It 8 17 1
+
+VGx 1 9 0.0
+VDx 2 5 0.0
+VSx 3 7 0.0
+
+* Lgate 1 9 8.6e-9
+* Ldrain 2 5 1.0e-9
+* Lsource 3 7 2.67e-9
+
+* RLgate 1 9 86
+* RLdrain 2 5 10
+* RLsource 3 7 26.7
+
+Mmed 16 6 8 8 MmedMOD
+Mstro 16 6 8 8 MstroMOD 
+Mweak 16 21 8 8 MweakMOD    
+
+Rbreak 17 18 RbreakMOD 1
+Rdrain 50 16 RdrainMOD 2.5e-3
+
+*** Rgate 9 20 2.43
+VRgate 9 20 0.0
+
+RSLC1 5 51 RSLCMOD 1e-6
+RSLC2 5 50 1e3
+Rsource 8 7 RsourceMOD 6.5e-3
+Rvthres 22 8 RvthresMOD 1
+Rvtemp 18 19 RvtempMOD 1
+S1a 6 12 13 8 S1AMOD
+S1b 13 12 13 8 S1BMOD
+S2a 6 15 14 13 S2AMOD
+S2b 13 15 14 13 S2BMOD
+
+Vbat 22 19 DC 1
+
+ESLC 51 50  VALUE={(V(5,51)/ABS(V(5,51)))*(PWR(V(5,51)/(1e-6*600),10))}
+
+.MODEL DbodyMOD D (IS=2E-12 IKF=10 N=1.01 RS=5.7e-3 TRS1=8e-4 TRS2=2e-7
++ CJO=4.6e-10 M=0.58 TT=1e-11 XTI=2.7)
+.MODEL DbreakMOD D (RS=1 TRS1=1e-3 TRS2=-8.9e-6)
+.MODEL DplcapMOD D (CJO=5.0e-10 IS=1e-30 N=10 M=0.45)
+
+.MODEL MmedMOD NMOS (VTO=2.11 KP=14 IS=1e-30 N=10 TOX=1 L=1u W=1u RG=2.43)
+.MODEL MstroMOD NMOS (VTO=2.65 KP=240 IS=1e-30 N=10 TOX=1 L=1u W=1u)
+.MODEL MweakMOD NMOS (VTO=1.82 KP=0.09 IS=1e-30 N=10 TOX=1 L=1u W=1u RG=24.3 RS=0.1) 
+
+.MODEL RbreakMOD RES (TC1=8.0e-4 TC2=-8e-7)
+.MODEL RdrainMOD RES (TC1=-0.6e-2 TC2=6e-6)
+.MODEL RSLCMOD RES (TC1=8e-5 TC2=2e-6)
+.MODEL RsourceMOD RES (TC1=7.5e-3 TC2=1e-6)
+.MODEL RvthresMOD RES (TC1=-12e-4 TC2=-8.3e-6)
+.MODEL RvtempMOD RES (TC1=-2.5e-3 TC2=3.3e-7)
+
+.MODEL S1AMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-4 VOFF=-3.5)
+.MODEL S1BMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-3.5 VOFF=-4)
+.MODEL S2AMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-2 VOFF=-1.5)
+.MODEL S2BMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-1.5 VOFF=-2)
+
+.ENDS
+
+********************************************************************************
+***                                                                          ***
+***                       Model With No Inductance, RG                       ***
+***                            and No ESG VCVS                               ***
+***                                                                          ***
+********************************************************************************
+*$
+.SUBCKT FDD8882_NO_INDUCTANCE_NO_ESG 2 1 3      
+*#ASSOC Category=NMOS Symbol=nmos_sub
+*Nom Temp=25 deg C 
+*30 July 04
+
+Ca 12 8 0.9e-9
+Cb 15 14 0.9e-9
+Cin 6 8 1.1e-9
+
+Dbody 7 5 DbodyMOD
+Dbreak 5 11 DbreakMOD
+Dplcap 10 5 DplcapMOD
+
+Ebreak 11 7 17 18 34.1
+Eds 14 8 5 8 1
+Egs 13 8 6 8 1
+
+
+*Esg 6 10 6 8 1
+VEsg 6 10 0.0
+
+
+Evthres 6 21 19 8 1
+Evtemp 20 6 18 22 1
+
+It 8 17 1
+
+VGx 1 9 0.0
+VDx 2 5 0.0
+VSx 3 7 0.0
+
+* Lgate 1 9 8.6e-9
+* Ldrain 2 5 1.0e-9
+* Lsource 3 7 2.67e-9
+
+* RLgate 1 9 86
+* RLdrain 2 5 10
+* RLsource 3 7 26.7
+
+Mmed 16 6 8 8 MmedMOD
+Mstro 16 6 8 8 MstroMOD 
+Mweak 16 21 8 8 MweakMOD    
+
+Rbreak 17 18 RbreakMOD 1
+Rdrain 50 16 RdrainMOD 2.5e-3
+
+*** Rgate 9 20 2.43
+VRgate 9 20 0.0
+
+RSLC1 5 51 RSLCMOD 1e-6
+RSLC2 5 50 1e3
+Rsource 8 7 RsourceMOD 6.5e-3
+Rvthres 22 8 RvthresMOD 1
+Rvtemp 18 19 RvtempMOD 1
+S1a 6 12 13 8 S1AMOD
+S1b 13 12 13 8 S1BMOD
+S2a 6 15 14 13 S2AMOD
+S2b 13 15 14 13 S2BMOD
+
+Vbat 22 19 DC 1
+
+ESLC 51 50  VALUE={(V(5,51)/ABS(V(5,51)))*(PWR(V(5,51)/(1e-6*600),10))}
+
+.MODEL DbodyMOD D (IS=2E-12 IKF=10 N=1.01 RS=5.7e-3 TRS1=8e-4 TRS2=2e-7
++ CJO=4.6e-10 M=0.58 TT=1e-11 XTI=2.7)
+.MODEL DbreakMOD D (RS=1 TRS1=1e-3 TRS2=-8.9e-6)
+.MODEL DplcapMOD D (CJO=5.0e-10 IS=1e-30 N=10 M=0.45)
+
+.MODEL MmedMOD NMOS (VTO=2.11 KP=14 IS=1e-30 N=10 TOX=1 L=1u W=1u RG=2.43)
+.MODEL MstroMOD NMOS (VTO=2.65 KP=240 IS=1e-30 N=10 TOX=1 L=1u W=1u)
+.MODEL MweakMOD NMOS (VTO=1.82 KP=0.09 IS=1e-30 N=10 TOX=1 L=1u W=1u RG=24.3 RS=0.1) 
+
+.MODEL RbreakMOD RES (TC1=8.0e-4 TC2=-8e-7)
+.MODEL RdrainMOD RES (TC1=-0.6e-2 TC2=6e-6)
+.MODEL RSLCMOD RES (TC1=8e-5 TC2=2e-6)
+.MODEL RsourceMOD RES (TC1=7.5e-3 TC2=1e-6)
+.MODEL RvthresMOD RES (TC1=-12e-4 TC2=-8.3e-6)
+.MODEL RvtempMOD RES (TC1=-2.5e-3 TC2=3.3e-7)
+
+.MODEL S1AMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-4 VOFF=-3.5)
+.MODEL S1BMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-3.5 VOFF=-4)
+.MODEL S2AMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-2 VOFF=-1.5)
+.MODEL S2BMOD VSWITCH (RON=1e-5 ROFF=0.1 VON=-1.5 VOFF=-2)
+
+.ENDS
+
+
+
+
+********************************************************************************
+***                                                                          ***
+***                         Development Models Below                         ***
+***                                                                          ***
+********************************************************************************
+
+*$
+
+.subckt mos_test 1 2 3
+*#ASSOC Category=NMOS Symbol=nmos_sub
+Mstro 1 2 3 3 MstroMOD 
+.MODEL MstroMOD NMOS (VTO=2.65 KP=240 IS=1e-30 N=10 TOX=1 L=1u W=1u)
+.ends
+
+.subckt mos_test_cgd_esg 5 6 8
+*#ASSOC Category=NMOS Symbol=nmos_sub
+Mstro 5 6 8 8 MstroMOD 
+.MODEL MstroMOD NMOS (VTO=2.65 KP=240 IS=1e-30 N=10 TOX=1 L=1u W=1u)
+D1 10 5 DplcapMOD
+.MODEL DplcapMOD D (CJO=5.0e-10 IS=1e-30 N=10 M=0.45)
+cgs 6 8 10p
+cds 5 8 15p
+Esg 6 10 6 8 1
+.ends
+
+.subckt mos_test_cgd_no_esg 5 6 8
+*#ASSOC Category=NMOS Symbol=nmos_sub
+Mstro 5 6 8 8 MstroMOD 
+.MODEL MstroMOD NMOS (VTO=2.65 KP=240 IS=1e-30 N=10 TOX=1 L=1u W=1u)
+D1 6 5 DplcapMOD
+.MODEL DplcapMOD D (CJO=5.0e-10 IS=1e-30 N=10 M=0.45)
+cgs 6 8 10p
+cds 5 8 15p
+.ends

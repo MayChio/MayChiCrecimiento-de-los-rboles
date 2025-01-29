@@ -1,0 +1,103 @@
+********************************************************************************
+***                                                                          ***
+***            Auto-generated ASCII Library file for component :             ***
+***                     Compensator_27_January_2015.sxcmp                    ***
+***                          Created on : 1/27/2015                          ***
+***                           At Time : 12:26:51 PM                          ***
+***                           Using version : 7.20j                          ***
+***                                                                          ***
+********************************************************************************
+
+*** POP Trigger Gate information:
+*** This model has no embedded POP trigger gate.
+
+.SUBCKT Compensator_27_January_2015  21 24 25 22 19 20 23 26
+
+.NODE_MAP VSENSE_P 21
+.NODE_MAP VCOMP_IN 24
+.NODE_MAP VCOMP_OUT 25
+.NODE_MAP VSENSE_N 22
+.NODE_MAP VREF 19
+.NODE_MAP ICMD_P 20
+.NODE_MAP VSENSE_OUT 23
+.NODE_MAP ICMD_N 26
+
+*
+?@@--START ENCRYPTION: "SMX_AES Compensator 27 January 2015"
+?@@73vubYmn9/o1LBe1Ct/nHRCul6qtjYALaVa92Gcc2vfgXp0Ug57+sqDVFeZUqvG+?##
+?@@y3XCc/p42T01ahxWL7WYxm1rlVZQHGATXMK4HreGToaif4z8J3kWEhSIVphjLVfp?##
+?@@kJup8UEz9Afx2EUKs3249lKQ+NUAi4nf/Lt4QIBiTEVsyHUhCChZiRy12mKA7C0u?##
+?@@wVm1lF3PL7mQ2jx37j+UcahPQqjAQDKL3Kf6HYjRmVF+nnEqvbwqvsV3aNRJHb31?##
+?@@dInhDAiR5rQMmsjyo29yUPbUJQ5F9wsxOEj9nBRcHPxit6wt5K2I+XXqxlG4NQhG?##
+?@@k5xQxbyH2GG7IWYBRlkX3Wou/6oY0DToTgynA5kJje/V/Az8iVzCozxgjzxpN0NW?##
+?@@lZ0bwCqry3E2FZQkFRrMgyqFDLVZ46zuBoUt9tVyhen7xmMU5VsnrYa6l+4rsW7+?##
+?@@IUXaaUdk34i6xMqDMFvdCXY6M4t2YnHnDbMfntTZ7N3aNdJOs9dHbVq1wSmTQh4w?##
+?@@Oc6YcWc4y4Smu1kZgfB3IVKbgeEUDlFZ6zRKQSDXj+EzAsAQrbOenuGhSqWvUvt9?##
+?@@U/F50t8XOjGuVyfIljf3xluMmWNjQV574y41IWHd8mILODzFG5J5i8l7CmVAuJNj?##
+?@@T9hh6xG+6SvxbVsqq2Iir3wtKKqwsXheMfKaCD30iwkCLTFuMTJMULDm7F+rSJ75?##
+?@@E8yTdgd/8kbixJJi9MXJWytfqQTTUOtLaaAgIgRGJM/t5tQfuS0PckPXw+zdoKaD?##
+?@@CnnBRpPicVE+DI4tOmWjqiKeZxi9rjncIdoYHLzKlgMRYEiIf5npDM/miEikQ7Kd?##
+?@@iJOixiupE+b4wxXPuXkCuJjwLgLaYpSa/Aqbxk+qtXpqHHCHcmaokTpIhPVkKKAe?##
+?@@W57Nt5HYg68odiIdEmBFUSGMkpI3sPdb9YXdBYp6DGNscu1T+I1D92aYXbcN5w7y?##
+?@@K7lyOWYYqECKe9uevFBDUUrIvI4imI0s4JoYCgU4KApsqJi6axeuyC1Og7b2Mjy8?##
+?@@q7+TQ2DvO4eeB/1USW1nx1ZZyapY+8bhtw6RhW6r5GCg4lIkSo5oJ5BN6IDy50KL?##
+?@@+5SmbpxuoE6PvIBi0PCaqv2xBxviPxp8/Yk9ioVI3ld6/Q1auGY7x09XypDgQTP5?##
+?@@Uf52zVslHNdAaoXoHQFfa0/lIh3BPgBmTG5MhtIC4eEL3GG4nYM1DbI56rEEH3M1?##
+?@@xNagHke/URckxHNCklo7xP1kYaTnybCmzXlZbbtVZIVjSJhqymQxE9HvmThBx8wI?##
+?@@ujIswwQyjgBxXSNM8AU0XJjVf87urZ47p0B6qwFaSIwngDS7uiGX+ugTPega7w28?##
+?@@tggAahv4KrS8nc5wLoTEailqg4RLtXKDuWBLh4OevDhH9euWK4nsrS06NqZXBP7v?##
+?@@z9wogshCcNYbxwzfS6W9BR/LxEcih7XgsM04Ld1iCwrbE6z3tgwta7CBh3Lu4Lid?##
+?@@O0u1OdpBkDXOg/wgFbizG6Jnhbgl01hsbqv/f2MVcJrawQKLHugkOkMheh6GHEPu?##
+?@@qiHzYCach40RY4bUyeg2lRUNMxd/2i79t4DodAO+9hjBYr4jSmWlD6tkLD+4EJPp?##
+?@@E0lwK72GnpVGKAwpFkeyOnDzFePBsHZUA1NoeNbV5/SoYDvbiETJJSHYKjHjTkV5?##
+?@@4M0QMhWoWuL29ytv0CKmADuj/rEBDH5dT91x5MxNRI9/kvWktjrKvfzGW+UhH+1W?##
+?@@kKudqZHKttrZRAzSHtOGyOP8E6iwXUUSmAP2mKB91E9Wmt3rCNU8IPVm1AbWRRqR?##
+?@@l9NvAVIP6U3gZkZjHERGus2DL18wmZJQj64dkQI4amPt5nvVYQtLtZ0qTk5DY6MO?##
+?@@n1YecfYMckn/pdCsqGDCr2821pxPMEVllG3GzYRhvVTsnOyY9ME71jCJZ4kG17vo?##
+?@@SgmxNaVHR+3FYBlc3Rmsxe3mwad6QCp3IJ/5PF30yJ2ft2CSoC1hVbqOde5IRwxw?##
+?@@K5I3tO5tfhUaBtln/iB3O9Y6BBuxvWujiHMrVbIDJ0g4poY9C+K7U1KqcERh5QjT?##
+?@@0NpcC4gzl2OpM0C5igk3JJ94neHpocmBi2+RVUQUWrxt5Zpi3oho0Zj9xHGdCiAp?##
+?@@HVWCkhHt3fJyvse74A3l3i2YgCWzHBZSnoxuoPgpa8QC717BSyFx7kvugQMthhPh?##
+?@@PzYY3NJISAxSErmX7HBLV2cc2xX+DGfkzzfyairtQJJYVDgvZwe2McGLufsf67kv?##
+?@@mYb86yw4XYW2bNCdh6ZfPRS6RWiF0S7mJJLUCT+1pbEAbUAZXHo1p551ymIUE5w/?##
+?@@24G2Zj/Jw+dfwSyxaIZQ1veZWTHLlwUMnacMXdEzQ7HhfaspNrkv9soIwXPwmkm9?##
+?@@7lpUuInLjxru5kn+q14tr3BhSDrrrZrl+IvOCmNeuj6jF86UIeYKaLiiIWsU5zuH?##
+?@@W2VbU0ha0DgK4QOPDqTfLBEZch231ZaA5Ndv98n+PazBpiDLMA6EWsSf3v4eQ/vH?##
+?@@0PaS5fN81LbpxQLKhM1GmVks8QMFa8d+gCr5blofWSzKbcdgjpJ3yZ7ySbU9T6YQ?##
+?@@SGNM8P1xcKEFE1QPENdrRNvwwVFXgYjJO0gUByzDJ+GOwTnB1fUzor2wemENwADs?##
+?@@qGE8HxYUAty/k7VdHMGjiEOrKMswe4oZ5aL+ir3yV/xGJQQhaC6HHSiSORfMDkWI?##
+?@@P3mHrjej5EFNsJ1hTbB+FQL+48lJc+oj9a6oibGhmBa15g0tvC/+tIdQDacw/20Z?##
+?@@P2BzaUFGxGCj7yNL4UX7EwkhfL/eQRNElY/blr3YN2GfCF0qrNcujqU/U4WH5Mop?##
+?@@q6gd5CwhlufzR9BrFg0qdEXLbiwNYFNoUU8tTyoj5w3u9DicoW6P7UPy8dRIgnh9?##
+?@@rMaMCpaERCoCuBvTS9EO3YK7pc72P4rImpY90U1lohuDbChdYhnNhyGY0+lUz3Em?##
+?@@xubspciI6AqbJ/UbyAd55IP1x9W/zuOEEB6bTRau0KtrnuGxRI85F5TwQPelMM81?##
+?@@omRmlmNI3HOXrAl7/tpjUV44mOnqMKt179rjob1W9SGti5DDSR52+Bp/NuVOVE2O?##
+?@@z95QDbQY0K3d3GZAEcqBhyF/M+d0P+7UTd5LDH9ZAx+Sszq81mpKeFXSz4m5fqFx?##
+?@@srvzkutvkAGFZLl3MFEsoDJiiUoJXGkDh98ojJLLr6w7I3eOjuYTiN4D42KbJHVb?##
+?@@64dgWonsjR2Pd1/34AThDxk0CQ7f9l+oT8XTC8BpYMPDTEZYhBMWIeCSfKcozWkN?##
+?@@hPkl9T5SsRkx+xvLoXVIu7GYPS0sAheaUzHLdAa0RgutI+BeOFQAq/Rdl91WmjZH?##
+?@@mBNmquSEwu6z14UWJGEVL8mTwALYV7NlI2Q+XDB2gDCuwLyhZ5fnXuxmXWYQsWUh?##
+?@@rISUTFzOp3J12RXL+IJ+5hul/KnsP9dwc4XVr4UPpOSbvNjEHh/CtiUUFbz82DBT?##
+?@@DhQf64zBfhqQs1MI6maAUzVSYGsYtL4MkzuvA9PBjU2mzoSNSDLe4JNIsIHTggVD?##
+?@@fgz9idPrJY2iE2qRvEq42fk6sK9PcWRYWv/Hz6GLPbX4VFCh7uYIIgOW4Ez7AFIw?##
+?@@zofwXdLQtDsG0keFHBwvzCnsWuUhCZUgRuAnjnl9+7NaJv3c3FxtH3VZE1gQ85Py?##
+?@@BSaeFhqG/Varz2h2OfE47iXBvN5eWoS7/7YHWH3fcGHCu8/6p4TDYlIIQNjkZxqK?##
+?@@Xhb6ABduazAkmoN6bwJ6yw0aOuLhu2mptM0CuJj37wOiMgTA5fwPt2xjOv+gXkEu?##
+?@@axt8f4o2TsPXxSqiRCi3SKzjvQTSJS5vOwGycZ+iCzQdCNSL51oE5vUrkkCFmqB7?##
+?@@TIDrlR/mbijadqqoFG4vWN3QrUOAnihKDj+FgxBzOpuiI+lI+bxk8zf8OzJ2fnOi?##
+?@@/avxzPJHUprZRvV0ptMkpvuFPS2x32cAKjQTWJzwVMG+s6qrZgHaZRjgoMnZhFpP?##
+?@@1uWEtIPxf2zF5krfMvNnnDgmHsRyiHXtBr6EabsYC6P2zFNnmCiDXE8J8H4mqUWU?##
+?@@tm73OT3CEEByKnoH9dxLUYD28Yrm3YzfQcAhKhTgA2IWG+iJh9x5b4Pb0JQSLG3P?##
+?@@rhTrX7egFrX1MWZkv0t1sbdYZg5Goh4H/rYg5i+/KwlnYn1oEec8D38/T1LubeoY?##
+?@@Ul6+c6WkGCONYhe21knLYPe5p8fX3NaQYZz4nX9ym8hqx6teE9WI+WsjLdVrLHEN?##
+?@@JZ2tXk5pkSeE4qlHQuAxp+/LMuLDcV0/eyF/eYgjtXGiyaMK1W+8djU2/ayT70Vc?##
+?@@wZgSJ4Jqaa3/sqREOgshjCDIerr/DsuqUyBEnAe4spBxZfaLpcjmvChHYj1vlMYl?##
+?@@PmbIosT2SY5tPeUg0MdF25M5VtaypQfEK7l/q5bf+zlxBk9TqUZygfKLbwiLMFBT?##
+?@@ADrN6PHlP/uLY5QfFy8ORd29LFY+GsRnYzPdNinTous2OcMxxY3n7h0bLVgEo4t6?##
+?@@6V508OraZNzf7YHGqfxmizbnb+CphVDkPKM5wrqowYYfr4arMVuXb+p0mbKoi9kF?##
+?@@6mH89UjwC0cJeA1+nAL0edQRoZFV2WmddoilnjcVkt8kvPXj8e/wN4yffsUAdJ/H?##
+?@@XycQ/LI9woLVd58wgt8PAkle2MI0xi0zDH/DpthWMm6xX8WUi9cE3eXzoP0zvlAU?##
+?@@--END ENCRYPTION: "SMX_AES Compensator 27 January 2015", 75 lines, chksum 88a5b03
+*
+
+.ENDS Compensator_27_January_2015

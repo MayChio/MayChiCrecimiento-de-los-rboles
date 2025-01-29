@@ -1,0 +1,2 @@
+RUN groupCurves=False NumCores=1 ShowConsole=False
+STEP Type=Parameter Parameter=ILOAD SweepType=List Values=5,7,11

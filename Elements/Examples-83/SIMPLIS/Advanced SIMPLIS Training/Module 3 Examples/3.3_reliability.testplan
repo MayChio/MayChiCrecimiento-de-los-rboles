@@ -1,0 +1,11 @@
+***					
+*** short_or_open_testplan					
+***					
+*?@ Label	LoadComponentValues	"Change( R1.ACTION , NOTHING )"	"Change( R2.ACTION , NOTHING )"	"Change( R3.ACTION , NOTHING )"	Include
+Reliability|Default	lcv/3.3_reliability.compvalues.txt				
+Reliability|Short R1		SHORT			short_or_open.lb
+Reliability|Open R1		OPEN			short_or_open.lb
+Reliability|Short R2			SHORT		short_or_open.lb
+Reliability|Open R2			OPEN		short_or_open.lb
+Reliability|Short R3				SHORT	short_or_open.lb
+Reliability|Open R3				OPEN	short_or_open.lb

@@ -1,0 +1,23 @@
+.IF { Search( Vector(4)+1 , CASE ) < 0 }
+	.ERROR "Incorrect CASE parameter: {CASE}, Valid values are 1,2,3,4"
+.ENDIF
+
+.IF { CASE == 1 } 
+	.VAR L_NOM = 680n
+	.VAR C_NOM = 220u
+.ENDIF
+
+.IF { CASE == 2 } 
+	.VAR L_NOM = 660n
+	.VAR C_NOM = 220u
+.ENDIF
+
+.IF { CASE == 3 } 
+	.VAR L_NOM = 680n
+	.VAR C_NOM = 210u
+.ENDIF
+
+.IF { CASE == 4 } 
+	.VAR L_NOM = 680n
+	.VAR C_NOM = 240u
+.ENDIF

@@ -1,0 +1,125 @@
+SIMetrixFile type=schematic format=1.0 revision=8
+.Component
+.Symbol
+Attributes format=1.0 revision=8 name="component" description="" track=1
+Arc l=-72 t=300 r=72 b=444 x1=0 y1=444 x2=0 y2=444 
+Arc l=-72 t=396 r=72 b=540 x1=0 y1=540 x2=0 y2=540 
+Segment x1=0 y1=300 x2=0 y2=0 
+Segment x1=-240 y1=120 x2=240 y2=120 
+Segment x1=-240 y1=120 x2=-240 y2=720 
+Segment x1=240 y1=120 x2=240 y2=720 
+Segment x1=-120 y1=300 x2=-120 y2=540 
+Segment x1=-120 y1=540 x2=-144 y2=480 
+Segment x1=-120 y1=540 x2=-96 y2=480 
+Segment x1=0 y1=540 x2=0 y2=840 
+Segment x1=240 y1=720 x2=-240 y2=720 
+Pin name="N" order=2 x=0 y=840 visible=0
+Pin name="P" order=1 x=0 y=0 visible=0
+Property name="DC_CURRENT" value="1" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="DESCRIPTIONS" value="Edit Constant Current Load,Constant Current Load" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="GROUPS" value="Load Parameters:GROUP:Load Parameters:0:0:0:0:0:0:0" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="LABELS" value="Load Parameters:Load Parameters:DC Current:0:0:A:REAL:1p:1:DC Current for a constant current type load.,Load Parameters:Load Parameters:Saturation Voltage:1:0:V:REAL:1p|9999:1:The saturation voltage for the constant current type load.,Load Parameters:Load Parameters:Use Shunt Resistance?:2:0::GROUPCHECK::0:The shunt resistance for the constant voltage load.,Load Parameters:Use Shunt Resistance?:Shunt Resistance:1:0:__Ohms__:REAL:1p:1:The leakage resistance for the constant voltage load." autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="MODEL" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="PARAMETERS" value="DC_CURRENT=1 SAT_VOLTAGE=20m USE_RSHUNT=1 RSHUNT=10Meg" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="REF" value="LOAD?" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Property name="RSHUNT" value="10Meg" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="SAT_VOLTAGE" value="20m" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> <value> vars: DC_CURRENT=%DC_CURRENT% SAT_VOLTAGE=%SAT_VOLTAGE% USE_RSHUNT=%USE_RSHUNT% RSHUNT=%RSHUNT%" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Property name="SIMULATOR" value="SIMPLIS" autopos=0 x=-240 y=898 align=LeftBase protected=1 visible=0 font=Default order=-1
+Property name="TABS" value="Load Parameters" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="USE_RSHUNT" value="1" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="VALUESCRIPT" value="edit_parameterised_multi_prop_device_tab_value_dialog 1" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+.EndSymbol
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes format=1.0 revision=8 name="modport" description="Module Port" catalog="Connections;Terminals" track=1
+FilledPoly x="120,120,299,299,120,120" y="0,35,35,-35,-35,0"
+Segment x1=120 y1=-36 x2=300 y2=-36 
+Segment x1=120 y1=-36 x2=120 y2=36 
+Segment x1=300 y1=-36 x2=300 y2=36 
+Segment x1=0 y1=0 x2=120 y2=0 
+Segment x1=120 y1=36 x2=300 y2=36 
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="netname" value="" autopos=1 normal=Left rotated=Left protected=1 font=Default order=-1
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="VALUE" value="VOUT" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+.EndSymbol
+.Symbol
+Attributes format=1.0 revision=8 name="simplis_pwlr_box" description="VPWL Resistor (Box shape)" catalog="Simplis;Primitives" track=1
+Segment x1=0 y1=90 x2=0 y2=0 
+Segment x1=36 y1=72 x2=36 y2=24 
+Segment x1=12 y1=48 x2=60 y2=48 
+Segment x1=-72 y1=90 x2=72 y2=90 
+Segment x1=-72 y1=270 x2=-72 y2=90 
+Segment x1=72 y1=90 x2=72 y2=270 
+Segment x1=48 y1=168 x2=60 y2=108 
+Segment x1=-48 y1=192 x2=48 y2=168 
+Segment x1=-48 y1=192 x2=-60 y2=252 
+Segment x1=72 y1=270 x2=-72 y2=270 
+Segment x1=0 y1=270 x2=0 y2=360 
+Pin name="N" order=2 x=0 y=360 visible=0
+Pin name="P" order=1 x=0 y=0 visible=0
+Property name="MODEL" value="!R" autopos=0 x=0 y=840 align=LeftBase protected=1 visible=0 font=Default order=-1
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %REF%$TP_SSPWLR IC=<ifd:IC:%IC%:1> ;.MODEL %REF%$TP_SSPWLR VPWLR %VALUE%" autopos=0 x=0 y=480 align=LeftBase visible=0 font=Default order=-1
+Property name="SIMULATOR" value="SIMPLIS" autopos=0 x=0 y=600 align=LeftBase protected=1 visible=0 font=Default order=-1
+Property name="VALUE" value="NSEG=2 X0=0 Y0=0 X1=1 Y1=1 X2=2 Y2=2" autopos=1 normal=Right rotated=Top visible=0 font=Default order=-1
+Property name="VALUESCRIPT" value="edit_pwlr 'dev'" autopos=0 x=0 y=720 align=LeftBase protected=1 visible=0 font=Default order=-1
+Property name="REF" value="R?" autopos=1 normal=Right rotated=Bottom font=Default order=1
+Property name="IC" value="1" autopos=1 normal=Right rotated=Top font=Default displayName=1 order=2
+.EndSymbol
+.EndSymbolLibrary
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=7320 y=4080 orient=N270 
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultInstance" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="VALUE" value="P" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Netnames pin1="#P"
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=7320 y=4920 orient=N90 
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultInstance" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="VALUE" value="N" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Netnames pin1="#N"
+.EndInstance
+.Instance
+Attributes type=symbol name="simplis_pwlr_box" selected=0 protected=0 x=7320 y=4320 orient=N0 
+Property name="IC" value="1" autopos=1 normal=Right rotated=Top font=Default displayName=1 order=-1
+Property name="REF" value="R1" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %REF%$TP_SSPWLR IC=<ifd:IC:%IC%:1> ;.MODEL %REF%$TP_SSPWLR VPWLR %VALUE%" autopos=0 x=0 y=480 align=LeftBase visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultInstance" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="VALUE" value="NSEG=3 X0=0 Y0=0 X1={SAT_VOLTAGE} Y1={DC_CURRENT} X2={VOLTAGE_3} Y2={CURRENT_3} X3={VOLTAGE_4} Y3={CURRENT_4} " autopos=1 normal=Right rotated=Top visible=0 font=Default order=-1
+Netnames pin1="#P" pin2="#N"
+.EndInstance
+Wire x1=7320 y1=4080 x2=7320 y2=4320 net="#P" branch="+:R1#P"
+.Wire
+Attributes x1=7320 y1=4080 x2=7320 y2=4320 
+Property name="BranchFormula" value="+:R1#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=7320 y1=4680 x2=7320 y2=4920 net="#N" branch="-:R1#N"
+.Wire
+Attributes x1=7320 y1=4680 x2=7320 y2=4920 
+Property name="BranchFormula" value="-:R1#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+.ImageAnnotation
+Attributes t=4080 b=4915 l=7800 r=8661 orient=N0 x=7800 y=4080  data="iVBORw0KGgoAAAANSUhEUgAAAc4AAAHACAIAAACkjh+XAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAgAElEQVR4nO3dPY/byL7n8T8NZ54XsMlmEtwdOJiQim3gSnCgSRq4iZMFqODgAlLQJ/Mc2J2dDiTg4AQtYBMnA3QyChriAnbcDCfooG2I2ST7Au4Am3GD0gMfihIlkSw+fD9wYEkk/0V290+lYpGygiCQclmWJSLl1wWAIqhMCwvnm3rxRZkNqojkcaF6G6obbwDVm1o9SLBCRCwRyzLVqwWA1gheGqtsbgDBMvEGQ3Xj1Y03gOptqL7tSqqKlmWJBCJiLGoBoEmSZ6G2ORsERC0AnCHWjQ0/HwTBdriUqAWAo6Ul7PbV2PNELQBktT9ht8skXyVqAeCALAm7XXK7jFpJPSJqASDVUZdc7ZnqQNQCQFz2bmzYnoWJWgBYOy1hsyBqAbRdEQkbHqgVohZAaxXXh00iagG0Tvn3FyRqAbRFmd3YGKIWQPMZv002UQugyYyHrNLGW4MDaA/jIasQtQCQs9hMLyFqUQ3uyLJGrj/rWZY1cjUL+LNe9BV3FP5Okdg67siyejM//pQlIpbOdvX1VrVN2LRiJ1oi2qLUxTIdi8OrRKtFlvdnveQWfBHZPBnbjeQ2Di5wcGfVFuKNWO9a6sr7jv2hA+XPesce6XIlvxWnaKbqhhtA9SpVX01tsaerIAiCpSMizlK7yO75pSORxeKPg6Ujmy3qGrC/iqNfeTW1JfJC/Im0rcar76f2Rdf4zC1ZTe3kFlahzWoWUJvYtP7gAgd3Vi2+W0Ttu+bncvCopdEcqKWTsqnyf+1FglhNerUwzb2dyPTLuCMi0h86IvNFvGPj3k48cYZ99WA0mIuzDO76m5f7d8HSkfkge4dIy3+498QZXl/a4t0/xPtj3YlnT1ePqp0iIp3x42pqe5Pb86rGygzmh1o5+6BpydIRb/Lh9E5dZ/xlasv8JnULBxfQcBznuBWy0x6o/vXULqrg2YhamOWOBnP76v0mNvrXUzuRte5iLvb0ui8i4s9udg921Hpn/Zlt8rwz/ujEs1a14Msu3ZTO+yvbuezm9bftz27m9nTqHG7lx3hL+tfLZTh9q2F4PZVz3gDSpB2ozvijc9Y7Tj6SA7VC1MIwdzGXUNKq9IplbWSZ1bMn8uZ1IlM6r9+IeM+rs1qy7jn3h45EeqvuYq4tKp3x4924k0/A+bMPE5l+Gb8+2Er7sptsSb9/XjNWz96ZC2io7Muz3y/7D1R/mHibrAiiFiYlklaTtZFl/B9P+qiR7qUt8vTj1D+yUNImxjHSiybMByee59nkR5a81IX+mfzZzVw0veW9C2TZ2f7d0pnfzPJs6d4D1dUN/1QBUQuD/B9PySdjWesu5vsiIKeGxIYlUsaMN9JP/2vOytz1U7YSqZ89aHPiTbqhfehOvMjwd5YFMu5s/3oqk7xaffBAnf3ppihELUxL9NE644/OJuf82c1829mUfX9JaSMLWfgP9140WwZzke3Yb6Jo/26dLJsT7ec5ImjP7LuHxKZOJIe/Dy6QVWf80RGRHEYRshyo7mUeP5L8EbUwTRMc/aGjcm49KSD0N56WNUd8yE9wbydecnbUdPdJNL+A0/Ef7r1Qzg/mKvW1k0RT32r2zEk+pH+3mtrepJu68sEFDlcQkfOnBmQ6UKcMKZeBqIVBqcGxPrvhPtx7sd6Umh+QONOScmI+EzVMG1+38/7K3hRKKZqTzvgxnPGbyaf6+QQpUy38h3tv0/FULY8d1ZVIfFQ83IIvU3vfbLmDC2Qx+XCjGS86QpYDdc5bbi600w+EqIVZ/aGj7y72r6e2NxlMvGQ89O9WU3s+CPXg3JE1mIuzzDIqmhQ5IRaiPveuBzI2RWNXTHUnXnqAFaMz/jK1vUk3enFXd+LtJqOpEZhBaAl3NBCRPe9E653dF7YHFjjoo+N5xXc4V8+l/0QyOuICiJyYqhtuANUrUz3twq7kNVG6l9fiSy11U1Pt6UqSV4tpL62KbCf8YmzDkfNC2qLh5mU8+PEjor2eKjZInHp1226BUPWUfd5df3VwgYM7G728b73vicOZtnfZ6H519BeMlflrn7xOTEn9Kt3iWKbvaWalf4Ew1Q1Ud0fWQOInt8tsQFlOru7PerevH888QDXd96P4s173/ip5KUeZ+84AAqqq0pdTVoH/cC8GBx/rw72deIXPC9wrLWeFqEUFdMaPyzdnnN+uAX/WS72v2KHbUbm391elzrg1SX9PsSwHyp/1Bk/TVRkfjk7CAALV21LdeAOo3vjq9GoBwCSiFgBysKdLK0QtAJSAqAWAwhG1AFA4ohYACkfUAkDhiFoAKJyxSxgAoEFUkOrDLQiCl2W2JVbbVOmWXLhC9ao1gOoNrr6ZVJtahQEEACgcUQsAhSNqAeAs+y/JVYhaACgcUQsAhSNqAaBwRC0AnC7LQK0QtQBQAqIWAApH1AJA4YhaACgcUQsAhSNqAeBEGacfCFELACUgagGgcEQtABSOqAWAU2QfqBWiFgBKQNQCQOGIWgAoHFELAEc7aqBWiFoAKAFRCwCFI2oBoHBELQAUjqgFgMIRtQBQOKIWAI5z7EwvIWoBoARELQAUjqgFgMIRtQBwhBMGaoWoBYASELUAUDiiFgAKR9QCQOGIWgAoHFELAFmdNv1AiFoAKIEVnJDPZ5ZU7wsAUD8qMI8LsSAIXhbRloy1TZW2LANvMFQ3Xt14A6jegOqbAYSjt8YAAgBkcvJArRC1AFACohYACkfUAkDhiFoAOOycgVohagGgBEQtABSOqAWAwhG1AFA4ohYACkfUAkDhiFoAOODMmV5C1AJACYhaACgcUQsAhSNqAWCf8wdqhagFgBIQtQBQOKIWAApH1AJAqlwGaoWoBYASELUAUDiiFgAKR9QCQOGIWgAoHFELAHp5TT8QohYASkDUAkDhiFoAKBxRCwAaOQ7UClELACUgagGgcEQtABSOqAWAwhG1AFA4ohYA4vKdfiBELQCUgKgFgMIRtQBQOKIWAApnBTkO/GYsqQacAaCiVCrmllRBELzMa1sn1DZV2rIMvMFQ3Xh14w2gel2qb6Yf5NlgBhAAoHBELQAUjqgFgJ3cL15QiFoAKBxRCwCFI2oBoHBELQAUjqgFgMIRtQCwVtD0AyFqAaAERC0AFI6ohZY7sqyR6896lmWNXM0C/qwXfcUdWSGxddyRZfVmiadSbVdfL6VtwqYVO72Zv7eCiCQX23cItNs9uHh8DX/WS+z+5klfsxvJbRxcIP1wbkqISHJH1M/Fz/azOPJA+bNexiPdDkHpTNUNN4Dqe62mttjTVRAEwdIREWepXWT3/NKRyGLxx8HSEbGnqdX3V3Ec2TQn8WL4hfgTya1mP/iRddOal7Ulq6md3P31k6v4/yOb2BQ9uMDhNq7/4KOLLJOH9tCGYvYeqKWzeViHX/tAJCiumUQt1ROWzt68SjyrXST65GlRu85zTc6sV0kEcOQd4PSojb6RJB8nF060JNy+U6L2yAWyRa3jONGtnBu1hw7U9k27Br/2BUctAwiIcUeDuX31vrN+2L+e2jJfxMYDFnOxp9d9ERF/drN7sKPWuznnA6R7O/HEGfY744+OePcPkcGBxVzs6ZdxJ7pK5/2V7Vx2z/3U2hk/BsFd//CC21Z+jLekf71crh7jz5o2vJ7K5EN+n+oPHajO+KPj5VmwvohaRLmLuYSSVqVXLGsjy6yePZE3rxOZ0nn9RsR7XsWfP6ol4gz7ItIfOuJNbt3oa5qi0hk/3o07+QacP/sw8ZJvJqGW2JfdZEv6/fOasXr2zlxAQ2Xf7aHh19PoDlR/6Ih3/1BIvVohahGRSFpN1kaW8X886aNGupe2yNOPUzs0oaRVf7ChNqQXTZgPEqfFDp7nCTViZFlWd+JpOtBhutA/kz+7mYumt7x3gcjOppzU6t8tnfM+beikH6jupS3efb7VilDcjFqFqEWY/+Mp+WQsa93FfF8E5NSQ2LBELGvj0k//a8ZqM44MiIj074IgCILlm0m38LPp3qQb2ofuxHOW0aYeXEA3xKrZ2X7Oowgi+w6U+nSTZ616ImqRkOijdcYfnU3O+bOb+bazKfvGCdJGFrLwH+69aLYM5iLbsd9E0fVf+ua8fN7611M7Plq8dmbfPSR2KjI5YnFwgayKG0XQHajuZRE/ktohapGgCY7+0FE55z/ce+GkTc+aIz7kJ7i3E097wn3zV5xfwGWT/oaS+sqeOcmH9O9WU9ubdFNXPrjA4QpFjCKI9nCcMqTcQEQtwlKDY312w324j5/3UPMDEn2klBPzmahh2vi6nfdX9qZQStG8JK7P2PO+kTLVwn+49zYdT9Xy5+gCq2cvPiq+0xl/mdoyH6Rm6cEFDlGjCDea8aJjZDhQ6pnzyjRCbtPGMjNVN9wAqqfSzLRUNh/NdS/GptOfeQlD+szOyCuJCwfWZfdMNc188GPzQ1MPSkpLUpu2ijzeFkifObxe5uACGefVJq5fSP5Aj7uE4fCBOvCjL0WW6oVOqg24hIHqCQeyNjVxIqOk+lSI0V8nob8iILygJsI2IhGhLZr6dqGvpVtBG0axQWLd1W3pTUjZZ9UCe7o6vMDBndVErf46kCOvFgv2HKjNi86y+r/2hUetgS9nV3Nuyq8bbgDV93FH1kDiJ7dLq16kvBrgz3q3rx+PPUA1+NHnzZ/1uvdXq8dxt9r7XvRML2GsFhr966ldyDmTpvAf7uW0830t495OvMLnBdYEUYukzvhx+eaM89s1oL9VVnJaro57e3+194qGJjn9QPmz3uBpusr/w1E9MYBA9bZUN94Aqle2OgMIAFCsEnJWiFoAKAFRC6BUagixbYhaAKUKgqCFaUvUAkDhiFoAZWthx5aoBWBARdK2nOkHQtQCMKUiaVsOohYACkfUAjCmPR1bohaASQbTtrSBWiFqARjXhr6tsdvNAIBpKv0KT6QgCF7qX3FH6htKRcSerh4LuGFclW/zQ/VGVjfeAKqfv0y+1TcDCGUclkTUFh+yAJCkhhFKez8oc6BWwmO161sAD+Yi4kyndvq3eQJAERo8aPtCRNyRZVlWd+Jtv73t7r3pdgFAg7wQcRfz7fdc8uUUAExqasf2hfrSPm/SzfStSgBQsEam7QsR6Ywfg0B9Yfs6ckcPptsFoMWal7aJ833+rNedeCJS2AwEvsaR6u1sANXLWSvLdkqefiCaq8USXVzGFJrIvYx8y/To8/aVb7OfLOvy8551i/dt9lO4SVufR9alK+L/8pPmm7J/+iX2i5q+j2oLP82+RZYPP5ltAav3S3SJz5eW9dPs2+eR9ru8het3Wiztwtz+XSRwR26prUKRPo8sa/DnUJ0IDYIg+HQx/0ciNcxxL99N/tK98Pm3+cV/bk7cvpp+DXa+Du2/Ft3dO0TKPubdVG/xX7q/jF/vdi375IjIxadA9arMduprp0nDCPvvgaACdzW1S2oNSvD5t7m8mi5+3w0N/fq8vEhLjZJ9HlnW4Lv+Nfe3785//qp/7e3vX4av5Ps/1/3QtH0U+Y88W3vhXHy/qcxbVDM1Jm2z3G6mM35kElhj/PzHn8kn+89BEDxrfsjffunpPqG7l5Z1+Xn3CT324T1lrUO+zX76x/zVcPV1qHtv/7z4fjFMSdoYP20fRf5P1sZkMvzXUBbDGWFbqGakLXf2aps/fv+7I39N3sUHIjU+X1rvFjJUH9S/TmXRDefm938M5JPmpW+/9FLWckVEN4a5GUV9O/7vIPjv3/VnYiOjBxqr77tBh072fTzT298/Xvw1+S+zQ9s4UvnnxISobaNf74JPjvw1ebdOupRR2m+zf36XV8Mvv78VEZG348XQ/mvxYbfwxfL51/BLt59F5NtsuPASa91+FhHpi0igcZehr+r+9t2+SB9r/fbLzXeRi7+P32bfx92rSnehHSE+oP/8ydkOXKAgDejYErWttDtvs7wQb/FOF0aPz3+J/e5vuz7m279dvRLv++P6YbiP+fbnNyJPf3xLW2v+25n9vm8//nx19be3oWeiQflu4V18Cp7Dma3bx8g2oyfWgmA1fHVS2369HspkmH2cBCepe9q+ULdAYEZXW/Wf1ynjLd7p5lcdwfv+KN/+eJJ1rm1TUD+d4Cjf/n0v796HkzYUlMsLEXk1/Vdq33i3jyL/UcBn/c7vf3c2PXcUqNZp+0JNM/giH9YftMjchhvqps12fv+7s+6W7vH4vDc07Yue6t7aw2h3MQhUf/PQWG0q/99fJdxTjuo/f52++mvy7nIzg0I/NVjt4/89sI+n+fXu08X8n3Rs68DIQK1sBxDWFy6Quc33//6nyPff4vO6vv3xJPLm53C/sXf5Sryv//ajy+wGTP/8w9esnlhLPo82oxOnjtV+e/gq0dGDmLfjxdCW74N1vL59nb6P/+PnPdvZ6fztnS1/PT9Gnlx9/0texTrXG7/+ayqLD//UzHxAnmrcsdX96kcm025u+pWb/XVL0PbqnxyR6EjlJ0dEXqkJ/1+nrzZT7j9dyK6L+nX6SkQu1F02lxcSeim8emwtteR6raz7/nVoizifQg9fDcO/hKvhq+RIq2rSZq2UfRT5OX0LsSfX4xLbZT5dhLavFt7sV2iBxGYTlzCY0qTqx24tvLxIYORIHK65mtrb+9jmU5KoNV9dBdNW6CN/KGqDdeqthfJueSHy6sLZnkbaLp9cK5xHJ0XtavgqNiKhDcpkvGr2cdOALFEbxE+UJV+6iP1ZxNN52yqiNvfqR22wClFr7Gscy68bbgDVz+NeWoM/h6u0ObAFVz9dIw4+1Y/eYHhhw2O1AFAjQd0GbYlaALV0Qtqa6tKK5n61JZRkAIHqrWwA1U1tebuMwailVwugxuoykhCOWnekm03rz3rcrxYAzkGvFnVSi/4LSpaxY2tw9EBErCBY7b5NLEW+XzLGWC3VTW2h7rtP9dNKqJeMR+22sjuybi4L+ebGaEmiluqGtlD33af6aVWqFrVllSRqqW5oC3XffaofVSU08cB81MbGav3Z7ptKIvde4rQYgIqLDdqGH5rNWRF5GX7gjroTz1kGfJMYquLgAFzJ7UHFqXit4C9GZLLXYi729JqcBVBf1Zxpy2QvVFran001ey5AmnDUdi9t8Z5XxtoCACeJvR9v36Gr08MNR21n/NGR+YBTYKiU5F8LXVrEqF+StHNiVRC9MHcwF5H5gBkIqJaq/dmggtZ34A4FbujXRt0d3FzjmFdL9bpU30yNPOuXp767T/Vjy0nFovbl4UWACqhIx/a8JgRG96BV1ddXLmweWuoZg5IzENyR6oL3Zr74sx5fnZs/yzL2T/3G17T6xukbOX/3USuB8YTdivZq3ZE1eJqugtVDr3svIp3xl+l9t9uT4u+M0A7qr910K+orEDGcdud8CG3VR/gqVVcXNRgqvmvFzmpqr7+KfPe/6P9zYXqPzarQ2yyAcgRBEO7Vrp49kSvdgt7zSiTfbm0732DDn0CNtKHFXRvzDaB6O6srhy9hWD17Yl92y2xUw+3uNmS6JQBKcuASBn/WG8zF+chIbQ6IVqC1kv1qd2QN5ruH+X4Dg0iL59VuonY9PzQwcQuiln+Oa/PuU91U9XUbuIShrKK7/4ZDtvyp3W078tVpANXbWV0JDyD4sx5X4BYtfslgRWbmAyhUOGpXz548/eCChfyRpUDLxWcgoDhpn2Do2AKNF52B8GUqkw9ciFs+4wNJAAoV+3Ly8NyDsDy/cKxtp8XSToiV3xIjFatT3XgDqN7O6us2MAOh+HIiIkEgyQleRG2rGkD1dlZXmIFQLONX4gKoAmYglIGMBVqOGQgFOjitgLkHQEswA6FwdGkBMAOh0EIiiaiNVefC3PY0gOrtrL5uAzMQCquy/g9RW5HqxhtA9XZWV5LfLYY8Hfz5MlwLtEE4ajdf4KjBHLDjEJ4Awg71q92RNZAcB2qlHQMI2lHatOplfrpp+ee4Nu8+1U1VX7fhYAtyD1uilqhtZwOo3s7qyuGx2u6lLfMFAwjZHTt6wHAt0HicFiuK6TdRABVyMGrd24knzjDHsdpmo3sKIOll6P8plzDY01WeZ8VagS4tgDAuYch3y+v/7Nl8WvWyLqxo9dmJNu8+1U1VVxirzZ/pnymAytlGrT/rRa9U8Gc9y+px7xkAOJuKWndkdScSHZPtjB+D5ZtJl7gtB1O+gAazgiBwR9bgabp6HHc0C+x98bSSDR2r3XPZQsbqpVxb0eohszbvPtVNVVdeiPg/nsS+ep8Spf3rqe3dP9CxBYCTvVDfc/PmdWqntfP6jXjPqzIbVUN89Aewx/q02J6vFPN/PJXVmNo78zMKw7VAU70Q6Q+dfd3W1bMn9mW3zEbVDfEIYD8rCALxZ73u5I327l17Xjq5ZONOi2U8IZaletHj9y0/O9Hm3ae6qerKCxGRzvhx6cwH8Wld/qyXnAMGADhWOOz9Wa878UIv5vnljaGSzerVZrkY96jqhb4Dt7xz0ebdp7qp6us2cA+Es7cmcswJMaLWVHXjDaB6O6sr3APhLJwQA5AFUZsD0++XAKrO2ABCU6ij16Q9ApCzIAheHl6qsNqmSuc1cBM6IXbE1rJUL/KOuq0eMmvz7lPdVHWFAYRzmf4JAqgBovZEjRoFAVAwovYsBXVpuRkC0DBE7SmIQQBHIWpPxygtgIyIWgAoHFF7tHJGDxiuBZqEqD1RCaMHxmcCAsgLUXscOpoATkDUnoLuJoCjELVHMNqldUeWNXIjD0NCr8TWCb/ojkTESqHfhIi6R3zK6/6sF30l2q7kOvH7z8f2I6VJ8R3RNnArWiJcIbL7sZbsbVGmZVMWSrdndX/WS24w/GRsn5PbiC+g9j28ydRjHykRb4Q7sqzezD/wg/NnveOPR7MFpTNVN9yAU1cMzm/4SdVXU1vs6Wr9aOmIhB5qntiuJI7jhF/aVV86IuIss9VPW1iVWIaXCi0WfxyIrplZq0R3JPpi+IX4E+GtZjn4mlaoTeqe21M3KVz90OqrqZ3cWPhJzQLRZsYXEJHYfhz6FVCLxxdZJn8O+g0tndCTNf2Tz7MNBkoStcdaOuFfbs3vemo+OMvoX9yJUbvnj2n7rHaR6JOnRa12R8KrpLzJaNp1YtQmn9U2JqU1W7vqh1c/JWr3LyAisSczRa3jONEymaM20kGo6Z98jhhAqD53NJjbV+8764fab4vv3wVB9NuJ3NuJJ86w3xl/dMS7fzjvs1z/emrLfBH9AO8u5mJPr/siIv7sZvcgvt7NOZ8k9+2IasGXcSe6Suf9le1cdvP8+BrdEdWmj/G6/evlcvUYfzbpzNXLNbyeyuTDKT/Bzvij4522agMRtVkd+8U2uXEXcwklrajImXT3j4S5i7mIM+zL+tvnJ7epQ7GZdN5fxbM20rDVsyfy5nUiJjqv34h4z6uTC+/bEXcx1xaVzvjxbtzJNbPCO+Iu5iL2ZTe5UL+foeiZq++xevbOXEBDJeZJvz/9YQ5v8w1B1FZdPGlFpH8XLB3xJt300zGhgFK/8Iku6bESWRtpmP/jSZ8e0r20RZ5+nPrXtm9H0osmzAehU0ObUzcnNmlNF/Hlra7jz27moukt711gfWSiJ7Vi6/Xvls5pH026lzZZqxC1mZibe6AdLlgPGARBEOxCN3LyOfppvoisdRfzfX/V+ThyR9LP6GvGagv4MujS7d5uLcuyuhMv/iXXoQVERLOAbqxWc2T6J44inP2hpjmI2iMYm067rwekQnc1tb1Jd90d8R/uveif4WAucuaQ6XrkYp1z/uxmvu1syr4/qbSRhSwO7Eii6PYNaHPuvCBn9tTPXD0kMSslPlYeWkC0C2R16ihC97LQn0SNELV1EP6zTMxkFZF1DK6Xc28nnvbctHf/cF47+kNH5Zz/cO+FkzY9Po74kJ+wb0f8fUWLEB7JSH1j2TMDOeTM1bX6d5F3W80CIrJ3gcMVThlFOGVwuJmI2sOMXrmQ+LPsvH6j+wzt/3hadx5VJsQ/2nfeX9niTc5szfo0h/tw78U6SOuTdfFuT8q59kz27sitm160CJEx47SJFf7DvZel55hhdbWbsThePXvxcfudzvjL1Jb5YE+WHlzgYLNl8uFGO6KV4px32qY5Y6LYiUzVDTfgyOVzmE57cnXNPEZ1aUDKNQzpkyXVaqfNq93afDTXzR6Nz/Q/7xKGAzsSmamfPBj62aNZDr6mbmJHdHXzvYQhSM7SjTYsfZrxehntvNrInmSbV6s5Ehnn1QahX956/ckX0gYDJWsVtSpnTUat9pKFze/8xuZ1/dz4yDoZ56+nOZAokVHS+FLaN3v9dV2Hd0STrhuR3Yq9pqmsifg4/YGKDQnvi9n17h+5enSJyAIpB2j3NqyN2sj79KEjo4la/WUaqb9LuwvG4vteLrPVFQPf2atOhpZfN9yA7NVzn057VPU1d2QNJH7quLTq+TFbfU8D/Fnv9vVj0XMS2nbw/Vmve3+lLspo274nMVa7T1Vumdi/ntrnzh9AOv/hXhhPzJt7O/EKnw5YH0TtYabfDkWkM35cvjnj7PFh+htFpV4i0Sju7f1V4uLec6QcTBFp/sFc82e9wdN01YTJyzlhAGH/kiJ5R22bP0kZ/xzX5t2nuqnqCr3aVFUZPQBQf0TtAabfCwE0AVGrR5cWQI6I2n3o0gLIBVGrQZcWQL6I2lR0aQHkhagFgMIRtXGMHgDIHVGrx+gBgBwRtRF0aQEUgajVoEsLIF9E7Q5dWgAFIWrj6NICyB1RCwCFM3YTxerZHodqNg9AXQVB8NJgbVOltTevDN2attiGtfnGncZvG9rm3ae6qeoKAwgAUDiiVoS5BwAKRtTumP6EAaCxiFoAKBxRy+gBgMIRtWuMHgAoTtujli4tgBK0PWoVurQACtXqqKVLC6AcrY5ahS4tgKIRtQBQuPZGLaMHAErT3qhVGD0AUIKWRi1dWgBlamnUKnRpAZSjnVFLxAIoVTujVoQuLYAStWFiDpYAAAb6SURBVDdqAaA0rYtaTogBKF/rolZh9ABAmdoVtXRpARjRrqjdIHEBlKqdUQsApWpR1DJ6AMCUFkWtwgkxAOVrS9TSpQVgUFuiVqFLC8CIdkUtABjRiqhl9ACAWa2IWoXRAwCmtChqAcCU5kctowcAjGt+1CqMHgAwqOFRS5cWQBU0PGoVurQAzGpy1NKlBVARTY5ahS4tAOOaH7UAYFxjo5bRAwDVYQWlf8C2SkpBtV8kLgDDgiB4abB2cRvfhrm2imUZeIOhuvHqxhtA9XZWVxo7gCCcEANQGQ2MWkZpAVRNA6NWoUsLoDoaG7UAUB1Ni1pGDwBUUNOiVmH0AEClNCpq6dICqKZGRa1ClxZA1TQwagGgapoTtYweAKis5kStwugBgApqSNTSpQVQZQ2JWoUuLYBqalTUAkA1NSFqGT0AUHFNiFqF0QMAldWcqAWAyqp91DJ6AKD6ah+1CqMHAKqs3lFLlxZALdQ7ahW6tAAqrsZRS5cWQF3UOGoVurQAqq/2UQsA1VfXqGX0AECN1DVqFUYPANRCLaOWLi2Aeqll1Cp0aQHURY2jFgDqon5Ry+gBgNqpX9QqjB4AqJGaRS1dWgB1VLOoVejSAqiXOkUtXVoANVWnqFXo0gKonfpFLQDUTm2iltEDAPVVm6hVGD0AUEf1iFq6tABqrR5Rq9ClBVBTVlB6gFmn9FFVI+ncAqifIAheGqydcUmVzEEgm8A9l2UZeIOhuvHqxhtA9XZWV+o0gAAANUXUAkDhqh61zD0A0ABVj1rF9DALAJyl0lFLlxZAM1Q6ahW6tADqrgZRCwB1V92oZfQAQGNUN2oVRg8ANEBFo5YuLYAmqWjUKnRpATRDFaOWLi2Ahqli1Cp0aQE0RnWjFgAao3JRy+gBgOapXNQqjB4AaJJqRS1dWgCNVK2oVejSAmiYCkUtXVoATVWhqFXo0gJonspFLQA0T1WiltEDAA1WlahVGD0A0EiViFq6tACarRJRq9ClBdBUFYpaAGgq81GrRg/o0gJoMPNRCwCNR9QCQOEMRy1zDwC0QSV6tQzUAmg2k1FLlxZAS5jv1dKlBdB4BUStO7K2Rm7+2weAusk7at2RNZg7yyAIgiBYOvNBWtoyegCgPawgzw/w/qzXnbxZBnf99RPuyBo8TVeP406o5DplAzE0emBZ+e411etR3XgDqN7O6kquvVr/4d4T+7K7e6Z7aYt3/+AnFmWAFkCL5D9W++Z1qAfbef0mfUnTbzMAUJJco3b17Ome9p5X0SeIWADt8rKMIvOBNQ8/VlFrGTwzZrI21Y1q8+5T3ZQgCHKN2u6lrXvajp0X21TPszQAVFj+Y7VPP0InwfwfT7HRWwBon1yjtvP+yo6OzK6eY1MSuMABQAvl26vtjD86Mh9sItQdDebifNwNHmS+wAEAmqSAmb3uyBpszoI5ocsZsl3gAADNU8A9EPp3wdYuZ4+6wAEAGqXsO3tlv8ABABqjxKjNeoEDADSN+fvVAkDjlRi1aRc4ROaCAUADld2r5QIHAC1UYtRmucABAJqo3Dvmbi5huOvHHwBAg5V+c/LUCxwAoLHMfw8EADQek71QPn/WS7vbkD/r7b0PUeh1f9brzQq+1NAdWaP/fXprgQ2iFuXrjD86IvNFMqP8h3tPnGGWYSX3dqK9JiZP7mLuDP9XHq1F2xG1MKE/1KaXezupUna5i7kz7Neltag0ohZG9K+ndiK93MVc7Om1yi41yqDEBwp+zHrWYC7iTbrbD/DhOyHHVti91Ju5s1741X1VNkmbpbXAAQFgxGpqi2xuXhwEQRAsHRF7utr8d/N/teT6wW6t0NKxB9FNLx3ZPlhNbUnZcPTBesVd8/a2FjiIqIUp8fTaZVci9XZPaKM2kYO7J+IvhTatr7JddunseZGkxZEYQIApnfdX4U/l7mL7lR2rZ0/sq/ed6KLp94DrjB/X90Zejwd0N2fMEjdJDt24U19l0yD/x1P6i5HWAhkQtTBGfT/SYj1z62Z+ximmzWhsd+I5y+1AwVrkNhvbux75P57Wg71b3d2cBv/hXsJJm2tr0UJELQzqDx2Z38z8g9OmUm52vOaOBvPtp/nkBYiRexxtt9R5/UY7BKB6x4mkPaa1QAJRC5P6Q0e8+wf34d4LncxPfBOS/+Pp0O02w5/2/Yf7TZ7GRx78H0+b/ya/b8kdrachaJM2rbVAFqWPDgNhm8/60f5lcgbC+pRU+mmx7TmrzRbXj/fMQIhUCS24mtopZ7z0rQUOImphmEqvZHaFx1u187gikbp0JLx0dH7A7kV7Oo3OHIiM6u4COTVK01oL7MftZtAu7sgaCLeUQ9kYq0WjuaPIrWLc0YCpAzCBXi0azp/1QpO47OnqkdmwKN//B2cmM7W27hE0AAAAAElFTkSuQmCC" 
+Property name="StyleNormal" value="DefaultAnnotation" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndImageAnnotation
+Text value=".VAR VOLTAGE_3 = 10000\n\n.IF { USE_RSHUNT }\n    .VAR CURRENT_3 = { DC_CURRENT + ( VOLTAGE_3 - SAT_VOLTAGE ) / RSHUNT }\n.ELSE\n    .VAR CURRENT_3 = { DC_CURRENT }\n.ENDIF\n\n.VAR VOLTAGE_4 = { VOLTAGE_3 + 1 }\n.VAR CURRENT_4 = { CURRENT_3 + 1 }\n\n.IF { DC_CURRENT <= 0 }\n   .ERROR \"The dc load current parameter (DC_CURRENT={DC_CURRENT}) for the constant_current_load subcircuit must be greater than 0.\"\n.ENDIF\n\n.IF { RSHUNT <= 0 }\n   .ERROR \"The shunt resistance parameter (RSHUNT={RSHUNT}) for the constant_current_load subcircuit must be greater than 0.\"\n.ENDIF\n\n.IF { SAT_VOLTAGE <= 0 || SAT_VOLTAGE >= VOLTAGE_3 }\n   .ERROR \"The saturation voltage parameter (SAT_VOLTAGE={SAT_VOLTAGE}) for the constant_current_load subcircuit must be greater than 0 and less than {VOLTAGE_3} volts.\"\n.ENDIF\n\n{ '*** Parameters Passed Into This Level' }\n{ '*** DC_CURRENT  : ' & DC_CURRENT }\n{ '*** SAT_VOLTAGE : ' & SAT_VOLTAGE }\n{ '*** USE_RSHUNT  : ' & USE_RSHUNT }\n{ '*** RSHUNT      : ' & RSHUNT }\n\n{ '*** Parameters Calculated In This Level' }\n{ '*** VOLTAGE_3   : ' & VOLTAGE_3 }\n{ '*** CURRENT_3   : ' & CURRENT_3 }\n{ '*** VOLTAGE_4   : ' & VOLTAGE_4 }\n{ '*** CURRENT_4   : ' & CURRENT_4 }"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+SimulatorMode value="Simplis"
+View x=2976 y=3518 zoomlevel=26 zoom=4 snapgrid=120 offsetX=-6365 offsetY=-3518
+Property name="UserVersion" value="37" type=value
+.EndSchematic
+.EndComponent

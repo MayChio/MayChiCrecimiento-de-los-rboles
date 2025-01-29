@@ -1,0 +1,105 @@
+***
+*** apps_d_4_generate_loop_comparison_plots.sxscr
+***
+
+Arguments @retval label report_dir log_file controlhandle
+
+*** only try and generate the curves if the test has 'Generate Efficiency Curves' in test Label.
+
+if StrStr( label , 'Generate Summary Curves' ) > -1 then
+
+	***
+	*** generate three curves of the multi step results, using the option usescalars=multi to read the multi-step data.
+	***
+	
+	Let source_labels = [ 'Vin Minimum' , 'Vin Nominal' , 'Vin Maximum' ]
+	Let load_labels   = [ 'Light Load'  , '50% Load'    , '100% Load'   ]
+	
+	for i = 0 to length( source_labels ) - 1
+		
+		for j = 0 to length( load_labels ) - 1
+***			[0]	Report label on the previously run test
+***			[1]	Name of the curve to extract
+***			[2]	New name for the curve
+***			[3]	Name of the graph for the new test report
+***			[4]	Grid on which to place the curve
+***			[5]	Axis on a particular grid
+***			[6]	A space-separated set of KEY=VALUE pairs that define additional parameters
+
+		Let label_to_extract = 'Ac Analysis|Bode Plot|' & source_labels[i] & '|' & load_labels[j]
+
+		*** this is a single function with line continuation
+		Let return = SimplisDVMAdvancedUtilMeasurementExtractCurve( [ 
++			label_to_extract , 
++			'DVM Gain' , 
++			'DVM Gain ' & source_labels[i] & ' ' & load_labels[j] , 
++			'DVM Gain Summary' , 
++			'A1' , 
++			'vert' , 
++			'color=SEQ:' & (i + 1) * (j + 1) ] , 
++			log_file )
+
+		*** this is a single function with line continuation
+		Let return = SimplisDVMAdvancedUtilMeasurementExtractCurve( [ 
++			label_to_extract , 
++			'DVM Phase' , 
++			'DVM Phase ' & source_labels[i] & ' ' & load_labels[j] , 
++			'DVM Phase Summary' , 
++			'A1' , 
++			'vert' , 
++			'color=SEQ:' & (i + 1) * (j + 1) ] , 
++			log_file )
+
+		next j
+
+	next i
+	
+	*** put the graph on the overview report
+	Let return = SimplisDVMAdvancedUtilMeasurementPromoteGraph([ 'DVM Phase Summary' , '300' ], log_file)
+	Let return = SimplisDVMAdvancedUtilMeasurementPromoteGraph([ 'DVM Gain Summary'  , '200' ], log_file)
+	
+	***
+	*** Generate three curves, one for each input voltage with the gain_margin, phase_margin, and gain_crossover_freq
+	***
+	
+	Let str_aliases    = [ 'minimum' , 'nominal' , 'maximum' ]
+	Let pretty_aliases = [ 'Min' , 'Nom' , 'Max' ]
+	Let target_scalars  = [ 'gain_margin' , 'phase_margin' , 'gain_crossover_freq' ]
+	Let y_labels       = [ 'Gain Margin' , 'Phase Margin' , 'Gain Xover Freq' ]
+	Let y_units        = [ 'dB' , 'degrees' , 'Hz' ]
+
+	for i = 0 to length( str_aliases ) - 1
+		
+		for j = 0 to length( target_scalars ) - 1
+		
+			*** SimplisDVMAdvancedUtilMeasurementCreateXYScalarPlot argument #1:
+			*** [0] X-axis scalar name
+			*** [1] Y-axis scalar name
+			*** [2] Scalars to extract from the report. Variables, such as ILOAD are made available by default.
+			*** [3] Curve name
+			*** [4] Graph name
+			*** [5] Grid index - A1 is the first analog grid
+			*** [6] axis name
+			*** [7] optional parameter string - assigns pretty labels to graph
+			
+			*** this is a single function with line continuation
+			Let return = SimplisDVMAdvancedUtilMeasurementCreateXYScalarPlot( [ 
++				'AVG(ILOAD)', 
++				target_scalars[j] & '_' & str_aliases[i] , 
++				target_scalars[j] & '_' & str_aliases[i] & ' AVG(ILOAD)' , 
++				'DVM ' & y_labels[j] & ' VIN ' & pretty_aliases[i] , 
++				'DVM Bode Plot Scalar Summary' , 
++				'A' & j+1 , 
++				'vert' , 
++				'xlabel=Load Current xunits=A ylabel=' & y_labels[j] & ' yunits=' & y_units[j] & ' showpoints=true color=SEQ:' & i + 1 ] , 
++				log_file )
+
+		next j
+	next i
+
+	*** put the graph on the overview report
+	Let return = SimplisDVMAdvancedUtilMeasurementPromoteGraph([ 'DVM Bode Plot Scalar Summary' , '100' ], log_file)
+
+else
+	*** do nothing
+endif

@@ -1,0 +1,2 @@
+RUN groupCurves=True NumCores=1 ShowConsole=False
+STEP Type=MonteCarlo Values=4,2108471527

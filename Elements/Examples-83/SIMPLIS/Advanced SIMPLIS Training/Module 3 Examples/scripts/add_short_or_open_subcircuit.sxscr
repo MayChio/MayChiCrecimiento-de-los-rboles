@@ -1,0 +1,92 @@
+***
+*** Name  : add_short_or_open_subcircuit.sxscr
+*** Author: CDB
+***	Date  : 10/14/2015
+***
+*** Id    : $Id$
+***
+*** Description: This templatescript either adds a parallel short or series open to a two-terminal resistor.
+***              The subcircuit named short_or_open is assumed to be available to the preprocessor.
+***              You need to include the model file in the F11 window.
+
+Arguments ref template
+
+*** get the model type...
+Let model_type = TemplateGetPropValue( ref ,'MODEL' )
+
+
+*** check for action
+Let action_open = 0
+Let action_short = 0
+
+Let action = TemplateGetPropValue( ref , 'ACTION' )
+
+
+if action == 'OPEN' then
+
+	Let action_open = 1
+
+elseif action == 'SHORT' then
+
+	Let action_short = 1
+
+endif
+
+
+*** branch on the model type and create the correct instantiations.
+if model_type == 'R' then
+
+	if action_open then
+		
+		*** get value
+		Let value = TemplateGetPropValue( ref ,'VALUE' )
+
+		*** get four short/open parameters off symbol
+		Let ron         = TemplateGetPropValue( ref ,'RON' )
+		Let roff        = TemplateGetPropValue( ref ,'ROFF' )
+		Let pulse_width = TemplateGetPropValue( ref ,'PULSE_WIDTH' )
+		Let time_delay  = TemplateGetPropValue( ref ,'TIME_DELAY' )
+
+		*** make new template as a two-element string array
+		Let new_template = '<ref> <node[1]> <inode:1> ' & value &
++							 '\nX$SHORT_<ref> <inode:1> <node[2]> short_or_open vars: ACTION=''OPEN'' RON=' & ron & ' ROFF=' & roff & ' PULSE_WIDTH=' & pulse_width & ' TIME_DELAY=' & time_delay
+
+		*** the business end of the script - write new template value 
+		TemplateSetValue { ref } { EscapeString( new_template ) }							 
+
+		*** echo to shell
+		Echo { 'Adding OPEN subcircuit to reference designator ' & ref }
+
+	elseif action_short then
+		
+		*** get value
+		Let value = TemplateGetPropValue( ref ,'VALUE' )
+
+		*** get four short/open parameters off symbol
+		Let ron         = TemplateGetPropValue( ref ,'RON' )
+		Let roff        = TemplateGetPropValue( ref ,'ROFF' )
+		Let pulse_width = TemplateGetPropValue( ref ,'PULSE_WIDTH' )
+		Let time_delay  = TemplateGetPropValue( ref ,'TIME_DELAY' )
+
+		*** make new template as a string
+		Let new_template = '<ref> <nodelist> ' & value &
++							'\nX$SHORT_<ref> <nodelist> short_or_open vars: ACTION=''SHORT'' RON=' & ron & ' ROFF=' & roff & ' PULSE_WIDTH=' & pulse_width & ' TIME_DELAY=' & time_delay
+		
+***		Echo { new_template }
+		*** the business end of the script - write new template value 
+		TemplateSetValue { ref } { EscapeString( new_template ) }
+
+		*** echo to shell
+		Echo { 'Adding SHORT subcircuit to reference designator ' & ref }
+	else
+
+		*** do nothing. The regular template will instantiate the resistor
+		Echo { 'Doing nothing for reference designator: ' & ref }
+
+	endif
+
+else
+
+	*** TODO - handle other two terminal symbols, such as Capacitors, PWL devices, etc.
+
+endif

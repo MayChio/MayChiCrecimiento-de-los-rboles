@@ -1,0 +1,91 @@
+***
+*** extract_semiconductors.sxscr
+***
+
+*** extracts semiconductors (MOSFET, IGBT, JFET, diodes, schottky diodes, zeners) prior to a DVM run.
+*** Devices to be extracted are designated in this script in "refs" array.
+*** extraction parameters can be changed before each extraction using the Change() function.
+
+*** standard DVM interface, see: http://www.simplis.com/documentation/link/simplis/5194
+Arguments @retval label report_dir log_file controlhandle
+
+*** don't plot extracted curves
+UnSet /quiet /noerr SIMPLISModelExtractionPlotDebug
+
+*** single quote
+Let sq = Chr( 39 )
+
+*** all device models
+Let models = global:catalog
+
+*** reference designators to extract
+Let ref_property_value = PropValues2( 'SEMICONDUCTORS_TO_EXTRACT' , -1 , 'handle' , controlhandle )
+
+*** empty string id if doesn't exist
+if StringLength( ref_property_value ) then
+	Let refs = Parse( ref_property_value )
+	if !Length( refs ) then
+		Exit Script
+	endif
+else
+	Echo
+	Echo /html { 'Missing critical DVM control symbol property: SEMICONDUCTORS_TO_EXTRACT <br/><br/>
++	To add property to the DVM control symbol: <b>SEMICONDUCTORS_TO_EXTRACT</b>:
++	<ol><li>Select DVM Control Symbol and right click <b>Edit/Add Properties...</b></li>
++	<li>Click the <b>Add Property</b> button</li>
++	<li>Enter <b>SEMICONDUCTORS_TO_EXTRACT</b>, click Ok</li>
++	<li>Edit property, adding space delimited list of reference designators to extract' }
+	Exit Script
+endif
+
+*** initialize return value to empty string
+Let retval = ''
+
+*** process each refdes
+for i = 0 to Length( refs ) - 1
+	
+	*** make sure nothing is selected...
+	Unselect
+	
+	*** select the device
+	Select /prop ref {refs[i]}
+	
+	*** did we actually select something?
+	if SelectCount( 'instances' ) == 1 then
+	
+		*** this device - e.g. the spice model name Si4410DY, for example
+		Let device = PropValues2( 'VALUE' , -1 )
+		
+		*** find model in array of built-in models
+		Let index = Search( SelectColumns( models , 0 ) , device )
+		
+		*** it is possible that the model is not installed. If so, index=-1 and we skip extraction
+		if index>-1 then
+		
+			*** information about this model is stored in the catalog line
+			Let line = Scan( models[index], "';'" )
+		
+			*** need to get the model extraction parameters - that is, the test conditions, stored in parameter string localParams
+			Let localParams = ''
+			model_extraction_get_standard_device_local_params @localParams @line 0 '!dialog'
+			
+			*** This next command extracts the model
+			Let script_cmd = 'Execute place_library_device /ne line ' & sq & 'edit' & sq & ' localParams'
+			
+			*** execute safely
+			Execute /noerr /literal { script_cmd }
+			Let last_error = GetLastError()
+
+		else
+			Let retval = retval & ' Device ( ' & device & ') not found in catalog. Make sure this device is installed to extract model.'
+			Echo { 'Device ( ' & device & ') not found in catalog. Make sure this device is installed to extract model.' }
+		endif
+	else
+		Let retval = retval & ' Reference ( ' & refs[i] & ') not found on schematic.'
+		Echo { 'Reference ( ' & refs[i] & ') not found on schematic.' }
+	endif
+next i
+
+if !StringLength( retval ) then
+	Let retval = 'extract_semiconductors.sxscr script ran without errors'
+endif

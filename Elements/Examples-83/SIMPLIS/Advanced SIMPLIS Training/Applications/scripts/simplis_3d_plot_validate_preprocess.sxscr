@@ -1,0 +1,52 @@
+***
+*** simplis_3d_plot_validate_preprocess.sxscr
+***
+
+*** Author: Chris Bridge, SIMPLIS Technologies
+*** Customer: Intel
+***
+*** Unsupported user pre-process script which validates the user is executing a 64 bit version.
+***
+
+Arguments @retval label report_dir log_file controlhandle 
+
+*** get version information
+Let vi = VersionInfo()
+
+*** get decimal version
+Let decimal_release = Val( vi[1] )
+
+*** get architechture
+Let version = vi[7]
+
+*** initialize test variables
+Let test_decimal = 0
+Let test_arch = 0
+
+*** check
+if decimal_release >= 8.0 && version != 'x64' || test_arch then
+
+	*** unset the global running DVM flag.
+	Let global:SimplisDVMSyncBuckSimulationRunning = 0
+
+	*** spec message will appear in report
+	Let MessageBox( [ 
++	'<p>This installation of SIMetrix/SIMPLIS is a 32 bit version. This will likely fail when running the 3D testplan because a 32 bit application cannot address enough memory for the graphing stage of the testplan. Please use the 64 bit version of SIMetrix/SIMPLIS. The rest of the tests have been changed to NoSimulation and will not be run.</p>' &
++	'<p>You can download the 64 bit installer at the <a href="http://simetrix.co.uk/simetrix80/Downloadlinks.htm" >Download Links</a> page on our website.</p>' &
++	'<p>You will need the user name and password you recieved with your license file. If you don''t have this information, you can contact <a href="mailto:support@simplistechnologies.com">Support</a> for the user name and password. You will need to provide your license information - a screenshot of the <b>Help > License Diagnostics...</b> dialog is the easiest way to determine your license information.</p>' ,
++	'Error: You must run the 3D Testplan on a 64 bit version of SIMetrix/SIMPLIS' ] , [ 'ok' , 'warn' ] )
+
+elseif decimal_release < 8.0 || test_decimal then
+
+	*** unset the global running DVM flag.
+	Let global:SimplisDVMSyncBuckSimulationRunning = 0
+
+	*** spec message will appear in report
+	Let MessageBox( [ 
++	'<p>This installation of SIMetrix/SIMPLIS is version: ' & decimal_release & '. The 3D Testplan requires SIMetrix/SIMPLIS version 8.0 (64 bit) or later. Please download and install the 64 bit version of SIMetrix/SIMPLIS release 8.0 or later. The rest of the tests have been changed to NoSimulation and will not be run.</p>' &
++	'<p>You can download the 64 bit installer at this URL: <b>http://simetrix.co.uk/simetrix80/Downloadlinks.htm</b></p>' &
++	'<p>You will need the user name and password you recieved with your license file. If you don''t have this information, you can contact support at: <b>support@simplistechnologies.com</b> for the user name and password.</p>' &
++	'<p>You will need to provide your license information - a screenshot of the <nobr><b>Help > License Diagnostics...</b></nobr> dialog is the easiest way to determine your license information.</p>' ,
++	'Error: You must run the 3D Testplan on Version 8.00/64 bit version of SIMetrix/SIMPLIS' ] , [ 'ok' , 'warn' ] )
+
+endif

@@ -1,0 +1,5 @@
+*** file   : simplis_041_and_nand_points.txt
+*** example: simplis_041_digitallookuptable_file_example.sxsch
+***		
+*** decimal in	NAND (O1)	AND (O0)
+1023	0	1

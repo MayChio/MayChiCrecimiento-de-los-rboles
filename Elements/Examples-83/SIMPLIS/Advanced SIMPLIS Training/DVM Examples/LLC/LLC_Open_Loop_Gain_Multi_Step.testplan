@@ -1,0 +1,41 @@
+*** 																										
+*** LLC_Open_Loop_Gain_Multi_Step.testplan																										
+"*** After changing this testplan, save as a Tab delimited text file."																										
+*** 	User Inputs																									
+*** VIN	380																									
+*** Lp	9.98E-04																									
+*** Lr	2.34E-04																									
+*** Cr	1.50E-08																									
+*** N	7.50	Concatenation																								
+*** Q1	200m	200m																								
+*** Q2	400m	"200m , 400m"																								
+*** Q3	600m	"200m , 400m , 600m"																								
+***																										
+*** Normalized Frequency Steps	0.4	0.4																								
+***	0.425	"0.4 , 0.425"																								
+***	0.45	"0.4 , 0.425 , 0.45"																								
+***	0.475	"0.4 , 0.425 , 0.45 , 0.475"																								
+***	0.5	"0.4 , 0.425 , 0.45 , 0.475 , 0.5"																								
+***	0.525	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525"																								
+***	0.55	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55"																								
+***	0.575	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575"																								
+***	0.6	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6"																								
+***	0.625	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625"																								
+***	0.65	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65"																								
+***	0.675	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675"																								
+***	0.7	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7"																								
+***	0.725	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725"																								
+***	0.75	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75"																								
+***	0.775	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775"																								
+***	0.8	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775 , 0.8"																								
+***	0.825	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775 , 0.8 , 0.825"																								
+***	0.85	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775 , 0.8 , 0.825 , 0.85"																								
+***	0.875	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775 , 0.8 , 0.825 , 0.85 , 0.875"																								
+***	1	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775 , 0.8 , 0.825 , 0.85 , 0.875 , 1"																								
+***	1.2	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775 , 0.8 , 0.825 , 0.85 , 0.875 , 1 , 1.2"																								
+***	1.4	"0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775 , 0.8 , 0.825 , 0.85 , 0.875 , 1 , 1.2 , 1.4"																								
+																										
+"*** Two tests - one for generating data, one to plot it."			Input Voltage	Resonant Circuit Parameters			Test Description	Turns Ratio	Calculation		Deadtime	Output Cap	Intermediate Calculations			Switching Frequency		"Variable Alias - Make unique ""M"" based on ""Q"""	Initial Condition							
+*?@ analysis	analysis	analysis	"var(VIN,380)"	"var(Lr,234u)"	"var(Lp,998u)"	"var(Cr,15n)"	Label	"var(N,7.5)"	"var(Rac, {SQRT(Lr/Cr)/Q})"	"var(Ro,{Rac*Pi^2/(8*N^2)})"	"var(Tdead,200n)"	"var(Co,400u)"	"var(littlem,{(Lr+Lp)/Lr})"	"var(fp,{1/(2*Pi*SQRT((Lr+Lp)*Cr))})"	"var(fo,{1/(2*Pi*SQRT(Lr*Cr))})"	"var(Fsw,{Fnormalized*fo})"	"var(M,{(Fsw/fo)^2*(littlem-1)/SQRT((1-(Fsw^2/fp^2))^2 + ((Fsw/fo)*(1-Fsw^2/fo^2)* (littlem-1)*Q)^2)})"	measurement	"var(IC_Cout,0)"	Measurement	Measurement	Measurement	Measurement	Measurement	Measurement	Measurement
+.POP\n+ TRIG_GATE={TRIG_GATE}\n+ TRIG_COND=0_TO_1\n+ MAX_PERIOD=15u\n+ CYCLES_BEFORE_LAUNCH=10\n+ CONVERGENCE=1p\n+ TD_RUN_AFTER_POP_FAILS=0	"Multi-Step( Fnormalized , LIST , 0.4 , 0.425 , 0.45 , 0.475 , 0.5 , 0.525 , 0.55 , 0.575 , 0.6 , 0.625 , 0.65 , 0.675 , 0.7 , 0.725 , 0.75 , 0.775 , 0.8 , 0.825 , 0.85 , 0.875 , 1 , 1.2 , 1.4 , NUM_CORES=4 )"	"Multi-Step( Q , LIST , 200m , 400m , 600m )"					POP|Multi-Step|FNormalized and Q											"Alias( AVG(M) , M_Q_%Q% )"		"Alias( AVG(VOUT) , VOUT_Q_%Q% )"						
+NoSimulation							POP|Multi-Step|Generate Gain Curve													"CreateXYScalarPlot( Fnormalized , M_Q_200m , M_Q_200m , DVM 1st Harmonic Approx(Q=200m) , DVM Gain , A1, vert,  ylabel=Voltage Gain yunits=(V/V) xlabel=Normalized Switching Frequency xunits=(Hz/Hz) ygrid=0.4 xgrid=0.2 usescalars=multi showpoints=true color=green)"	"CreateXYScalarPlot( Fnormalized , 2 * N * VOUT_Q_200m / VIN , VOUT_Q_200m , DVM SIMPLIS(Q=200m) , DVM Gain , A1, vert, usescalars=multi showpoints=true color=red)"	"CreateXYScalarPlot( Fnormalized , M_Q_400m , M_Q_400m , DVM 1st Harmonic Approx(Q=400m) , DVM Gain , A1, vert, usescalars=multi showpoints=true color=green)"	"CreateXYScalarPlot( Fnormalized , 2 * N * VOUT_Q_400m / VIN , VOUT_Q_400m , DVM SIMPLIS(Q=400m) , DVM Gain , A1, vert, usescalars=multi showpoints=true color=red)"	"CreateXYScalarPlot( Fnormalized , M_Q_600m , M_Q_600m , DVM 1st Harmonic Approx(Q=600m) , DVM Gain , A1, vert, usescalars=multi showpoints=true color=green)"	"CreateXYScalarPlot( Fnormalized , 2 * N * VOUT_Q_600m / VIN , VOUT_Q_600m , DVM SIMPLIS(Q=600m) , DVM Gain , A1, vert, usescalars=multi showpoints=true color=red)"	"PromoteGraph( DVM Gain , 1 )"

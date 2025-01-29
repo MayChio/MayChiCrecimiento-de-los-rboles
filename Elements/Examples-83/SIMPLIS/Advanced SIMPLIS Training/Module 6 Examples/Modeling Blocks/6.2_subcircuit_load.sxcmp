@@ -1,0 +1,94 @@
+SIMetrixFile type=schematic format=1.0 revision=7
+.Component
+.Symbol
+Attributes name="component" description="" track=1
+Segment x1=0 y1=240 x2=0 y2=0
+Segment x1=-72 y1=264 x2=-72 y2=216
+Segment x1=0 y1=240 x2=-108 y2=240
+Segment x1=240 y1=510 x2=240 y2=360
+Segment x1=240 y1=360 x2=120 y2=240
+Segment x1=-240 y1=420 x2=-240 y2=360
+Segment x1=240 y1=582 x2=240 y2=720
+Segment x1=408 y1=120 x2=-408 y2=120
+Segment x1=-408 y1=840 x2=408 y2=840
+Segment x1=156 y1=582 x2=240 y2=510
+Segment x1=0 y1=960 x2=0 y2=660
+Segment x1=324 y1=582 x2=156 y2=582
+Segment x1=324 y1=582 x2=240 y2=510
+Segment x1=324 y1=510 x2=156 y2=510
+Segment x1=324 y1=510 x2=324 y2=546
+Segment x1=-408 y1=120 x2=-408 y2=840
+Segment x1=408 y1=840 x2=408 y2=120
+Segment x1=-120 y1=660 x2=-96 y2=600
+Segment x1=-120 y1=660 x2=-144 y2=600
+Segment x1=-120 y1=420 x2=-120 y2=660
+Segment x1=-270 y1=570 x2=-210 y2=630
+Segment x1=-270 y1=450 x2=-210 y2=510
+Segment x1=-240 y1=420 x2=-270 y2=450
+Segment x1=-210 y1=510 x2=-270 y2=570
+Segment x1=-210 y1=630 x2=-240 y2=660
+Segment x1=-240 y1=720 x2=-240 y2=660
+Segment x1=-240 y1=720 x2=240 y2=720
+Segment x1=-240 y1=360 x2=-120 y2=240
+Segment x1=0 y1=360 x2=0 y2=420
+Segment x1=-108 y1=240 x2=-72 y2=264
+Segment x1=-72 y1=216 x2=-108 y2=240
+Arc l=-12 t=708 r=12 b=732 x1=-12 y1=720 x2=-12 y2=720
+Arc l=-12 t=348 r=12 b=372 x1=0 y1=372 x2=0 y2=372
+Arc l=-72 t=516 r=72 b=660 x1=0 y1=660 x2=0 y2=660
+Arc l=-72 t=420 r=72 b=564 x1=0 y1=564 x2=0 y2=564
+Arc l=-132 t=228 r=-108 b=252 x1=-120 y1=252 x2=-120 y2=252
+Arc l=108 t=228 r=132 b=252 x1=120 y1=252 x2=120 y2=252
+Arc l=-6 t=714 r=6 b=726 x1=-6 y1=720 x2=-6 y2=720
+Pin name="N" order=2 x=0 y=960 visible=0
+Pin name="P" order=1 x=0 y=0 visible=0
+Property name="DESC" value="LOAD_TYPE" autopos=0 x=0 y=120 align=CentreTop protected=1 font=Default
+Property name="REF" value="LOAD?" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="MODEL" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes name="modport" description="Module Port" catalog="Connections;Terminals" track=1
+Segment x1=0 y1=0 x2=300 y2=0
+Segment x1=120 y1=-18 x2=300 y2=-18
+Segment x1=120 y1=-24 x2=300 y2=-24
+Segment x1=120 y1=-30 x2=300 y2=-30
+Segment x1=120 y1=-36 x2=120 y2=36
+Segment x1=120 y1=-36 x2=300 y2=-36
+Segment x1=120 y1=24 x2=300 y2=24
+Segment x1=120 y1=30 x2=300 y2=30
+Segment x1=120 y1=36 x2=300 y2=36
+Segment x1=120 y1=6 x2=300 y2=6
+Segment x1=300 y1=-12 x2=120 y2=-12
+Segment x1=300 y1=-36 x2=300 y2=36
+Segment x1=300 y1=-6 x2=120 y2=-6
+Segment x1=300 y1=12 x2=120 y2=12
+Segment x1=300 y1=18 x2=120 y2=18
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="netname" value="" autopos=1 normal=Left rotated=Left protected=1 font=Default
+Property name="VALUE" value="VOUT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.EndSymbolLibrary
+View x=1800 y=600 zoom=6 snapgrid=120
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=5280 y=3600 orient=N90
+Property name="VALUE" value="N" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=5280 y=2280 orient=N270
+Property name="VALUE" value="P" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames
+.EndInstance
+Text value=""
+SimulatorMode value="Simplis"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+Property name="UserVersion" value="5" type=value
+Property name="last_hierarchical_path" value="" type=value
+.EndSchematic
+.EndComponent

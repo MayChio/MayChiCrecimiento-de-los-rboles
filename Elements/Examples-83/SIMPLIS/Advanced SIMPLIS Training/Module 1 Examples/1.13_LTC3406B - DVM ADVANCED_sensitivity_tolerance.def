@@ -1,0 +1,12 @@
+*** sensitivity_tolerance.def
+***
+*** PARAMETER	NTOL	PTOL	LOT	MATCH
+L1	10%
+C1	20%
+R2	5%	5%	feedback_resistors	1%
+R3	5%	5%	feedback_resistors	1%
+U1.U3.R2	20%
+U1.U3.C1	20%
+U1.U3.C2	20%
+V2.DC_VOLTAGE	.5	.5
+I1.LOAD_RESISTANCE	1.003340	28

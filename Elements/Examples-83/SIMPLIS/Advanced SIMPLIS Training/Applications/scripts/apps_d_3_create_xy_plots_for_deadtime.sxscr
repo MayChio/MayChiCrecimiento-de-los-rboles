@@ -1,0 +1,48 @@
+***
+*** apps_d_3_create_xy_plots_for_deadtime.sxscr
+***
+
+Arguments @retval label report_dir log_file controlhandle
+
+*** only try and generate the curves if the test has 'Generate Efficiency Curves' in test Label.
+
+if StrStr( label , 'Generate Efficiency Curves' ) > -1 then
+
+	***
+	*** generate three curves of the multi step results, using the option usescalars=multi to read the multi-step data.
+	***
+	
+	Let deadtimes = [ 1n, 2n, 3n, 4n, 5n, 6n, 7n, 8n, 9n, 10n ]
+	
+	for i = 0 to length( deadtimes ) - 1
+		
+		*** SimplisDVMAdvancedUtilMeasurementCreateXYScalarPlot argument #1:
+		*** [0] X-axis scalar name
+		*** [1] Y-axis scalar name
+		*** [2] Scalars to extract from the report. Variables, such as ILOAD are made available by default.
+		*** [3] Curve name
+		*** [4] Graph name
+		*** [5] Grid index - A1 is the first analog grid
+		*** [6] axis name
+		*** [7] optional parameter string - assigns pretty labels to graph
+		
+		*** this is a single function with line continuation
+		Let return = SimplisDVMAdvancedUtilMeasurementCreateXYScalarPlot( [ 
++			'AVG(ILOAD)', 
++			'Efficiency_' & deadtimes[i] , 
++			'Efficiency_' & deadtimes[i] & ' ' & 'AVG(ILOAD)' , 
++			'DVM Efficiency td ' & deadtimes[i] & 's' , 
++			'DVM Efficiency vs. ILOAD', 
++			'A1', 
++			'vert' , 
++			'usescalars=multi xlabel=Load Current xunits=A ylabel=Efficiency yunits=%%% showpoints=true color=SEQ:' & i + 1 ], 
++			log_file )
+	
+	next i
+	
+	*** put the graph on the overview report
+	Let return = SimplisDVMAdvancedUtilMeasurementPromoteGraph([ 'DVM Efficiency vs. ILOAD' , '200' ], log_file)
+	
+else
+	*** do nothing
+endif

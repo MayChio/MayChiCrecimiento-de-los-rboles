@@ -1,0 +1,63 @@
+<!DOCTYPE FilmoraSettings>
+<FilmoraSettings>
+    <Settings>
+        <General>
+            <ThemeType>1</ThemeType>
+            <CheckForAutoUpdate>7</CheckForAutoUpdate>
+            <DontShowMessage>0</DontShowMessage>
+            <ReppleCustomSpeed>1</ReppleCustomSpeed>
+            <HighDpiScaling>1</HighDpiScaling>
+            <AutoRipple>1</AutoRipple>
+            <ShowProjectLibrary>1</ShowProjectLibrary>
+            <TimelineSnapEnable>1</TimelineSnapEnable>
+        </General>
+        <FolderPath>
+            <TempFileFolder>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Temp</TempFileFolder>
+            <CaptureFileFolder>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Recorded</CaptureFileFolder>
+            <ViceoverFolder>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Voiceover</ViceoverFolder>
+            <YouTobeFileFolder>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Upload</YouTobeFileFolder>
+            <SnapShotFileFolder>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Snapshot</SnapShotFileFolder>
+            <InstanllEffectPackTo>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Installed Effects</InstanllEffectPackTo>
+        </FolderPath>
+        <sEditting>
+            <sPhotoType>1</sPhotoType>
+            <sPhoto>500</sPhoto>
+            <sTransitionType>1</sTransitionType>
+            <sTransition>200</sTransition>
+            <sEffectType>1</sEffectType>
+            <sEffect>500</sEffect>
+            <sPhotoPlacement>0</sPhotoPlacement>
+            <sFreezeType>1</sFreezeType>
+            <sFreeze>500</sFreeze>
+            <sSplitMode>0</sSplitMode>
+            <ShowSplitButton>1</ShowSplitButton>
+        </sEditting>
+        <Save>
+            <AutoBackupProject>1</AutoBackupProject>
+            <AutoBackupProjectTime>5</AutoBackupProjectTime>
+            <BackupProjectFile>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Backup</BackupProjectFile>
+            <MaximumBackupVersion>10</MaximumBackupVersion>
+            <DefaultProjectSaveFolder>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Projects</DefaultProjectSaveFolder>
+            <lutCubeFolder></lutCubeFolder>
+        </Save>
+        <Performance>
+            <sOpenCLCanBeChange>1</sOpenCLCanBeChange>
+            <EnableOpenCL>1</EnableOpenCL>
+            <EnableOpenGLEncode>1</EnableOpenGLEncode>
+            <GPUDeviceSwicth>0</GPUDeviceSwicth>
+            <EnableGPUDeCode>1</EnableGPUDeCode>
+            <OpenCLGPUAcceleration></OpenCLGPUAcceleration>
+            <UserChangedGpuState>0</UserChangedGpuState>
+            <AutomaticallyCreateProxy>0</AutomaticallyCreateProxy>
+            <AutoCreateProxyResolution>3840*2160</AutoCreateProxyResolution>
+            <GetProxyFileFolder>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Proxy</GetProxyFileFolder>
+            <AutomaticallyDeleteProxy>0</AutomaticallyDeleteProxy>
+            <PreviewRenderFilesFolder>C:/Users/MAYRA ROCIO/Documents/Wondershare/Wondershare Filmora/Render</PreviewRenderFilesFolder>
+            <AutomaticallyDeleteRenderFile>0</AutomaticallyDeleteRenderFile>
+            <EnableAutoRender>0</EnableAutoRender>
+            <sAutoRenderAfterSeconds>5</sAutoRenderAfterSeconds>
+            <Register>0</Register>
+            <sRenderView>1</sRenderView>
+        </Performance>
+    </Settings>
+</FilmoraSettings>

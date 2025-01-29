@@ -1,0 +1,253 @@
+SIMetrixFile type=schematic format=1.0 revision=8
+.Component
+.Symbol
+Attributes format=1.0 revision=8 name="component" description="" track=1
+Arc l=-132 t=228 r=-108 b=252 x1=-120 y1=252 x2=-120 y2=252 
+Arc l=108 t=228 r=132 b=252 x1=120 y1=252 x2=120 y2=252 
+Arc l=-12 t=348 r=12 b=372 x1=0 y1=372 x2=0 y2=372 
+Arc l=-72 t=420 r=72 b=564 x1=0 y1=564 x2=0 y2=564 
+Arc l=-72 t=516 r=72 b=660 x1=0 y1=660 x2=0 y2=660 
+Arc l=-12 t=708 r=12 b=732 x1=0 y1=732 x2=0 y2=732 
+Arc l=-6 t=714 r=6 b=726 x1=0 y1=726 x2=0 y2=726 
+Segment x1=0 y1=240 x2=0 y2=0 
+Segment x1=408 y1=120 x2=-408 y2=120 
+Segment x1=-408 y1=120 x2=-408 y2=840 
+Segment x1=408 y1=840 x2=408 y2=120 
+Segment x1=-72 y1=216 x2=-108 y2=240 
+Segment x1=-72 y1=264 x2=-72 y2=216 
+Segment x1=-240 y1=360 x2=-120 y2=240 
+Segment x1=0 y1=240 x2=-108 y2=240 
+Segment x1=-108 y1=240 x2=-72 y2=264 
+Segment x1=240 y1=360 x2=120 y2=240 
+Segment x1=-240 y1=420 x2=-240 y2=360 
+Segment x1=0 y1=360 x2=0 y2=420 
+Segment x1=240 y1=510 x2=240 y2=360 
+Segment x1=-240 y1=420 x2=-270 y2=450 
+Segment x1=-120 y1=420 x2=-120 y2=660 
+Segment x1=-270 y1=450 x2=-210 y2=510 
+Segment x1=-210 y1=510 x2=-270 y2=570 
+Segment x1=324 y1=510 x2=156 y2=510 
+Segment x1=156 y1=582 x2=240 y2=510 
+Segment x1=324 y1=582 x2=240 y2=510 
+Segment x1=324 y1=510 x2=324 y2=546 
+Segment x1=-270 y1=570 x2=-210 y2=630 
+Segment x1=324 y1=582 x2=156 y2=582 
+Segment x1=240 y1=582 x2=240 y2=720 
+Segment x1=-120 y1=660 x2=-144 y2=600 
+Segment x1=-120 y1=660 x2=-96 y2=600 
+Segment x1=-210 y1=630 x2=-240 y2=660 
+Segment x1=-240 y1=720 x2=-240 y2=660 
+Segment x1=0 y1=960 x2=0 y2=660 
+Segment x1=-240 y1=720 x2=240 y2=720 
+Segment x1=-408 y1=840 x2=408 y2=840 
+Pin name="N" order=2 x=0 y=960 visible=0
+Pin name="P" order=1 x=0 y=0 visible=0
+Property name="DC_CURRENT" value="1" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="DC_VOLTAGE" value="1" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="DESC" value="LOAD_TYPE" autopos=0 x=0 y=120 align=CentreTop protected=1 font=Default order=-1
+Property name="DESCRIPTIONS" value="Edit Programmable Load,Programmable Load" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="GROUPS" value="Constant\\sResistance:GROUP:Resistance Parameters:0:0:0:0:0:0:0,Constant\\sCurrent:GROUP:Current Parameters:0:0:0:0:0:0:0,Constant\\sVoltage:GROUP:Voltage Parameters:0:0:0:0:0:0:0" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="LABELS" value=" : :Load Type::::RADIO:::The Type of Load,Constant\\sResistance:Resistance Parameters:Resistor Value:0:0:__Ohms__:REAL:1p:1:Load Resistance,Constant\\sCurrent:Current Parameters:DC Current:0:0:A:REAL:1p:1:DC Current for a constant current type load.,Constant\\sCurrent:Current Parameters:Saturation Voltage:1:0:V:REAL:1p|9999:1:The saturation voltage for the constant current type load.,Constant\\sCurrent:Current Parameters:Use Shunt Resistance?:2:0::GROUPCHECK::0:The shunt resistance for the constant voltage load.,Constant\\sCurrent:Use Shunt Resistance?:Shunt Resistance:1:0:__Ohms__:REAL:1p:1:The leakage resistance for the constant voltage load.,Constant\\sVoltage:Voltage Parameters:DC Voltage:0:0:V:REAL:1p:1:DC Voltage for a constant voltage type load.,Constant\\sVoltage:Voltage Parameters:Series Resistance:1:0:__Ohms__:REAL:1u:1:The series resistance for the constant voltage load.,Constant\\sVoltage:Voltage Parameters:Leakage Resistance:2:0:__Ohms__:REAL:1:1:The leakage resistance for the constant voltage load." autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="LOAD_TYPE" value="Constant\\sResistance" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="MODEL" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="PARAMETERS" value="LOAD_TYPE='Constant\\sResistance' RESISTANCE=1 DC_CURRENT=1 SAT_VOLTAGE=20m USE_RSHUNT=1 RSHUNT=10Meg DC_VOLTAGE=1 RSERIES=1m RLEAKAGE=1Meg" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="RESISTANCE" value="1" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="RLEAKAGE" value="1Meg" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="RSERIES" value="1m" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="RSHUNT" value="10Meg" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="SAT_VOLTAGE" value="20m" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> <value> vars: LOAD_TYPE='%LOAD_TYPE%' RESISTANCE=%RESISTANCE% DC_CURRENT=%DC_CURRENT% SAT_VOLTAGE=%SAT_VOLTAGE% USE_RSHUNT=%USE_RSHUNT% RSHUNT=%RSHUNT% DC_VOLTAGE=%DC_VOLTAGE% RSERIES=%RSERIES% RLEAKAGE=%RLEAKAGE%" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="TABS" value="Constant\\sResistance,Constant\\sCurrent,Constant\\sVoltage" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="USE_RSHUNT" value="1" autopos=1 normal=Top rotated=Left visible=0 selectable=1 font=Default displayName=1 order=-1
+Property name="VALUESCRIPT" value="edit_parameterised_multi_prop_device_radio_widget_dialog 1" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default order=-1
+Property name="REF" value="LOAD?" autopos=1 normal=Right rotated=Bottom font=Default order=1
+.EndSymbol
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes format=1.0 revision=8 name="modport" description="Module Port" catalog="Connections;Terminals" track=1
+FilledPoly x="120,120,299,299,120,120" y="0,35,35,-35,-35,0"
+Segment x1=120 y1=-36 x2=300 y2=-36 
+Segment x1=120 y1=-36 x2=120 y2=36 
+Segment x1=300 y1=-36 x2=300 y2=36 
+Segment x1=0 y1=0 x2=120 y2=0 
+Segment x1=120 y1=36 x2=300 y2=36 
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="netname" value="" autopos=1 normal=Left rotated=Left protected=1 font=Default order=-1
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="VALUE" value="VOUT" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+.EndSymbol
+.EndSymbolLibrary
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=5280 y=2280 orient=N270 
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultInstance" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="VALUE" value="P" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Netnames pin1="#P"
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=5280 y=3600 orient=N90 
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultInstance" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="VALUE" value="N" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Netnames pin1="#N"
+.EndInstance
+.Instance
+Attributes type=component path="6.1.1_constant_resistance_load_answer.sxcmp" selected=0 protected=0 x=4080 y=2520 orient=N0 
+Property name="MODEL" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="REF" value="LOAD1" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Property name="RESISTANCE" value="{RESISTANCE}" autopos=1 normal=Right rotated=Top visible=0 font=Default displayName=1 order=-1
+Property name="SIMPLIS_TEMPLATE" value=".IF {{ LOAD_TYPE == 'Constant\\sResistance' }}\n<ref> <nodelist> <value> vars: RESISTANCE=%RESISTANCE%\n.ENDIF" autopos=1 normal=Right rotated=Left visible=0 linear=1 font=Default order=-1
+Property name="StyleNormal" value="DefaultInstance" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="TEMPLATE" value="<ref> <nodelist> <value> params: RESISTANCE=%RESISTANCE%" autopos=1 normal=Right rotated=Left visible=0 font=Default order=-1
+Netnames pin1="#P" pin2="#N"
+.EndInstance
+.Instance
+Attributes type=component path="6.1.2_constant_current_load_answer.sxcmp" selected=0 protected=0 x=5520 y=2520 orient=N0 
+Property name="DC_CURRENT" value="{DC_CURRENT}" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Property name="MODEL" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="REF" value="LOAD2" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Property name="RSHUNT" value="{RSHUNT}" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Property name="SAT_VOLTAGE" value="{SAT_VOLTAGE}" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Property name="SIMPLIS_TEMPLATE" value=".IF {{ LOAD_TYPE == 'Constant\\sCurrent' }}\n<ref> <nodelist> <value> vars: DC_CURRENT=%DC_CURRENT% SAT_VOLTAGE=%SAT_VOLTAGE% USE_RSHUNT=%USE_RSHUNT% RSHUNT=%RSHUNT%\n.ENDIF" autopos=1 normal=Left rotated=Left visible=0 linear=1 font=Default order=-1
+Property name="StyleNormal" value="DefaultInstance" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="USE_RSHUNT" value="{USE_RSHUNT}" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Netnames pin1="#P" pin2="#N"
+.EndInstance
+.Instance
+Attributes type=component path="6.1.3_constant_voltage_load_answer.sxcmp" selected=0 protected=0 x=6960 y=2520 orient=N0 
+Property name="DC_VOLTAGE" value="{DC_VOLTAGE}" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Property name="MODEL" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="REF" value="LOAD3" autopos=1 normal=Right rotated=Bottom font=Default order=-1
+Property name="RLEAKAGE" value="{RLEAKAGE}" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Property name="RSERIES" value="{RSERIES}" autopos=1 normal=Top rotated=Right visible=0 font=Default order=-1
+Property name="SIMPLIS_TEMPLATE" value=".IF {{ LOAD_TYPE == 'Constant\\sVoltage' }}\n<ref> <nodelist> <value> vars: DC_VOLTAGE=%DC_VOLTAGE% RSERIES=%RSERIES% RLEAKAGE=%RLEAKAGE%\n.ENDIF" autopos=1 normal=Top rotated=Left visible=0 linear=1 font=Default order=-1
+Property name="StyleNormal" value="DefaultInstance" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Netnames pin1="#P" pin2="#N"
+.EndInstance
+Wire x1=4080 y1=2400 x2=4080 y2=2520 net="#P" branch="+:LOAD1#P"
+.Wire
+Attributes x1=4080 y1=2400 x2=4080 y2=2520 
+Property name="BranchFormula" value="+:LOAD1#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=4080 y1=2400 x2=5280 y2=2400 net="#P" branch="-:LOAD1#P"
+.Wire
+Attributes x1=4080 y1=2400 x2=5280 y2=2400 
+Property name="BranchFormula" value="-:LOAD1#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=4080 y1=3360 x2=4080 y2=3480 net="#N" branch="-:LOAD1#N"
+.Wire
+Attributes x1=4080 y1=3360 x2=4080 y2=3480 
+Property name="BranchFormula" value="-:LOAD1#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=4080 y1=3480 x2=5280 y2=3480 net="#N" branch="-:LOAD1#N"
+.Wire
+Attributes x1=4080 y1=3480 x2=5280 y2=3480 
+Property name="BranchFormula" value="-:LOAD1#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=5280 y1=2280 x2=5280 y2=2400 net="#P" branch="+:LOAD1#P+:LOAD3#P+:LOAD2#P"
+.Wire
+Attributes x1=5280 y1=2280 x2=5280 y2=2400 
+Property name="BranchFormula" value="+:LOAD1#P+:LOAD3#P+:LOAD2#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=5280 y1=2400 x2=5520 y2=2400 net="#P" branch="+:LOAD3#P+:LOAD2#P"
+.Wire
+Attributes x1=5280 y1=2400 x2=5520 y2=2400 
+Property name="BranchFormula" value="+:LOAD3#P+:LOAD2#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=5280 y1=3480 x2=5280 y2=3600 net="#N" branch="-:LOAD1#N-:LOAD3#N-:LOAD2#N"
+.Wire
+Attributes x1=5280 y1=3480 x2=5280 y2=3600 
+Property name="BranchFormula" value="-:LOAD1#N-:LOAD3#N-:LOAD2#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=5280 y1=3480 x2=5520 y2=3480 net="#N" branch="+:LOAD3#N+:LOAD2#N"
+.Wire
+Attributes x1=5280 y1=3480 x2=5520 y2=3480 
+Property name="BranchFormula" value="+:LOAD3#N+:LOAD2#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=5520 y1=2400 x2=5520 y2=2520 net="#P" branch="+:LOAD2#P"
+.Wire
+Attributes x1=5520 y1=2400 x2=5520 y2=2520 
+Property name="BranchFormula" value="+:LOAD2#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=5520 y1=2400 x2=6960 y2=2400 net="#P" branch="+:LOAD3#P"
+.Wire
+Attributes x1=5520 y1=2400 x2=6960 y2=2400 
+Property name="BranchFormula" value="+:LOAD3#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=5520 y1=3360 x2=5520 y2=3480 net="#N" branch="-:LOAD2#N"
+.Wire
+Attributes x1=5520 y1=3360 x2=5520 y2=3480 
+Property name="BranchFormula" value="-:LOAD2#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=5520 y1=3480 x2=6960 y2=3480 net="#N" branch="+:LOAD3#N"
+.Wire
+Attributes x1=5520 y1=3480 x2=6960 y2=3480 
+Property name="BranchFormula" value="+:LOAD3#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=6960 y1=2400 x2=6960 y2=2520 net="#P" branch="+:LOAD3#P"
+.Wire
+Attributes x1=6960 y1=2400 x2=6960 y2=2520 
+Property name="BranchFormula" value="+:LOAD3#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#P" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Wire x1=6960 y1=3360 x2=6960 y2=3480 net="#N" branch="-:LOAD3#N"
+.Wire
+Attributes x1=6960 y1=3360 x2=6960 y2=3480 
+Property name="BranchFormula" value="-:LOAD3#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="NetName" value="#N" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleNormal" value="DefaultWire" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndWire
+Text value=".IF { LOAD_TYPE != 'Constant\\sResistance' && LOAD_TYPE != 'Constant\\sCurrent' && LOAD_TYPE != 'Constant\\sVoltage' }\n   .ERROR \"The load type parameter (LOAD_TYPE={LOAD_TYPE}) for the subcircuit_load subcircuit must be one of 'Constant\\sResistance', 'Constant\\sCurrent', or 'Constant\\sVoltage'.\"\n.ENDIF\n\n{ '*** Parameters Passed Into This Level' }\n{ '*** LOAD_TYPE   : ' & LOAD_TYPE }\n{ '*** RESISTANCE  : ' & RESISTANCE }\n{ '*** DC_CURRENT  : ' & DC_CURRENT }\n{ '*** SAT_VOLTAGE : ' & SAT_VOLTAGE }\n{ '*** USE_RSHUNT  : ' & USE_RSHUNT }\n{ '*** RSHUNT      : ' & RSHUNT }\n{ '*** DC_VOLTAGE  : ' & DC_VOLTAGE }\n{ '*** RSERIES     : ' & RSERIES }\n{ '*** RLEAKAGE    : ' & RLEAKAGE }\n"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+SimulatorMode value="Simplis"
+View x=-134 y=1538 zoomlevel=31 zoom=8 snapgrid=120 offsetX=-3064 offsetY=-1538
+Property name="last_hierarchical_path" value="" type=value
+Property name="UserVersion" value="15" type=value
+.EndSchematic
+.EndComponent

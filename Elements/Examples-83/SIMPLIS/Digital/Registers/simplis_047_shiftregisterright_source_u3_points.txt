@@ -1,0 +1,9 @@
+*** file   : simplis_047_shiftregisterright_source_u3_points.txt
+*** example: simplis_047_shiftregisterright_example.sxsch
+***
+*** Time	D3	D2	D1	D0
+000	0	0	0	0
+50n	1	0	1	0
+150n	0	1	0	0
+350n	0	1	0	0
+1150n	0	1	1	1

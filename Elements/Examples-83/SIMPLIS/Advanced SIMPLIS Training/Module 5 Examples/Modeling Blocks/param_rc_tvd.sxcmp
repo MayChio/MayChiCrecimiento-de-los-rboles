@@ -1,0 +1,217 @@
+SIMetrixFile type=schematic format=1.0 revision=7
+.Component
+.Symbol
+Attributes name="component" description="" track=1
+Segment x1=522 y1=96 x2=534 y2=108
+Segment x1=498 y1=108 x2=510 y2=96
+Segment x1=510 y1=144 x2=498 y2=132
+Segment x1=534 y1=132 x2=522 y2=144
+Segment x1=456 y1=66 x2=504 y2=66
+Segment x1=480 y1=-60 x2=480 y2=-24
+Segment x1=480 y1=-180 x2=480 y2=-144
+Segment x1=480 y1=-120 x2=720 y2=120
+Segment x1=1200 y1=0 x2=1080 y2=0
+Segment x1=0 y1=0 x2=120 y2=0
+Segment x1=120 y1=-360 x2=120 y2=360
+Segment x1=120 y1=360 x2=1080 y2=360
+Segment x1=1080 y1=-360 x2=1080 y2=360
+Segment x1=120 y1=-360 x2=1080 y2=-360
+Segment x1=360 y1=-120 x2=480 y2=-120
+Segment x1=480 y1=-240 x2=480 y2=-204
+Segment x1=480 y1=-120 x2=480 y2=-84
+Segment x1=480 y1=0 x2=480 y2=36
+Segment x1=456 y1=144 x2=456 y2=66
+Segment x1=456 y1=102 x2=492 y2=102
+Segment x1=600 y1=480 x2=600 y2=360
+Segment x1=522 y1=144 x2=510 y2=144
+Segment x1=498 y1=132 x2=498 y2=108
+Segment x1=510 y1=96 x2=522 y2=96
+Pin name="RTN" order=3 x=600 y=480 visible=0
+Pin name="VOUT" order=2 x=1200 y=0 visible=1 xlabel=-180 ylabel=0 align=RightBase rotated=0
+Pin name="IN" order=1 x=0 y=0 visible=1 xlabel=180 ylabel=0 align=LeftBase rotated=0
+Property name="GROUPS" value="Filter Parameters:GROUP:Filter Parameters:0:0:0:0:0:0:0,Filter Parameters:GROUP:Gain and Resistor:1:0:1:0:0:1:0" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default
+Property name="TABS" value="Filter Parameters," autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default
+Property name="DESCRIPTIONS" value="Edit RC Filter,RC Filter" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="edit_parameterised_multi_prop_device_tab_value_dialog 1" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default
+Property name="PARAMETERS" value="FC=10k R_VAR=1k GAIN=1" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default
+Property name="LABELS" value="Filter Parameters:Filter Parameters:Cutoff Frequency:0:0:Hz:REAL:1p|100G:1:The Filter Frequency,Filter Parameters:Gain and Resistor:Resistor Value:1:1:__Ohms__:REAL:1|100k:1:The resistor used in the filter,Filter Parameters:Gain and Resistor:Filter Gain:1:0:V/V:REAL::1:The Gain of the Filter" autopos=1 normal=Bottom rotated=Left protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> <value> vars: FC=%FC% R_VAR=%R_VAR% GAIN=%GAIN%" autopos=1 normal=Top rotated=Left visible=0 font=Default
+Property name="GAIN" value="1" autopos=1 normal=Top rotated=Left font=Default displayName=1
+Property name="R_VAR" value="1k" autopos=1 normal=Top rotated=Left font=Default displayName=1
+Property name="FC" value="10k\t" autopos=1 normal=Top rotated=Left font=Default displayName=1
+Property name="ModuleName" value="param_rc_tvd" autopos=1 normal=Top rotated=Right font=Default
+Property name="Ref" value="U?" autopos=1 normal=Top rotated=Right font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="SIMULATOR" value="Simplis" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes name="cap" description="Capacitor" catalog="Passives" track=1
+Segment x1=0 y1=240 x2=0 y2=156
+Segment x1=0 y1=0 x2=0 y2=84
+Segment x1=-84 y1=84 x2=84 y2=84
+Segment x1=-84 y1=156 x2=84 y2=156
+Pin name="P" order=1 x=0 y=0 visible=0
+Pin name="N" order=2 x=0 y=240 visible=0
+Property name="plus" value=" +" autopos=0 x=-60 y=60 align=CentreBase visible=0 font=Default
+Property name="PARAMSSCRIPT" value="params_capacitor" autopos=0 x=0 y=900 align=LeftTop protected=1 visible=0 font=Default
+Property name="ICANAL" value="0;1;0;0;" autopos=0 x=0 y=660 align=LeftTop visible=0 font=Default
+Property name="SIMULATOR" value="DUAL" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="REF" value="C?" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="VALUE" value="1n" autopos=1 normal=Right rotated=Top font=Default
+Property name="DECSCRIPT" value="inc_dec_passive 1" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="INCSCRIPT" value="inc_dec_passive 0" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="MODEL" value="C" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="TEMPLATE" value="<ref> <nodelist> <value> <paramsvalue> %FORM%" autopos=0 x=0 y=360 align=LeftBase protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %VALUE%" autopos=0 x=0 y=480 align=LeftBase visible=0 font=Default
+Property name="VALUESCRIPT" value="edit_reactive" autopos=0 x=0 y=600 align=LeftBase protected=1 visible=0 font=Default
+Property name="INIT_SCRIPT" value="ic_reactive" autopos=0 x=0 y=840 align=LeftBase visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="vcvs" description="Voltage Controlled Voltage Source" catalog="Sources" track=1
+Segment x1=60 y1=96 x2=60 y2=144
+Segment x1=36 y1=120 x2=84 y2=120
+Segment x1=180 y1=360 x2=360 y2=360
+Segment x1=180 y1=120 x2=360 y2=120
+Segment x1=0 y1=480 x2=360 y2=240
+Segment x1=0 y1=0 x2=360 y2=240
+Segment x1=0 y1=0 x2=0 y2=480
+Segment x1=-120 y1=360 x2=0 y2=360
+Segment x1=-120 y1=120 x2=0 y2=120
+Pin name="P" order=1 x=360 y=120 visible=0
+Pin name="N" order=2 x=360 y=360 visible=0
+Pin name="CP" order=3 x=-120 y=120 visible=0
+Pin name="CN" order=4 x=-120 y=360 visible=0
+Property name="REF" value="E?" autopos=1 normal=Bottom rotated=Right font=Default
+Property name="VALUE" value="1" autopos=1 normal=Top rotated=Right font=Default
+Property name="MODEL" value="E" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="SIMULATOR" value="DUAL" autopos=0 x=0 y=780 align=LeftBase protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="res" description="Resistor (Box shape)" catalog="Passives" track=1
+Segment x1=-36 y1=270 x2=-36 y2=90
+Segment x1=-36 y1=90 x2=36 y2=90
+Segment x1=0 y1=270 x2=0 y2=360
+Segment x1=0 y1=90 x2=0 y2=0
+Segment x1=36 y1=270 x2=-36 y2=270
+Segment x1=36 y1=90 x2=36 y2=270
+Pin name="N" order=2 x=0 y=360 visible=0
+Pin name="P" order=1 x=0 y=0 visible=0
+Property name="MODEL" value="R" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="INCSCRIPT" value="inc_dec_passive 0" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="DECSCRIPT" value="inc_dec_passive 1" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="VALUE" value="1K" autopos=1 normal=Right rotated=Top font=Default
+Property name="REF" value="R?" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="SIMULATOR" value="DUAL" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="modport" description="Module Port" catalog="Connections;Terminals" track=1
+Segment x1=0 y1=0 x2=300 y2=0
+Segment x1=120 y1=-18 x2=300 y2=-18
+Segment x1=120 y1=-24 x2=300 y2=-24
+Segment x1=120 y1=-30 x2=300 y2=-30
+Segment x1=120 y1=-36 x2=120 y2=36
+Segment x1=120 y1=-36 x2=300 y2=-36
+Segment x1=120 y1=24 x2=300 y2=24
+Segment x1=120 y1=30 x2=300 y2=30
+Segment x1=120 y1=36 x2=300 y2=36
+Segment x1=120 y1=6 x2=300 y2=6
+Segment x1=300 y1=-12 x2=120 y2=-12
+Segment x1=300 y1=-36 x2=300 y2=36
+Segment x1=300 y1=-6 x2=120 y2=-6
+Segment x1=300 y1=12 x2=120 y2=12
+Segment x1=300 y1=18 x2=120 y2=18
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="netname" value="" autopos=1 normal=Left rotated=Left protected=1 font=Default
+Property name="VALUE" value="VOUT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="Free_text" description="Free text" catalog="Sheet/Text" track=1
+Property name="VALUE" value="Text" autopos=0 x=0 y=156 align=LeftBase linear=1 selectable=1 font=FreeText
+Property name="VALUESCRIPT" value="edit_schem_text" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.EndSymbolLibrary
+View x=-720 y=1800 zoom=7 snapgrid=120
+.Instance
+Attributes type=symbol name="vcvs" selected=0 protected=0 x=1440 y=2280 orient=N0
+Property name="MODEL" value="E" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="1" autopos=1 normal=Top rotated=Right font=Default
+Property name="REF" value="E2" autopos=1 normal=Bottom rotated=Right font=Default
+Netnames pin1="4" pin2="#RTN" pin3="#IN" pin4="#RTN"
+.EndInstance
+.Instance
+Attributes type=symbol name="vcvs" selected=0 protected=0 x=4200 y=2280 orient=N0
+Property name="MODEL" value="E" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="{GAIN}" autopos=1 normal=Top rotated=Right font=Default
+Property name="REF" value="E1" autopos=1 normal=Bottom rotated=Right font=Default
+Netnames pin1="#VOUT" pin2="#RTN" pin3="5" pin4="#RTN"
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=4920 y=2400 orient=N0
+Property name="VALUE" value="VOUT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#VOUT"
+.EndInstance
+.Instance
+Attributes type=symbol name="res" selected=0 protected=0 x=2040 y=2400 orient=N270
+Property name="MODEL" value="R" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="{R_VAR}" autopos=1 normal=Right rotated=Top font=Default
+Property name="REF" value="R1" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames pin1="4" pin2="5"
+.EndInstance
+.Instance
+Attributes type=symbol name="cap" selected=0 protected=0 x=2640 y=2640 orient=N0
+Property name="ICANAL" value="0;1;0;0;" autopos=0 x=0 y=660 align=LeftTop visible=0 font=Default
+Property name="REF" value="C1" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="VALUE" value="{1/(2*pi*FC*R_VAR)}" autopos=1 normal=Right rotated=Top font=Default
+Property name="MODEL" value="C" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %VALUE%" autopos=0 x=0 y=480 align=LeftBase visible=0 font=Default
+Property name="INIT_SCRIPT" value="ic_reactive" autopos=0 x=0 y=840 align=LeftBase visible=0 font=Default
+Netnames pin1="5" pin2="#RTN"
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=960 y=2400 orient=N180
+Property name="VALUE" value="IN" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#IN"
+.EndInstance
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=1560 y=3600 orient=N0
+Property name="VALUE" value="pi is a global constant in SIMetrix/SIMPLIS\n\nFC, and R_VAR, and GAIN are parameters\nwhich need to be passed into this hierarchy level" autopos=0 x=0 y=156 align=LeftBase linear=1 selectable=1 font=FreeText
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="modport" selected=0 protected=0 x=2640 y=3120 orient=N90
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="RTN" autopos=1 normal=Right rotated=Bottom font=Default
+Netnames pin1="#RTN"
+.EndInstance
+Wire x1=1800 y1=2400 x2=2040 y2=2400 net="4" branch="-:E2#P"
+Wire x1=1800 y1=2640 x2=1920 y2=2640 net="#RTN" branch="-:E2#N"
+Wire x1=1920 y1=2640 x2=1920 y2=3000 net="#RTN" branch="-:E2#N"
+Wire x1=1320 y1=2640 x2=1200 y2=2640 net="#RTN" branch="+:E2#CN"
+Wire x1=4080 y1=2640 x2=3960 y2=2640 net="#RTN" branch="+:E1#CN"
+Wire x1=3960 y1=3000 x2=4680 y2=3000 net="#RTN" branch="+:E1#N"
+Wire x1=4560 y1=2400 x2=4920 y2=2400 net="#VOUT" branch="-:E1#P"
+Wire x1=4680 y1=2640 x2=4680 y2=3000 net="#RTN" branch="-:E1#N"
+Wire x1=4560 y1=2640 x2=4680 y2=2640 net="#RTN" branch="-:E1#N"
+Wire x1=4080 y1=2400 x2=2640 y2=2400 net="5" branch="+:E1#CP"
+Wire x1=3960 y1=3000 x2=2640 y2=3000 net="#RTN" branch="+:E1#N+:E1#CN"
+Wire x1=3960 y1=2640 x2=3960 y2=3000 net="#RTN" branch="-:E1#CN"
+Wire x1=2640 y1=2880 x2=2640 y2=3000 net="#RTN" branch="-:C1#N"
+Wire x1=2400 y1=2400 x2=2640 y2=2400 net="5" branch="-:R1#N"
+Wire x1=2640 y1=2640 x2=2640 y2=2400 net="5" branch="+:C1#P"
+Wire x1=2640 y1=3000 x2=2640 y2=3120 net="#RTN" branch="-:E2#CN-:E2#N-:E1#N-:E1#CN-:C1#N"
+Wire x1=960 y1=2400 x2=1320 y2=2400 net="#IN" branch="+:E2#CP"
+Wire x1=2640 y1=3000 x2=1920 y2=3000 net="#RTN" branch="-:E2#CN-:E2#N"
+Wire x1=1200 y1=3000 x2=1920 y2=3000 net="#RTN" branch="-:E2#CN"
+Wire x1=1200 y1=2640 x2=1200 y2=3000 net="#RTN" branch="-:E2#CN"
+Text value=""
+SimulatorMode value="Simplis"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+Property name="NetName" value="" type=value
+Property name="UserVersion" value="20" type=value
+.EndSchematic
+.EndComponent

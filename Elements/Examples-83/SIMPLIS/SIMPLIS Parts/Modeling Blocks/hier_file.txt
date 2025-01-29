@@ -1,0 +1,10 @@
+***
+*** hier_file.txt
+***
+*** created on:	9/21/2016
+*** at time:	10:55 AM
+***
+START_DATA
+0	0
+10u	0
+20u	1

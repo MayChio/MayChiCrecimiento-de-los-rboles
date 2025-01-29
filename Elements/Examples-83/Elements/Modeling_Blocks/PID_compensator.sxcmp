@@ -1,0 +1,306 @@
+SIMetrixFile type=schematic format=1.0 revision=7
+.Component
+.Symbol
+Attributes name="component" description="" track=1
+Segment x1=0 y1=0 x2=120 y2=0
+Segment x1=0 y1=240 x2=120 y2=240
+Segment x1=120 y1=-360 x2=120 y2=720
+Segment x1=120 y1=720 x2=2040 y2=720
+Segment x1=2040 y1=-360 x2=2040 y2=720
+Segment x1=120 y1=-360 x2=2040 y2=-360
+Segment x1=2160 y1=120 x2=2040 y2=120
+Pin name="TIMING" order=1 x=0 y=0 visible=1 xlabel=178 ylabel=0 align=LeftBase rotated=0
+Pin name="ERR_N0" order=3 x=0 y=240 visible=1 xlabel=178 ylabel=0 align=LeftBase rotated=0
+Pin name="OUT" order=2 x=2160 y=120 visible=1 xlabel=-182 ylabel=0 align=RightBase rotated=0
+Property name="LABEL1" value="PID Compensator" autopos=0 x=1080 y=-780 align=CentreTop protected=1 font=Caption
+Property name="SIMULATOR" value="Simplis" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Ref" value="U?" autopos=0 x=420 y=-480 align=LeftTop font=Default
+.EndSymbol
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes name="Ripper_0_4_0" description=""
+Segment x1=120 y1=0 x2=240 y2=0
+Segment x1=0 y1=600 x2=120 y2=480
+Segment x1=0 y1=480 x2=120 y2=360
+Segment x1=0 y1=360 x2=120 y2=240
+Segment x1=0 y1=240 x2=120 y2=120
+Segment x1=0 y1=120 x2=120 y2=0
+Segment x1=144 y1=0 x2=144 y2=480
+Segment x1=132 y1=0 x2=132 y2=480
+Segment x1=120 y1=0 x2=120 y2=480
+Pin name="6" order=6 x=240 y=0 visible=0
+Pin name="5" order=5 x=0 y=600 visible=0
+Pin name="4" order=4 x=0 y=480 visible=0
+Pin name="3" order=3 x=0 y=360 visible=0
+Pin name="2" order=2 x=0 y=240 visible=0
+Pin name="1" order=1 x=0 y=120 visible=0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$busripper" value="3" autopos=0 x=-49 y=480 align=RightBase font=Default
+Property name="pinprop$5$busripper" value="4" autopos=0 x=-49 y=600 align=RightBase font=Default
+Property name="pinprop$6$bus" value="" autopos=0 x=262 y=0 align=LeftBase font=Default
+Property name="Style" value="0" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="valuescript" value="edit_ripper" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="term" description="Terminal" catalog="Connections;Terminals" track=1
+Segment x1=0 y1=0 x2=120 y2=0
+Segment x1=120 y1=-60 x2=120 y2=60
+Segment x1=120 y1=-60 x2=240 y2=-60
+Segment x1=120 y1=60 x2=240 y2=60
+Segment x1=240 y1=-60 x2=240 y2=60
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="VALUE" value="VOUT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="bus_port" description="Module Bus Port" catalog="Connections;Terminals" track=1
+Segment x1=6 y1=-6 x2=0 y2=0
+Segment x1=300 y1=18 x2=120 y2=18
+Segment x1=300 y1=12 x2=120 y2=12
+Segment x1=300 y1=-6 x2=6 y2=-6
+Segment x1=300 y1=-36 x2=300 y2=36
+Segment x1=300 y1=-12 x2=120 y2=-12
+Segment x1=6 y1=6 x2=300 y2=6
+Segment x1=120 y1=36 x2=300 y2=36
+Segment x1=120 y1=30 x2=300 y2=30
+Segment x1=120 y1=24 x2=300 y2=24
+Segment x1=120 y1=-36 x2=300 y2=-36
+Segment x1=120 y1=-36 x2=120 y2=36
+Segment x1=120 y1=-30 x2=300 y2=-30
+Segment x1=120 y1=-24 x2=300 y2=-24
+Segment x1=120 y1=-18 x2=300 y2=-18
+Segment x1=0 y1=0 x2=300 y2=0
+Segment x1=0 y1=0 x2=6 y2=6
+Pin name="A" order=1 x=0 y=0 visible=0
+Property name="VALUE" value="BUS" autopos=0 x=0 y=360 align=LeftBase visible=0 font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="LABEL" value="BUS[0..3]" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="valuescript" value="edit_bus_port" autopos=0 x=0 y=120 align=LeftBase protected=1 visible=0 font=Default
+Property name="BUSSIZE" value="4" autopos=0 x=0 y=240 align=LeftBase visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="Free_text" description="Free text" catalog="Sheet/Text" track=1
+Property name="VALUE" value="Text" autopos=0 x=0 y=156 align=LeftBase linear=1 selectable=1 font=FreeText
+Property name="VALUESCRIPT" value="edit_schem_text" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.EndSymbolLibrary
+View x=240 y=-3600 zoom=11 snapgrid=120
+.Instance
+Attributes type=component path="delay.sxcmp" selected=0 protected=0 x=3720 y=840 orient=N0
+Property name="pinprop$3$busLabel" value="[0..9]" autopos=0 x=960 y=240 align=LeftBase selectable=1 font=Default
+Property name="pinprop$3$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$2$busLabel" value="[0..9]" autopos=0 x=0 y=240 align=RightBase selectable=1 font=Default
+Property name="pinprop$2$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="IC" value="{IC_DELAY}" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> <value> vars: IC=%IC%" autopos=1 normal=Bottom rotated=Bottom visible=0 font=Default displayName=1
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Ref" value="U1" autopos=1 normal=Right rotated=Right font=Default
+Netnames pin1="#CLK_DLY" pin4="11" pin5="12"
+.EndInstance
+.Instance
+Attributes type=component path="PID_sum_terms.sxcmp" selected=0 protected=0 x=10800 y=2160 orient=N0
+Property name="pinprop$5$busLabel" value="[0..23]" autopos=0 x=0 y=720 align=RightBase selectable=1 font=Default
+Property name="pinprop$5$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$4$busLabel" value="[0..19]" autopos=0 x=0 y=240 align=RightBase selectable=1 font=Default
+Property name="pinprop$4$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$3$busLabel" value="[0..19]" autopos=0 x=2160 y=240 align=LeftBase selectable=1 font=Default
+Property name="pinprop$3$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$1$busLabel" value="[0..23]" autopos=0 x=0 y=480 align=RightBase selectable=1 font=Default
+Property name="pinprop$1$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Ref" value="U5" autopos=1 normal=Top rotated=Right font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin2="#PID_OUT"
+.EndInstance
+.Instance
+Attributes type=component path="D_term.sxcmp" selected=0 protected=0 x=6840 y=4320 orient=N0
+Property name="pinprop$4$busLabel" value="[0..13]" autopos=0 x=0 y=720 align=RightBase selectable=1 font=Default
+Property name="pinprop$4$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$3$busLabel" value="[0..9]" autopos=0 x=0 y=240 align=RightBase selectable=1 font=Default
+Property name="pinprop$3$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$2$busLabel" value="[0..23]" autopos=0 x=2160 y=240 align=LeftBase selectable=1 font=Default
+Property name="pinprop$2$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$1$busLabel" value="[0..9]" autopos=0 x=0 y=480 align=RightBase selectable=1 font=Default
+Property name="pinprop$1$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Ref" value="U6" autopos=1 normal=Top rotated=Right font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin5="#CLK_INT"
+.EndInstance
+.Instance
+Attributes type=symbol name="term" selected=0 protected=0 x=6600 y=4320 orient=M0
+Property name="VALUE" value="CLK_INT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#CLK_INT"
+.EndInstance
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=3960 y=240 orient=N0
+Property name="VALUE" value="Delay" autopos=0 x=0 y=156 align=LeftBase selectable=1 font=Caption
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="term" selected=0 protected=0 x=10560 y=2160 orient=M0
+Property name="VALUE" value="PID_OUT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#PID_OUT"
+.EndInstance
+.Instance
+Attributes type=component path="P_term.sxcmp" selected=0 protected=0 x=6840 y=600 orient=N0
+Property name="pinprop$3$busLabel" value="[0..9]" autopos=0 x=0 y=480 align=RightBase selectable=1 font=Default
+Property name="pinprop$3$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$2$busLabel" value="[0..9]" autopos=0 x=0 y=0 align=RightBase selectable=1 font=Default
+Property name="pinprop$2$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$1$busLabel" value="[0..19]" autopos=0 x=2160 y=120 align=LeftBase selectable=1 font=Default
+Property name="pinprop$1$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Ref" value="U3" autopos=1 normal=Top rotated=Right font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="term" selected=0 protected=0 x=3480 y=840 orient=M0
+Property name="VALUE" value="CLK_DLY" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#CLK_DLY"
+.EndInstance
+.Instance
+Attributes type=symbol name="term" selected=0 protected=0 x=3960 y=-480 orient=N0
+Property name="VALUE" value="CLK_INT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#CLK_INT"
+.EndInstance
+.Instance
+Attributes type=symbol name="term" selected=0 protected=0 x=3960 y=-600 orient=N0
+Property name="VALUE" value="CLK_A2D" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#CLK_A2D"
+.EndInstance
+.Instance
+Attributes type=symbol name="bus_port" selected=0 protected=0 x=13560 y=2400 orient=N0
+Property name="VALUE" value="OUT" autopos=0 x=0 y=360 align=LeftBase visible=0 font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="LABEL" value="OUT[0..19]" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="BUSSIZE" value="20" autopos=0 x=0 y=240 align=LeftBase visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="bus_port" selected=0 protected=0 x=3120 y=1080 orient=M0
+Property name="VALUE" value="ERR_N0" autopos=0 x=0 y=360 align=LeftBase visible=0 font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="LABEL" value="ERR_N0[0..9]" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="BUSSIZE" value="10" autopos=0 x=0 y=240 align=LeftBase visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="bus_port" selected=0 protected=0 x=2880 y=-960 orient=M0
+Property name="VALUE" value="TIMING" autopos=0 x=0 y=360 align=LeftBase visible=0 font=Default
+Property name="scterm" value="1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="LABEL" value="TIMING[0..4]" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="BUSSIZE" value="5" autopos=0 x=0 y=240 align=LeftBase visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="Ripper_0_4_0" selected=0 protected=0 x=3600 y=-960 orient=M0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$busripper" value="3" autopos=0 x=-49 y=480 align=RightBase font=Default
+Property name="pinprop$5$busripper" value="4" autopos=0 x=-49 y=600 align=RightBase font=Default
+Property name="pinprop$6$bus" value="" autopos=0 x=262 y=0 align=LeftBase font=Default
+Netnames pin1="#TIMING$0" pin2="#CLK_DLY" pin3="#CLK_A2D" pin4="#CLK_INT" pin5="#PID_OUT"
+.EndInstance
+.Instance
+Attributes type=symbol name="term" selected=0 protected=0 x=3960 y=-720 orient=N0
+Property name="VALUE" value="CLK_DLY" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#CLK_DLY"
+.EndInstance
+.Instance
+Attributes type=symbol name="term" selected=0 protected=0 x=3960 y=-360 orient=N0
+Property name="VALUE" value="PID_OUT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#PID_OUT"
+.EndInstance
+.Instance
+Attributes type=symbol name="term" selected=0 protected=0 x=6600 y=2520 orient=M0
+Property name="VALUE" value="CLK_INT" autopos=1 normal=Right rotated=Bottom font=Default
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="#CLK_INT"
+.EndInstance
+.Instance
+Attributes type=component path="I_term.sxcmp" selected=0 protected=0 x=6840 y=2520 orient=N0
+Property name="pinprop$5$busLabel" value="[0..9]" autopos=0 x=0 y=600 align=RightBase selectable=1 font=Default
+Property name="pinprop$5$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$4$busLabel" value="[0..9]" autopos=0 x=0 y=240 align=RightBase selectable=1 font=Default
+Property name="pinprop$4$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$3$busLabel" value="[0..23]" autopos=0 x=2160 y=120 align=LeftBase selectable=1 font=Default
+Property name="pinprop$3$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$1$busLabel" value="[0..9]" autopos=0 x=0 y=360 align=RightBase selectable=1 font=Default
+Property name="pinprop$1$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Ref" value="U4" autopos=1 normal=Top rotated=Right font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin2="#CLK_INT"
+.EndInstance
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=5760 y=-1080 orient=N0
+Property name="VALUE" value="THE INPUT OF THE DELAY COMPONENT IS THE CURRENT\nERROR e(n) AND ITS OUTPUT IS THE PREVIOUS ERROR e(n-1)" autopos=0 x=0 y=156 align=LeftBase selectable=1 font=Caption
+Netnames
+.EndInstance
+.Instance
+Attributes type=component path="PID_coefficients_params.sxcmp" selected=0 protected=0 x=4560 y=3840 orient=N0
+Property name="pinprop$3$busLabel" value="[0..13]" autopos=0 x=0 y=1200 align=LeftBase selectable=1 font=Default
+Property name="pinprop$3$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$2$busLabel" value="[0..9]" autopos=0 x=0 y=0 align=LeftBase selectable=1 font=Default
+Property name="pinprop$2$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="pinprop$1$busLabel" value="[0..9]" autopos=0 x=0 y=600 align=LeftBase selectable=1 font=Default
+Property name="pinprop$1$busStart" value="0" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Model" value="X" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="Ref" value="U2" autopos=1 normal=Top rotated=Right font=Default
+Netnames
+.EndInstance
+Wire x1=10800 y1=2880 x2=9600 y2=2880 net="BUS5" branch=""
+Wire x1=9000 y1=4560 x2=9600 y2=4560 net="BUS5" branch=""
+Wire x1=5280 y1=2880 x2=5280 y2=4800 net="BUS2" branch=""
+Wire x1=5040 y1=2760 x2=5040 y2=4560 net="ERR_N0" branch=""
+Wire x1=9600 y1=2400 x2=9600 y2=720 net="BUS1" branch=""
+Wire x1=5520 y1=3840 x2=5520 y2=1080 net="BUS3" branch=""
+Wire x1=6840 y1=600 x2=5040 y2=600 net="ERR_N0" branch=""
+Wire x1=5760 y1=4440 x2=4560 y2=4440 net="BUS6" branch=""
+Wire x1=6840 y1=3120 x2=5760 y2=3120 net="BUS6" branch=""
+Wire x1=3120 y1=1080 x2=3480 y2=1080 net="ERR_N0" branch=""
+Wire x1=3480 y1=2760 x2=3480 y2=1080 net="ERR_N0" branch=""
+Wire x1=5040 y1=2760 x2=6840 y2=2760 net="ERR_N0" branch=""
+Wire x1=5280 y1=1080 x2=5280 y2=2880 net="BUS2" branch=""
+Wire x1=4680 y1=1080 x2=5280 y2=1080 net="BUS2" branch=""
+Wire x1=6840 y1=2520 x2=6600 y2=2520 net="#TIMING$3" branch="+:U4#CLK"
+Wire x1=3720 y1=840 x2=3480 y2=840 net="#TIMING$1" branch="+:U1#CLK"
+Wire x1=3600 y1=-360 x2=3960 y2=-360 net="#TIMING$4" branch="0"
+Wire x1=3600 y1=-720 x2=3960 y2=-720 net="#TIMING$1" branch="0"
+Wire x1=12960 y1=2400 x2=13560 y2=2400 net="OUT" branch=""
+Wire x1=3480 y1=1080 x2=3720 y2=1080 net="ERR_N0" branch=""
+Wire x1=3360 y1=-960 x2=2880 y2=-960 net="TIMING" branch=""
+Wire x1=3600 y1=-600 x2=3960 y2=-600 net="#TIMING$2" branch="0"
+Wire x1=3960 y1=-480 x2=3600 y2=-480 net="#TIMING$3" branch="0"
+Wire x1=5280 y1=2880 x2=6840 y2=2880 net="BUS2" branch=""
+Wire x1=5760 y1=3120 x2=5760 y2=4440 net="BUS6" branch=""
+Wire x1=5040 y1=600 x2=5040 y2=2760 net="ERR_N0" branch=""
+Wire x1=3480 y1=2760 x2=5040 y2=2760 net="ERR_N0" branch=""
+Wire x1=4560 y1=3840 x2=5520 y2=3840 net="BUS3" branch=""
+Wire x1=5520 y1=1080 x2=6840 y2=1080 net="BUS3" branch=""
+Wire x1=10560 y1=2160 x2=10800 y2=2160 net="#TIMING$4" branch="+:U5#CLK"
+Wire x1=9000 y1=2640 x2=10800 y2=2640 net="BUS4" branch=""
+Wire x1=10800 y1=2400 x2=9600 y2=2400 net="BUS1" branch=""
+Wire x1=9600 y1=720 x2=9000 y2=720 net="BUS1" branch=""
+Wire x1=6840 y1=5040 x2=4560 y2=5040 net="BUS7" branch=""
+Wire x1=5040 y1=4560 x2=6840 y2=4560 net="ERR_N0" branch=""
+Wire x1=5280 y1=4800 x2=6840 y2=4800 net="BUS2" branch=""
+Wire x1=9600 y1=4560 x2=9600 y2=2880 net="BUS5" branch=""
+Wire x1=6840 y1=4320 x2=6600 y2=4320 net="#TIMING$3" branch="+:U6#CLK"
+Text value=" .KEEP *V\n\n\n* The following initial conditions are the bit values for the unit delay component U1.  Assuming\n*\tthe system is close to steady-state at the start of the simulation, the input error\n*\tshould be very close to zero.  Hence, set all these bit values to 0.\n*\t\n.VAR IC_DELAY 0\n"
+SimulatorMode value="Simplis"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+Property name="NetName" value="" type=value
+Property name="UserVersion" value="98" type=value
+.EndSchematic
+.EndComponent

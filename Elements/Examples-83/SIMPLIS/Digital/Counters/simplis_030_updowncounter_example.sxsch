@@ -1,0 +1,455 @@
+SIMetrixFile type=schematic format=1.0 revision=7
+.Component
+.Schematic
+.SymbolLibrary
+.Symbol
+Attributes name="probev_new" description="Probe Voltage" catalog="Connections;Probes" track=1
+Segment x1=0 y1=0 x2=60 y2=-60
+Segment x1=60 y1=-60 x2=120 y2=-60
+Segment x1=60 y1=-60 x2=60 y2=-120
+Pin name="NODE" order=1 x=0 y=0 visible=0
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=1020 align=LeftTop visible=0 font=Default
+Property name="PARAMSSCRIPT" value="edit_probe_measure" autopos=0 x=-240 y=840 align=LeftTop protected=1 visible=0 font=Default
+Property name="PARAMS_MENU" value="Edit/Add Measurement..." autopos=0 x=-240 y=780 align=LeftTop protected=1 visible=0 font=Default
+Property name="CLASS" value="PROBE" autopos=0 x=-240 y=480 align=LeftBase protected=1 visible=0 font=Default
+Property name="Label" value="" autopos=1 normal=Right rotated=Right font=Default
+Property name="VALUE" value="" autopos=1 normal=Right rotated=Right font=Default
+Property name="REF" value="Probe?" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUESCRIPT" value="edit_probe" autopos=0 x=-240 y=360 align=LeftBase protected=1 visible=0 font=Default
+Property name="TEMPLATE" value=".GRAPH <node[1]> %VALUE% <ifd:PROBE_DISABLED:disabled=%PROBE_DISABLED%> <ifd:MEASURE_SPEC:userid=%REF%.<block> MeasureSpec=\"%MEASURE_SPEC%\";.post_process probe_measure %REF%.<block> %MEASURE_SPEC%>" autopos=0 x=-240 y=120 align=LeftBase protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value=".PRINT V(<probe[1]>);.GRAPH :<probe[1]> %VALUE% <ifd:PROBE_DISABLED:disabled=%PROBE_DISABLED%> <ifd:MEASURE_SPEC:userid=%REF%.<block> MeasureSpec=\"%MEASURE_SPEC%\" ;.post_process probe_measure %REF%.<block> %MEASURE_SPEC%>" autopos=0 x=-240 y=240 align=LeftBase protected=1 visible=0 font=Default
+Property name="PROBETYPE" value="V" autopos=0 x=-240 y=600 align=LeftBase protected=1 visible=0 font=Default
+Property name="SIMULATOR" value="DUAL" autopos=0 x=-240 y=720 align=LeftBase protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="Ripper_0_2_0" description=""
+Segment x1=120 y1=0 x2=240 y2=0
+Segment x1=0 y1=360 x2=120 y2=240
+Segment x1=0 y1=240 x2=120 y2=120
+Segment x1=0 y1=120 x2=120 y2=0
+Segment x1=144 y1=0 x2=144 y2=240
+Segment x1=132 y1=0 x2=132 y2=240
+Segment x1=120 y1=0 x2=120 y2=240
+Pin name="4" order=4 x=240 y=0 visible=0
+Pin name="3" order=3 x=0 y=360 visible=0
+Pin name="2" order=2 x=0 y=240 visible=0
+Pin name="1" order=1 x=0 y=120 visible=0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$bus" value="" autopos=0 x=262 y=0 align=LeftBase font=Default
+Property name="Style" value="0" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+Property name="valuescript" value="edit_ripper" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="probe_bus" description="Probe Bus" catalog="Connections;Probes" track=1
+Segment x1=60 y1=-60 x2=60 y2=-120
+Segment x1=60 y1=-60 x2=120 y2=-60
+Segment x1=0 y1=0 x2=60 y2=-60
+Pin name="NODE" order=1 x=0 y=0 visible=0
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=2040 align=LeftTop visible=0 font=Default
+Property name="HIGHTHRESH" value="0.9" autopos=0 x=-240 y=1920 align=LeftTop visible=0 font=Default
+Property name="LOWTHRESH" value="0.8" autopos=0 x=-240 y=1800 align=LeftTop visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value=".GRAPH \"ComposeDigital('#<bus[1]>', [%BUSSTART%, %BUSEND%], <if:{'%BUSTYPE%'=='analog'}:['holdInvalid', 'scale']:<<if:{'%HOLDINV%'=='true'}: <if:{'%BUSTYPE%'=='decsigned'}:['holdinvalid','signed']:'holdinvalid'> : <if:{'%BUSTYPE%'=='decsigned'}:'signed':''> >>>, '%%BUSNAME%%$%%WIRENUM%%', [%LOWTHRESH%, %HIGHTHRESH%])*%ANALOGRANGE%+{%ANALOGOFFSET%-%ANALOGRANGE%/2}\" complete=true <ifd:YUNIT:yunit=%YUNIT%:> axistype=<if:{'%BUSTYPE%'!='analog'&&('%AXISTYPE%'=='auto'||'%AXISTYPE%'=='')}:digital:%axistype%> <ifd:GRAPHNAME:graphname=%GRAPHNAME%:> <ifd:AXISNAME:axisname=%AXISNAME%:> bus=%BUSTYPE% curveLabel=\"<ifd:LABEL:%LABEL%:<<bus[1]>>>\" <ifd:PROBE_DISABLED:disabled=%PROBE_DISABLED%> ;.PRINT ^<bus[1]>$*" autopos=0 x=-240 y=150 align=LeftTop protected=1 visible=0 font=Default
+Property name="ANALOGOFFSET" value="0.5" autopos=0 x=-240 y=1560 align=LeftBase visible=0 font=Default
+Property name="ANALOGRANGE" value="1" autopos=0 x=-240 y=1440 align=LeftBase visible=0 font=Default
+Property name="LABEL" value="" autopos=1 normal=Right rotated=Right font=Default
+Property name="BUSTYPE" value="dec" autopos=0 x=-240 y=1318 align=LeftBase visible=0 font=Default
+Property name="HOLDINV" value="true" autopos=0 x=-240 y=1198 align=LeftBase visible=0 font=Default
+Property name="BUSEND" value="-1" autopos=0 x=-240 y=1078 align=LeftBase visible=0 font=Default
+Property name="BUSSTART" value="-1" autopos=0 x=-240 y=958 align=LeftBase visible=0 font=Default
+Property name="pinprop$1$bus" value="" autopos=0 x=-240 y=838 align=LeftBase font=Default
+Property name="SIMULATOR" value="Dual" autopos=0 x=-240 y=718 align=LeftBase protected=1 visible=0 font=Default
+Property name="PROBETYPE" value="V" autopos=0 x=-240 y=598 align=LeftBase protected=1 visible=0 font=Default
+Property name="TEMPLATE" value=".GRAPH \"ComposeDigital('<bus[1]>', [%BUSSTART%, %BUSEND%], <if:{'%BUSTYPE%'=='analog'}:['holdInvalid', 'scale']:<<if:{'%HOLDINV%'=='1'}:  <if:{'%BUSTYPE%'=='decsigned'}:['holdinvalid','signed']:'holdinvalid'>   : <if:{'%BUSTYPE%'=='decsigned'}:'signed':''>  >>>, '%%BUSNAME%%#%%WIRENUM%%'  <ifd:LOWTHRESH:, [%LOWTHRESH%, %HIGHTHRESH%] :>)*%ANALOGRANGE%+{%ANALOGOFFSET%-%ANALOGRANGE%/2}\" complete=true <ifd:YUNIT:yunit=%YUNIT%:> axistype=<if:{'%BUSTYPE%'!='analog'&&('%AXISTYPE%'=='auto'||'%AXISTYPE%'=='')}:digital:<ifd:AXISTYPE:%axistype%:auto> > <ifd:GRAPHNAME:graphname=%GRAPHNAME%:> <ifd:AXISNAME:axisname=%AXISNAME%:> bus=%BUSTYPE% curveLabel=\"<ifd:LABEL:%LABEL%:<<bus[1]>>>\" <ifd:PROBE_DISABLED:disabled=%PROBE_DISABLED%> ;.KEEP ^<bus[1]>#*" autopos=0 x=-240 y=120 align=LeftBase protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="edit_bus_probe" autopos=0 x=-240 y=358 align=LeftBase protected=1 visible=0 font=Default
+Property name="REF" value="Probe?" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="CLASS" value="PROBE" autopos=0 x=-240 y=478 align=LeftBase protected=1 visible=0 font=Default
+Property name="YUNIT" value="" autopos=0 x=-240 y=1680 align=LeftBase visible=0 font=Default
+.EndSymbol
+.Symbol
+Attributes name="SIMPLIS_DIGI1_D_PULSE_N_Y" description="SIMPLIS Logic BB Digital Pulse Source" catalog="Digital"
+Segment x1=360 y1=600 x2=360 y2=720
+Segment x1=600 y1=240 x2=720 y2=240
+Segment x1=120 y1=528 x2=192 y2=600
+Segment x1=120 y1=540 x2=180 y2=600
+Segment x1=120 y1=552 x2=168 y2=600
+Segment x1=120 y1=564 x2=156 y2=600
+Segment x1=432 y1=240 x2=480 y2=240
+Segment x1=420 y1=480 x2=432 y2=240
+Segment x1=372 y1=480 x2=420 y2=480
+Segment x1=360 y1=240 x2=372 y2=480
+Segment x1=252 y1=240 x2=360 y2=240
+Segment x1=240 y1=480 x2=252 y2=240
+Segment x1=120 y1=600 x2=120 y2=120
+Segment x1=120 y1=600 x2=600 y2=600
+Segment x1=600 y1=120 x2=600 y2=600
+Segment x1=120 y1=120 x2=600 y2=120
+Pin name="RTN" order=2 x=360 y=720 visible=0
+Pin name="OUT" order=1 x=720 y=240 visible=0
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="simplis_edit_pulse" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_DIGI1_D_PULSE_N_Y" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: PERIOD=%PERIOD% WIDTH=%WIDTH% DELAY=%DELAY% ROUT=%ROUT% VOL=%VOL% VOH=%VOH% COMP=%COMP% GNDREF=%GNDREF%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="INIT_SCRIPT" value="simplis_back_annotate_digital_devices" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PERIOD" value="100n" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="WIDTH" value="50n" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="COMP" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="GNDREF" value="'Y'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+.EndSymbol
+.Symbol
+Attributes name="SIMPLIS_DIGI1_D_UPDOWN_COUNTER_N_1_ASYNC_0_TO_1_3BIT" description="SIMPLIS Logic BB Up/Down Counter" catalog="Digital"
+Segment x1=120 y1=120 x2=1080 y2=120
+Segment x1=1080 y1=120 x2=1080 y2=1080
+Segment x1=120 y1=1080 x2=1080 y2=1080
+Segment x1=120 y1=1080 x2=120 y2=120
+Segment x1=120 y1=1044 x2=156 y2=1080
+Segment x1=120 y1=1032 x2=168 y2=1080
+Segment x1=120 y1=1020 x2=180 y2=1080
+Segment x1=120 y1=1008 x2=192 y2=1080
+Segment x1=1080 y1=360 x2=1200 y2=360
+Segment x1=1080 y1=480 x2=1200 y2=480
+Segment x1=1080 y1=600 x2=1200 y2=600
+Segment x1=0 y1=360 x2=120 y2=360
+Segment x1=120 y1=312 x2=168 y2=360
+Segment x1=120 y1=408 x2=168 y2=360
+Segment x1=288 y1=324 x2=288 y2=396
+Segment x1=240 y1=396 x2=288 y2=396
+Segment x1=288 y1=324 x2=336 y2=324
+Segment x1=0 y1=480 x2=120 y2=480
+Segment x1=0 y1=600 x2=120 y2=600
+Segment x1=0 y1=576 x2=24 y2=504
+Segment x1=48 y1=576 x2=24 y2=504
+Segment x1=12 y1=552 x2=36 y2=552
+Segment x1=0 y1=720 x2=120 y2=720
+Segment x1=0 y1=696 x2=24 y2=624
+Segment x1=48 y1=696 x2=24 y2=624
+Segment x1=12 y1=672 x2=36 y2=672
+Segment x1=0 y1=840 x2=120 y2=840
+Pin name="D0" order=1 x=1200 y=360 visible=1 xlabel=-132 ylabel=60 align=RightBase rotated=0
+Pin name="D1" order=2 x=1200 y=480 visible=0
+Pin name="D2" order=3 x=1200 y=600 visible=1 xlabel=-132 ylabel=60 align=RightBase rotated=0
+Pin name="CLK" order=4 x=0 y=360 visible=0
+Pin name="EN" order=5 x=0 y=480 visible=1 xlabel=144 ylabel=60 align=LeftBase rotated=0
+Pin name="SET" order=6 x=0 y=600 visible=1 xlabel=144 ylabel=60 align=LeftBase rotated=0
+Pin name="RST" order=7 x=0 y=720 visible=1 xlabel=144 ylabel=60 align=LeftBase rotated=0
+Pin name="CNT_UP" order=8 x=0 y=840 visible=1 xlabel=144 ylabel=60 align=LeftBase rotated=0
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="simplis_edit_counter" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_DIGI1_D_UPDOWN_COUNTER_N" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: CLK_TO_OUT_DELAY=%CLK_TO_OUT_DELAY% IC=%IC% RIN=%RIN% ROUT=%ROUT% TH=%TH% HYSTWD=%HYSTWD% VOL=%VOL% VOH=%VOH% MIN_CLK=%MIN_CLK% TRIG_COND=%TRIG_COND% ENABLE_DELAY=%ENABLE_DELAY% SETUP_TIME=%SETUP_TIME% HOLD_TIME=%HOLD_TIME% SET_RESET_DELAY=%SET_RESET_DELAY% SET_RESET_TYPE=%SET_RESET_TYPE% SET_RESET_LEVEL=%SET_RESET_LEVEL% NUMBITS=%NUMBITS% SET_TO=%SET_TO% RESET_TO=%RESET_TO% GNDREF=%GNDREF%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="INIT_SCRIPT" value="simplis_back_annotate_digital_devices" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="TEMPLATESCRIPT" value="simplis_make_counter_model" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="CLK_TO_OUT_DELAY" value="20p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="TH" value="2.5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="1.0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="MIN_CLK" value="10p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="TRIG_COND" value="'0_TO_1'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ENABLE_DELAY" value="10p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SETUP_TIME" value="10p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HOLD_TIME" value="1p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SET_RESET_DELAY" value="15p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SET_RESET_TYPE" value="'ASYNC'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SET_RESET_LEVEL" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="NUMBITS" value="3" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SET_TO" value="-1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RESET_TO" value="-1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="GNDREF" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+Property name="LABEL" value="U/D CNTR" autopos=0 x=600 y=132 align=CentreTop protected=1 font=Annotation
+.EndSymbol
+.Symbol
+Attributes name="SIMPLIS_DIGI1_D_SIGNAL_SOURCE_N_1BIT" description="SIMPLIS Logic BB Digital Signal Source(2)" catalog="Digital"
+Segment x1=720 y1=240 x2=840 y2=240
+Segment x1=504 y1=540 x2=468 y2=576
+Segment x1=504 y1=540 x2=468 y2=504
+Segment x1=216 y1=540 x2=504 y2=540
+Segment x1=216 y1=576 x2=216 y2=564
+Segment x1=192 y1=576 x2=216 y2=576
+Segment x1=192 y1=504 x2=192 y2=576
+Segment x1=168 y1=528 x2=216 y2=528
+Segment x1=456 y1=480 x2=504 y2=480
+Segment x1=456 y1=384 x2=456 y2=480
+Segment x1=408 y1=384 x2=456 y2=384
+Segment x1=408 y1=480 x2=408 y2=384
+Segment x1=360 y1=480 x2=408 y2=480
+Segment x1=360 y1=312 x2=360 y2=480
+Segment x1=312 y1=312 x2=360 y2=312
+Segment x1=312 y1=480 x2=312 y2=312
+Segment x1=264 y1=480 x2=312 y2=480
+Segment x1=264 y1=432 x2=264 y2=480
+Segment x1=216 y1=432 x2=264 y2=432
+Segment x1=216 y1=480 x2=216 y2=432
+Segment x1=168 y1=480 x2=216 y2=480
+Segment x1=120 y1=648 x2=192 y2=720
+Segment x1=120 y1=660 x2=180 y2=720
+Segment x1=120 y1=672 x2=168 y2=720
+Segment x1=120 y1=684 x2=156 y2=720
+Segment x1=120 y1=720 x2=120 y2=120
+Segment x1=120 y1=720 x2=720 y2=720
+Segment x1=720 y1=120 x2=720 y2=720
+Segment x1=120 y1=120 x2=720 y2=120
+Pin name="D0" order=1 x=840 y=240 visible=1 xlabel=-240 ylabel=60 align=CentreBase rotated=0
+Property name="SIMULATOR" value="SIMPLIS" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAMSSCRIPT" value="no_params" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="MODEL" value="X" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="VALUESCRIPT" value="simplis_edit_signal_source" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="PARAM_MODEL_NAME" value="SIMPLIS_DIGI1_D_SIGNAL_SOURCE_N" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="SIMPLIS_TEMPLATE" value="<ref> <nodelist> %PARAM_MODEL_NAME% vars: ROUT=%ROUT% VOL=%VOL% VOH=%VOH% GNDREF=%GNDREF%" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="TEMPLATESCRIPT" value="simplis_make_signal_source_model" autopos=1 normal=Bottom rotated=Bottom protected=1 visible=0 font=Default
+Property name="NUMBITS" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SOURCE_DEF" value="'Dialog'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="GNDREF" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REDEFINE_SOURCE" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VALUE" value="NSEG=2 X0=0 Y0=0 X1=10u Y1=0 X2=20u Y2=1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U?" autopos=1 normal=Top rotated=Top font=Default
+.EndSymbol
+.Symbol
+Attributes name="gnd" description="Ground" catalog="Connections;Terminals" track=1
+Segment x1=-120 y1=120 x2=120 y2=120
+Segment x1=-24 y1=192 x2=24 y2=192
+Segment x1=-72 y1=156 x2=72 y2=156
+Segment x1=0 y1=0 x2=0 y2=120
+Pin name="GND" order=1 x=0 y=0 visible=0
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="0" autopos=1 normal=Left rotated=Left protected=1 visible=0 font=Default
+.EndSymbol
+.EndSymbolLibrary
+View x=120 y=360 zoom=9 snapgrid=120
+.Instance
+Attributes type=symbol name="probev_new" selected=0 protected=0 x=2640 y=4080 orient=N0
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=1020 align=LeftTop visible=0 font=Default
+Property name="REF" value="Probe6" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="axisType=\"auto\" persistence=-1 curveLabel=\"RST\" analysis=\"tran|pop\" order=\"c1\" xLog=\"auto\" yLog=\"auto\"  nowarn=true" autopos=1 normal=Right rotated=Right visible=0 font=Default
+Property name="Label" value="RST" autopos=1 normal=Right rotated=Right font=Default
+Netnames pin1="8"
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_SIGNAL_SOURCE_N_1BIT" selected=0 protected=0 x=840 y=5040 orient=N0
+Property name="REF" value="U5" autopos=1 normal=Top rotated=Top font=Default
+Property name="VALUE" value="NSEG=2 X0=0 Y0=0 X1=2200n Y1=1 X2=2300n Y2=0 " autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REDEFINE_SOURCE" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="GNDREF" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SOURCE_DEF" value="'Dialog'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="NUMBITS" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SOURCE_FILE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="8"
+.EndInstance
+.Instance
+Attributes type=symbol name="probe_bus" selected=0 protected=0 x=5280 y=2400 orient=N0
+Property name="GRAPHNAME" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="AXISNAME" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="AXISTYPE" value="auto" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=2040 align=LeftTop visible=0 font=Default
+Property name="HIGHTHRESH" value="0.9" autopos=0 x=-240 y=1920 align=LeftTop visible=0 font=Default
+Property name="LOWTHRESH" value="0.8" autopos=0 x=-240 y=1800 align=LeftTop visible=0 font=Default
+Property name="ANALOGOFFSET" value="4" autopos=0 x=-240 y=1560 align=LeftBase visible=0 font=Default
+Property name="ANALOGRANGE" value="8" autopos=0 x=-240 y=1440 align=LeftBase visible=0 font=Default
+Property name="LABEL" value="D" autopos=1 normal=Right rotated=Right font=Default
+Property name="BUSTYPE" value="analog" autopos=0 x=-240 y=1318 align=LeftBase visible=0 font=Default
+Property name="HOLDINV" value="1" autopos=0 x=-240 y=1198 align=LeftBase visible=0 font=Default
+Property name="BUSEND" value="-1" autopos=0 x=-240 y=1078 align=LeftBase visible=0 font=Default
+Property name="BUSSTART" value="-1" autopos=0 x=-240 y=958 align=LeftBase visible=0 font=Default
+Property name="pinprop$1$bus" value="" autopos=0 x=-240 y=838 align=LeftBase font=Default
+Property name="REF" value="Probe5" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="YUNIT" value="V" autopos=0 x=-240 y=1680 align=LeftBase visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="gnd" selected=0 protected=0 x=1200 y=2520 orient=N0
+Property name="netname" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="0"
+.EndInstance
+.Instance
+Attributes type=symbol name="probe_bus" selected=0 protected=0 x=5280 y=1800 orient=N0
+Property name="GRAPHNAME" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="AXISNAME" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="AXISTYPE" value="digital" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=2040 align=LeftTop visible=0 font=Default
+Property name="HIGHTHRESH" value="0.9" autopos=0 x=-240 y=1920 align=LeftTop visible=0 font=Default
+Property name="LOWTHRESH" value="0.8" autopos=0 x=-240 y=1800 align=LeftTop visible=0 font=Default
+Property name="ANALOGOFFSET" value="0.5" autopos=0 x=-240 y=1560 align=LeftBase visible=0 font=Default
+Property name="ANALOGRANGE" value="1.0" autopos=0 x=-240 y=1440 align=LeftBase visible=0 font=Default
+Property name="LABEL" value="D" autopos=1 normal=Right rotated=Right font=Default
+Property name="BUSTYPE" value="dec" autopos=0 x=-240 y=1318 align=LeftBase visible=0 font=Default
+Property name="HOLDINV" value="0" autopos=0 x=-240 y=1198 align=LeftBase visible=0 font=Default
+Property name="BUSEND" value="-1" autopos=0 x=-240 y=1078 align=LeftBase visible=0 font=Default
+Property name="BUSSTART" value="-1" autopos=0 x=-240 y=958 align=LeftBase visible=0 font=Default
+Property name="pinprop$1$bus" value="" autopos=0 x=-240 y=838 align=LeftBase font=Default
+Property name="REF" value="Probe1" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="YUNIT" value="" autopos=0 x=-240 y=1680 align=LeftBase visible=0 font=Default
+Netnames
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_PULSE_N_Y" selected=0 protected=0 x=840 y=1680 orient=N0
+Property name="PERIOD" value="100n" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="WIDTH" value="50n" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="DELAY" value="100n" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="COMP" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="GNDREF" value="'Y'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U2" autopos=1 normal=Top rotated=Top font=Default
+Netnames pin1="2" pin2="0"
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_SIGNAL_SOURCE_N_1BIT" selected=0 protected=0 x=840 y=3960 orient=N0
+Property name="REF" value="U4" autopos=1 normal=Top rotated=Top font=Default
+Property name="VALUE" value="NSEG=2 X0=0 Y0=0 X1=900n Y1=1 X2=905n Y2=0 " autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REDEFINE_SOURCE" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="GNDREF" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SOURCE_DEF" value="'Dialog'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="NUMBITS" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SOURCE_FILE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="6"
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_SIGNAL_SOURCE_N_1BIT" selected=0 protected=0 x=840 y=2880 orient=N0
+Property name="SOURCE_FILE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="NUMBITS" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SOURCE_DEF" value="'Dialog'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="GNDREF" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REDEFINE_SOURCE" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VALUE" value="NSEG=2 X0=0 Y0=1 X1=300n Y1=0 X2=600n Y2=1 " autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U3" autopos=1 normal=Top rotated=Top font=Default
+Netnames pin1="4"
+.EndInstance
+.Instance
+Attributes type=symbol name="probev_new" selected=0 protected=0 x=2280 y=3360 orient=N0
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=1020 align=LeftTop visible=0 font=Default
+Property name="REF" value="Probe4" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="axisType=\"auto\" persistence=-1 curveLabel=\"SET\" analysis=\"tran|pop\" order=\"c\" xLog=\"auto\" yLog=\"auto\"  nowarn=true" autopos=1 normal=Right rotated=Right visible=0 font=Default
+Property name="Label" value="SET" autopos=1 normal=Right rotated=Right font=Default
+Netnames pin1="6"
+.EndInstance
+.Instance
+Attributes type=symbol name="probev_new" selected=0 protected=0 x=1920 y=2640 orient=N0
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=1020 align=LeftTop visible=0 font=Default
+Property name="REF" value="Probe2" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="axisType=\"auto\" persistence=-1 curveLabel=\"EN\" analysis=\"tran|pop\" order=\"b\" xLog=\"auto\" yLog=\"auto\"  nowarn=true" autopos=1 normal=Right rotated=Right visible=0 font=Default
+Property name="Label" value="EN" autopos=1 normal=Right rotated=Right font=Default
+Netnames pin1="4"
+.EndInstance
+.Instance
+Attributes type=symbol name="probev_new" selected=0 protected=0 x=1680 y=1920 orient=N0
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=1020 align=LeftTop visible=0 font=Default
+Property name="REF" value="Probe3" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="axisType=\"auto\" persistence=-1 curveLabel=\"CLK\" analysis=\"tran|pop\" xLog=\"auto\" yLog=\"auto\"  nowarn=true'" autopos=1 normal=Right rotated=Right visible=0 font=Default
+Property name="Label" value="CLK" autopos=1 normal=Right rotated=Right font=Default
+Netnames pin1="2"
+.EndInstance
+.Instance
+Attributes type=symbol name="Ripper_0_2_0" selected=0 protected=0 x=4680 y=1800 orient=N0
+Property name="pinprop$1$busripper" value="0" autopos=0 x=-49 y=120 align=RightBase font=Default
+Property name="pinprop$2$busripper" value="1" autopos=0 x=-49 y=240 align=RightBase font=Default
+Property name="pinprop$3$busripper" value="2" autopos=0 x=-49 y=360 align=RightBase font=Default
+Property name="pinprop$4$bus" value="" autopos=0 x=262 y=0 align=LeftBase font=Default
+Netnames pin1="#BUS1$0" pin2="#BUS1$1" pin3="#BUS1$2"
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_UPDOWN_COUNTER_N_1_ASYNC_0_TO_1_3BIT" selected=0 protected=0 x=3120 y=1560 orient=N0
+Property name="CLK_TO_OUT_DELAY" value="20p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="IC" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="RIN" value="10Meg" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="TH" value="2.5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HYSTWD" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="MIN_CLK" value="10p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="TRIG_COND" value="'0_TO_1'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ENABLE_DELAY" value="10p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SETUP_TIME" value="10p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="HOLD_TIME" value="1p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SET_RESET_DELAY" value="15p" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SET_RESET_TYPE" value="'ASYNC'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SET_RESET_LEVEL" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="NUMBITS" value="3" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SET_TO" value="6" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="RESET_TO" value="1" autopos=1 normal=Top rotated=Top font=Default displayName=1
+Property name="GNDREF" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REF" value="U1" autopos=1 normal=Top rotated=Top font=Default
+Netnames pin1="#BUS1$0" pin2="#BUS1$1" pin3="#BUS1$2" pin4="2" pin5="4" pin6="6" pin7="8" pin8="9"
+.EndInstance
+.Instance
+Attributes type=symbol name="SIMPLIS_DIGI1_D_SIGNAL_SOURCE_N_1BIT" selected=0 protected=0 x=840 y=6120 orient=N0
+Property name="REF" value="U6" autopos=1 normal=Top rotated=Top font=Default
+Property name="VALUE" value="NSEG=1 X0=0 Y0=0 X1=1300n Y1=1 " autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="REDEFINE_SOURCE" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="GNDREF" value="'N'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOH" value="5" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="VOL" value="0" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="ROUT" value="10" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SOURCE_DEF" value="'Dialog'" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="NUMBITS" value="1" autopos=1 normal=Top rotated=Top visible=0 font=Default displayName=1
+Property name="SOURCE_FILE" value="" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Netnames pin1="9"
+.EndInstance
+.Instance
+Attributes type=symbol name="probev_new" selected=0 protected=0 x=3000 y=4800 orient=N0
+Property name="PROBE_DISABLED" value="false" autopos=0 x=-240 y=1020 align=LeftTop visible=0 font=Default
+Property name="REF" value="Probe7" autopos=1 normal=Left rotated=Left visible=0 font=Default
+Property name="VALUE" value="axisType=\"auto\" persistence=-1 curveLabel=\"CNT_UP\" analysis=\"tran|pop\" order=\"c2\" xLog=\"auto\" yLog=\"auto\"  nowarn=true" autopos=1 normal=Right rotated=Right visible=0 font=Default
+Property name="Label" value="CNT_UP" autopos=1 normal=Right rotated=Right font=Default
+Netnames pin1="9"
+.EndInstance
+Wire x1=2640 y1=2280 x2=2640 y2=4080 net="8" branch="+:U5#D0"
+Wire x1=2640 y1=4080 x2=2640 y2=5280 net="8" branch="+:U5#D0"
+Wire x1=1680 y1=5280 x2=2640 y2=5280 net="8" branch="-:U5#D0"
+Wire x1=4320 y1=2160 x2=4680 y2=2160 net="#BUS1$2" branch="-:U1#D2"
+Wire x1=3120 y1=1920 x2=1680 y2=1920 net="2" branch="+:U1#CLK"
+Wire x1=4320 y1=1920 x2=4680 y2=1920 net="#BUS1$0" branch="-:U1#D0"
+Wire x1=3120 y1=2160 x2=2280 y2=2160 net="6" branch="+:U1#SET"
+Wire x1=4320 y1=2040 x2=4680 y2=2040 net="#BUS1$1" branch="-:U1#D1"
+Wire x1=3120 y1=2040 x2=1920 y2=2040 net="4" branch="+:U1#EN"
+Wire x1=4920 y1=1800 x2=5160 y2=1800 net="BUS1" branch=""
+Wire x1=2280 y1=2160 x2=2280 y2=3360 net="6" branch="+:U4#D0"
+Wire x1=1560 y1=1920 x2=1680 y2=1920 net="2" branch="-:U2#OUT"
+Wire x1=2280 y1=4200 x2=1680 y2=4200 net="6" branch="-:U4#D0"
+Wire x1=2280 y1=3360 x2=2280 y2=4200 net="6" branch="+:U4#D0"
+Wire x1=1200 y1=2400 x2=1200 y2=2520 net="0" branch="-:U2#RTN"
+Wire x1=1920 y1=3120 x2=1680 y2=3120 net="4" branch="-:U3#D0"
+Wire x1=1920 y1=2640 x2=1920 y2=3120 net="4" branch="+:U3#D0"
+Wire x1=1920 y1=2040 x2=1920 y2=2640 net="4" branch="+:U3#D0"
+Wire x1=5160 y1=1800 x2=5280 y2=1800 net="BUS1" branch=""
+Wire x1=5280 y1=2400 x2=5160 y2=2400 net="BUS1" branch=""
+Wire x1=5160 y1=2400 x2=5160 y2=1800 net="BUS1" branch=""
+Wire x1=3120 y1=2280 x2=2640 y2=2280 net="8" branch="+:U1#RST"
+Wire x1=3120 y1=2400 x2=3000 y2=2400 net="9" branch="+:U1#CNT_UP"
+Wire x1=3000 y1=4800 x2=3000 y2=6360 net="9" branch="+:U6#D0"
+Wire x1=1680 y1=6360 x2=3000 y2=6360 net="9" branch="-:U6#D0"
+Wire x1=3000 y1=2400 x2=3000 y2=4800 net="9" branch="+:U6#D0"
+Text value=".SIMULATOR SIMPLIS\n.OPTIONS\n+ PSP_NPT=1001\n+ NEW_ANALYSIS\n.TRAN 3u 0\n\n.SIMULATOR DEFAULT\n"
+SimulatorMode value="Simplis"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+Property name="NetName" value="" type=value
+Property name="UserVersion" value="19" type=value
+.EndSchematic
+.EndComponent

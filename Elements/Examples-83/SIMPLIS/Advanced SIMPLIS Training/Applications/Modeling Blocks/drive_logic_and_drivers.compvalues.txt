@@ -1,0 +1,18 @@
+********************************************************************************
+***                                                                          ***
+***                             SIMetrix/SIMPLIS                             ***
+***                 Load Component Values configuration file                 ***
+***                                created on                                ***
+***                             Date : 10/31/2015                            ***
+***                              Time : 9:38 AM                              ***
+***                                                                          ***
+********************************************************************************
+
+PROBE8.PROBE_DISABLED	{!PROBES_ENABLED_TON}
+Probe6.PROBE_DISABLED	{!PROBES_ENABLED}
+Probe5.PROBE_DISABLED	{!PROBES_ENABLED}
+Probe3.PROBE_DISABLED	{!PROBES_ENABLED}
+Probe2.PROBE_DISABLED	{!PROBES_ENABLED}
+Probe1.PROBE_DISABLED	{!PROBES_ENABLED}
+Probe4.PROBE_DISABLED	{!PROBES_ENABLED}
+PROBE7.PROBE_DISABLED	{!PROBES_ENABLED_TON}

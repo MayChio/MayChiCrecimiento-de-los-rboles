@@ -1,0 +1,51 @@
+********************************************************************************
+***                                                                          ***
+***                             SIMetrix/SIMPLIS                             ***
+***                 Load Component Values configuration file                 ***
+***                                                                          ***
+********************************************************************************
+
+*** I copied these values from the SI4410DY Model
+*** LD DRAIN 5 9e-10
+*** RLD2 DRAIN 5 2.2619448
+*** LG GATE 1 7.26405326934776e-10
+*** RLG GATE 1 1.82565416883602
+*** LS SOURCE 8 1.21457985538781e-09
+*** RLS2 SOURCE 8 3.05256954231023
+
+*** gate resistance
+*** RG 1 2 1.54879549200633
+*** End Copied Values
+
+***
+*** Component with reference : LDrain
+*** ADDRESS	VALUE
+***
+
+LDrain.L	9e-10
+LDrain.R_SHUNT	2.2619448
+
+
+***
+*** Component with reference : LGate
+*** ADDRESS	VALUE
+***
+
+LGate.L	7.26405326934776e-10
+LGate.R_SHUNT	1.82565416883602
+
+
+***
+*** Component with reference : LSource
+*** ADDRESS	VALUE
+***
+
+LSource.L	1.21457985538781e-09
+LSource.R_SHUNT	3.05256954231023
+
+***
+*** Component with reference : RG
+*** ADDRESS	VALUE
+***
+
+RG.VALUE	1.54879549200633

@@ -1,0 +1,53 @@
+********************************************************************************
+***                                                                          ***
+***                             SIMetrix/SIMPLIS                             ***
+***                 Load Component Values configuration file                 ***
+***                                created on                                ***
+***                             Date : 7/18/2014                             ***
+***                              Time : 15:58:45                             ***
+***                                                                          ***
+********************************************************************************
+*** File : C:\Training\Module_3_Examples\3.1_change_vo_to_5p5V.compvalues.txt
+
+*** !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ***
+*** Although this file was auto-generated, we have editing it for our own purposes. ***
+*** !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ***
+
+***
+*** Component with reference : V1
+*** ADDRESS	VALUE
+***
+
+*** Change value to, with uniform disty.
+V1.VALUE	 {310*Unif(0.0333)}
+
+***
+*** Component with reference : R6
+*** ADDRESS	VALUE
+***
+
+*** Add MC tolerance, and increase nominal Vo to 5.5V
+R6.VALUE	{5.7k*Gauss(0.05)}
+
+***
+*** Component with reference : R7
+*** ADDRESS	VALUE
+***
+
+*** Add MC tolerance
+R7.VALUE	{4.75k*Gauss(0.05)}
+
+***
+*** Component with reference : R2
+*** ADDRESS	VALUE
+***
+
+R2.VALUE	1.5
+
+***
+*** Component with reference : L4
+*** ADDRESS	VALUE
+***
+
+*** multiply all values by 10%
+L4.VALUE	"NSEG=5 X0=-{0.50*1.1} Y0=-{1.655m*1.1*(L4_Tol)} X1=-{0.45*1.1} Y1=-{1.65m*1.1*(L4_Tol)} X2=-{0.40*1.1} Y2=-{1.6m*1.1*(L4_Tol)} X3={0.40*1.1} Y3={1.6m*1.1*(L4_Tol)} X4={0.45*1.1} Y4={1.65m*1.1*(L4_Tol)} X5={0.50*1.1} Y5={1.655m*1.1*(L4_Tol)}"

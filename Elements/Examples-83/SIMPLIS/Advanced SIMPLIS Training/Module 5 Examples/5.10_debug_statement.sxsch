@@ -1,0 +1,26 @@
+SIMetrixFile type=schematic format=1.0 revision=8
+.Component
+.Schematic
+.SymbolLibrary
+.EndSymbolLibrary
+.TextAnnotation
+Attributes orient=N0 x=1680 y=1440  
+TextInfo text="After running this simulation, open the deck file\nusing the menu Simulator > Edit Netlist (after preprocess)..." font="arial" size="9" italics="false" bold="false" 
+Property name="StyleNormal" value="DefaultAnnotation" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="StyleSelected" value="DefaultSelected" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+Property name="TextAlignment" value="AlignLeft" autopos=1 normal=Left rotated=Left visible=0 font=Default order=-1
+.EndTextAnnotation
+--SXVERSION1.5
+.Instance
+Attributes type=symbol name="Free_text" selected=0 protected=0 x=1680 y=1440 orient=N0
+Property name="value" value="After running this simulation, open the deck file\nusing the menu Simulator > Edit Netlist (after preprocess)..." autopos=0 x=0 y=156 align=LeftBase linear=1 selectable=1 font=FreeText
+Netnames
+.EndInstance
+--EndSXVERSION1.5
+Text value=".SIMULATOR SIMPLIS\n.OPTIONS\n+ PSP_NPT=10001\n+ POP_ITRMAX=20\n+ POP_OUTPUT_CYCLES=5\n+ SNAPSHOT_INTVL=0\n+ SNAPSHOT_NPT=11\n+ MIN_AVG_TOPOLOGY_DUR=1a\n+ AVG_TOPOLOGY_DUR_MEASUREMENT_WINDOW=128\n.TRAN 1m 0\n\n.SIMULATOR DEFAULT\n\n.var VOUT=1.5\n.var Iload=2.8\n.var Rload={Vout/Iload}\n{'*'} Value of Rload : {RLoad}"
+LicenseInfo version="8.30h" feats=Basic|AD|Micron|Schematic|Advanced|Multistep|Monte|Sim|Plugindevices|Demo|Rtn|SIMPLIS_IF|beta serial=unknown user="unknown" code=unknown product="Elements" binarch=x86 system="WINNT/10.0/x64/16963538944/6/1/12/1662590173"
+SimulatorMode value="Simplis"
+View x=-7516 y=0 zoomlevel=31 zoom=8 snapgrid=120 offsetX=0 offsetY=0
+Property name="UserVersion" value="3" type=value
+.EndSchematic
+.EndComponent

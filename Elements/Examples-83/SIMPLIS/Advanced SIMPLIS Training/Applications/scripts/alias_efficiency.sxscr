@@ -1,0 +1,16 @@
+***
+*** alias_efficiency.sxscr
+***
+
+Arguments @retval label report_dir log_file controlhandle
+
+Let value = ''
+simplis_dvm_advanced_util_extract_scalars_from_report @value 'Efficiency' log_file
+
+Let value = Mid( value , 0 , StringLength( value ) - 1 )
+
+Let user_scalars = SimplisDVMAdvancedUtilCreateScalar( 'Efficiency_no_percent', value )
+
+Let retval = [user_scalars]
+
+
