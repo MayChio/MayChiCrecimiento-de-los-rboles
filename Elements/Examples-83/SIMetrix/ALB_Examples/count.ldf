@@ -1,9 +1,0 @@
-// Simple counter example referenced in user manual
-
-PORT	(DELAY = 10n)	CountOut	out[0:7] ;
-
-EDGE	(WIDTH=8, CLOCK=in[0])	Count ;
-
-Count = Count + 1 ;
-
-CountOut = count ;

@@ -1,1 +1,0 @@
-LOAD_NAME='{SubstString( '%LOAD_NAME%' , ' ' , '\s' , 'all' )}'

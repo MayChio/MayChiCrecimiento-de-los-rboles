@@ -1,2 +1,0 @@
-RUN groupCurves=False NumCores=1 ShowConsole=False
-STEP Type=Parameter Parameter=level SweepType=Linear Values=3,0,2

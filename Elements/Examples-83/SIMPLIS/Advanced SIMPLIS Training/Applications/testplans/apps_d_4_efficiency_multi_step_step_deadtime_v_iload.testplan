@@ -1,7 +1,0 @@
-***								
-*** apps_d_3a_efficiency_multi_step_step_deadtime.testplan								
-***								
-*?@ Label	Objective	Analysis	Analysis	Source	"Change( I1.LOAD_RESISTANCE , 5 )"	"Change( U2.DEADTIME_HSON , 10n )"	Create	Postprocess
-***								
-Efficiency|Step DEADTIME_HSON - 30 steps 1n to 30ns|Step ILOAD from 0.5 to 9.5	Steady-State	"Multi-Step( DEADTIME_HSON , Linear, 30 , 1n , 30n , num_cores=4 )"	"Multi-Step( ILOAD , Linear, 10 , 0.5 , 9.5 )"	"SOURCE( INPUT:1 , Nominal )"	{RLOAD}	{DEADTIME_HSON}	"Alias( Efficiency, Efficiency_%ILOAD% )"	
-Efficiency|Generate Efficiency Curves	NoSimulation							./scripts/apps_d_5_create_xy_plots_for_deadtime_iload.sxscr

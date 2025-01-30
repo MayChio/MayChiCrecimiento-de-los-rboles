@@ -1,8 +1,0 @@
-// a simple 4X4 multiplier
-
-
-PORT (DELAY=10n)    MultOut out[0:7] ;
-PORT                in1 in[0:3] ;
-PORT                in2 in[4:7] ;
-
-MultOut = in1*in2 ;

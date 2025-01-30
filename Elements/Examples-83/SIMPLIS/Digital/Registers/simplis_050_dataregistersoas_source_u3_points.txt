@@ -1,8 +1,0 @@
-*** file   : simplis_050_dataregistersoas_source_u3_points.txt
-*** example: simplis_050_dataregistersoas_example.sxsch
-***
-*** Time	D3	D2	D1	D0
-0	0	0	0	0
-50n	0	1	0	0
-150n	1	0	0	0
-350n	0	1	0	1

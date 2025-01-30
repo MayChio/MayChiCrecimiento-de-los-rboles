@@ -1,7 +1,0 @@
-***								
-*** apps_d_1_efficiency_multi_step.testplan								
-***								
-*?@ Label	Objective	Analysis	Analysis	"Change( V1.DC_VOLTAGE , 380 )"	"Change( I1.LOAD_RESISTANCE , 5 )"	Create	Create	Postprocess
-***								
-Efficiency|Step VIN and ILOAD	Steady-State	"Multi-Step( ILOAD , Linear, 10 , 0.5 , 5.0 )"	"Multi-Step( VIN , LIST , 360 , 380 , 400 )"	{VIN}	{RLOAD}	"Alias( Efficiency , Efficiency_WHEN_VIN_%VIN% )"	"Alias( Efficiency , Efficiency_WHEN_ILOAD_%ILOAD% )"	
-Efficiency|Generate Efficiency Curves	NoSimulation							./scripts/apps_d_1_create_xy_plots.sxscr

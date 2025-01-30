@@ -1,8 +1,0 @@
-*** sensitivity_parameter.def
-***
-*** FUNC DISPLAY NAME	PARAM1	[PARAM2..PARAMn]
-Gain Margin	L1	C1	R2	R3
-Phase Margin	U1.U3.C1	U1.U3.C2	U1.U3.R2
-VLOAD Max	L1	C1	R2	R3	U1.U3.C1	U1.U3.C2	U1.U3.R2
-VLOAD Min	L1	C1	R2	R3	U1.U3.C1	U1.U3.C2	U1.U3.R2
-VLOAD Avg	L1	R2	R3

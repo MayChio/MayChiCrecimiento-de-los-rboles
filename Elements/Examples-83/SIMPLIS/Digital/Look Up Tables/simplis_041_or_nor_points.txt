@@ -1,5 +1,0 @@
-*** file   : simplis_041_or_nor_points.txt
-*** example: simplis_041_digitallookuptable_file_example.sxsch
-***
-*** decimal in	NOR (O1)	OR (O0)
-0	1	0

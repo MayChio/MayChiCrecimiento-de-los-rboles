@@ -1,2 +1,0 @@
-RUN groupCurves=False NumCores=1 ShowConsole=False
-STEP Type=Parameter Parameter=RLoad SweepType=List Values=5,4.2,2.5

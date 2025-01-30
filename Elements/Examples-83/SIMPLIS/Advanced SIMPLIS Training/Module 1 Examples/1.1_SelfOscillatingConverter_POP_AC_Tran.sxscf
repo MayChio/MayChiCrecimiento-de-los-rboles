@@ -1,2 +1,0 @@
-RUN groupCurves=True NumCores=4 ShowConsole=False
-STEP Type=MonteCarlo Values=16
